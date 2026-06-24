@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZTAI.AI — the AI governance platform combining automated red teaming, adaptive guardrails, and zero trust enforcement. Expert advisory available today while we build the system." />
+  <title>ZTAI.AI | AI Governance Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body class="font-mono antialiased">
+  <div class="page-shell min-h-screen">
+
+    <!-- Navigation + Tab Bar (unified sticky wrapper) -->
+    <div class="sticky top-0 z-50">
+
+      <nav class="border-b border-neon/30 bg-black/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
+          <a href="#top" class="glow-text text-xl font-black tracking-[0.2em] text-neon sm:text-2xl" aria-label="ZTAI.AI home">ZTAI.AI</a>
+          <div class="hidden items-center justify-center gap-8 text-sm uppercase tracking-[0.22em] text-emerald-100 md:flex">
+            <a class="transition hover:text-neon" href="#platform">Platform</a>
+            <a class="transition hover:text-neon" href="#services">Advisory</a>
+            <a class="transition hover:text-neon" href="#pricing">Pricing</a>
+            <a class="transition hover:text-neon" href="#contact">Contact</a>
+          </div>
+          <a href="#contact" class="volatile-button rounded-md px-4 py-2 text-xs sm:px-5" data-text="Get Early Access">Get Early Access</a>
+        </div>
+      </nav>
+
+      <!-- Tab Bar -->
+      <div class="border-b border-neon/20 bg-black/70 backdrop-blur-xl" role="tablist" aria-label="Page sections">
+        <div class="mx-auto flex max-w-7xl items-center px-5 sm:px-6 lg:px-8">
+          <button class="tab-btn tab-active" data-tab="home" role="tab" aria-selected="true" aria-controls="panel-home">Home</button>
+          <button class="tab-btn" data-tab="blog" role="tab" aria-selected="false" aria-controls="panel-blog">Blog</button>
+          <button class="tab-btn" data-tab="contact" role="tab" aria-selected="false" aria-controls="panel-contact">Contact Us</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- /sticky wrapper -->
+
+    <main id="top">
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           HOME PANEL — all original landing page content
+           ═══════════════════════════════════════════════════════════════════ -->
+      <div id="panel-home" role="tabpanel" aria-labelledby="tab-home">
+
+        <!-- Hero Section -->
+        <section class="relative flex min-h-[calc(100vh-73px)] items-center overflow-hidden">
+          <canvas id="matrixCanvas" class="matrix-canvas" aria-hidden="true"></canvas>
+          <div class="scanline"></div>
+          <div class="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-5 py-20 sm:px-6 min-[788px]:grid-cols-2 lg:px-8">
+            <div>
+              <div class="mb-5 flex flex-wrap items-center gap-3">
+                <p class="inline-flex rounded-md border border-cyber/60 bg-cyber/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.26em] text-cyber shadow-cyber">AI Governance Platform</p>
+                <p class="inline-flex rounded-md border border-neon/40 bg-neon/8 px-3 py-2 text-xs font-bold uppercase tracking-[0.26em] text-neon">+ Security Advisory</p>
+              </div>
+              <h2 class="glow-text max-w-5xl text-5xl font-black uppercase leading-tight tracking-normal text-white sm:text-6xl lg:text-7xl">
+                Automate AI Governance. Red Team. Guard. Zero Trust.
+              </h2>
+              <p class="mt-7 max-w-3xl text-lg leading-8 text-emerald-50/82 sm:text-xl">
+                The AI governance platform that combines continuous red teaming, adaptive guardrails, and zero trust enforcement &mdash; so your AI systems are secured, monitored, and audit-ready by default.
+              </p>
+              <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a href="#platform" class="volatile-button inline-flex justify-center items-center gap-2 rounded-md" data-text="Explore Platform">Explore Platform</a>
+                <a href="#contact" class="volatile-button inline-flex justify-center items-center gap-2 rounded-md" data-text="Book Consultation">Book Consultation</a>
+              </div>
+            </div>
+
+            <!-- Terminal Console Preview -->
+            <aside class="terminal-panel rounded-lg p-4 sm:p-6" aria-label="Security console preview">
+              <div class="mb-5 flex items-center gap-2 border-b border-cyber/30 pb-4">
+                <span class="h-3 w-3 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,.85)]"></span>
+                <span class="h-3 w-3 rounded-full bg-yellow-300 shadow-[0_0_12px_rgba(253,224,71,.8)]"></span>
+                <span class="h-3 w-3 rounded-full bg-neon shadow-[0_0_12px_rgba(57,255,20,.85)]"></span>
+                <span class="ml-3 text-xs uppercase tracking-[0.22em] text-cyber">ztai-console</span>
+              </div>
+              <div class="space-y-4 text-sm leading-7 text-emerald-100">
+                <p><span class="text-neon">&gt;</span> ai-governance --init --mode continuous</p>
+                <p><span class="text-neon">&gt;</span> red-team engine: <span class="text-cyber">1,247 vectors tested</span></p>
+                <p><span class="text-neon">&gt;</span> guardrails: <span class="text-cyber">14 behavioral policies enforced</span></p>
+                <p><span class="text-neon">&gt;</span> zero-trust: <span class="text-cyber">all agent calls verified ✓</span></p>
+                <p><span class="text-neon">&gt;</span> compliance: <span class="text-cyber">SOC2 · ISO27001 · HIPAA</span></p>
+                <p class="border-l-2 border-neon/70 pl-4 text-neon">GOVERNANCE: ACTIVE<span class="animate-pulse">_</span></p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- About / Mission Section -->
+        <section id="about" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="grid gap-6 lg:grid-cols-2">
+
+              <!-- Left: Mission statement -->
+              <div class="cyber-border rounded-lg p-6 sm:p-9">
+                <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Our Mission</p>
+                <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Platform + Advisory. Built for the Agentic Era.</h2>
+                <p class="mt-6 text-base leading-8 text-emerald-50/80">
+                  We are building the AI governance platform that enterprises need &mdash; one that combines continuous red teaming, adaptive guardrails, and zero trust enforcement into a <span class="font-bold text-white">single, always-on system</span> rather than a collection of point solutions.
+                </p>
+                <p class="mt-4 text-base leading-8 text-emerald-50/80">
+                  Our advisory practice is how we work with clients <span class="font-bold text-white">today</span> &mdash; solving immediate AI security challenges while co-developing the platform capabilities that will automate this at scale. Every engagement directly shapes our product roadmap.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                  <span class="inline-flex rounded-md border border-neon/40 bg-neon/8 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-neon">Building Platform</span>
+                  <span class="inline-flex rounded-md border border-cyber/40 bg-cyber/8 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-cyber">Advisory Now</span>
+                </div>
+              </div>
+
+              <!-- Right: Why this model -->
+              <div class="flex flex-col gap-5">
+                <div class="terminal-panel rounded-lg p-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">Why Consulting Alone Falls Short</p>
+                  <p class="text-sm leading-7 text-emerald-50/75">AI systems are non-deterministic and continuously evolving. A one-time assessment or a periodic audit leaves you exposed the moment your models update, your agents change behavior, or a new attack vector emerges. You need governance that runs as fast as your AI does.</p>
+                </div>
+                <div class="cyber-border rounded-lg p-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-3">Why a Unified Platform Changes Everything</p>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">Threats detected in hours, not the next quarterly review. Compliance evidence generated automatically, not assembled under audit pressure.</p>
+                  <ul class="space-y-3 text-sm leading-6 text-emerald-50/75">
+                    <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Red teaming</span> that runs continuously &mdash; not annually</span></li>
+                    <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Guardrails</span> that enforce policy in real-time &mdash; not after the fact</span></li>
+                    <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Zero trust</span> that verifies every agent action automatically &mdash; not by assumption</span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Platform Section (NEW) -->
+        <section id="platform" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+
+            <div class="mb-12 max-w-3xl">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">The Platform</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">One System. Three Engines. Fully Automated.</h2>
+              <p class="mt-4 text-base leading-7 text-emerald-50/70">
+                Not point solutions. Not one-time audits. A continuously operating AI governance system that discovers threats, enforces boundaries, and verifies every action across your entire agentic stack.
+              </p>
+            </div>
+
+            <!-- Three engine pipeline -->
+            <div class="flex flex-col items-stretch gap-0 md:flex-row">
+
+              <!-- Engine 01: Red Teaming -->
+              <div class="cyber-border flex-1 rounded-t-lg p-6 md:rounded-l-lg md:rounded-tr-none animate-slideInUp stagger-1">
+                <div class="mb-5 flex items-center gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-red-500/70 text-red-500 text-xs font-black shadow-[0_0_18px_rgba(239,68,68,.42)]">RT</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400">Engine 01</p>
+                    <p class="text-xs text-emerald-50/45 uppercase tracking-wide">Always On</p>
+                  </div>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">Red Teaming Engine</h3>
+                <p class="text-sm leading-6 text-emerald-50/70 mb-4">Continuous adversarial testing. Not a one-time assessment &mdash; a persistent engine that discovers behavioral vulnerabilities before attackers do.</p>
+                <ul class="space-y-2 text-xs text-emerald-50/60">
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5 shrink-0">›</span>Automated prompt injection &amp; jailbreak probing</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5 shrink-0">›</span>Behavioral drift &amp; model confusion detection</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5 shrink-0">›</span>AVE vulnerability scoring per finding</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5 shrink-0">›</span>RAG poisoning &amp; tool-use abuse simulation</li>
+                </ul>
+              </div>
+
+              <!-- Connector -->
+              <div class="flex items-center justify-center bg-black/40 py-3 text-neon/50 md:py-0 md:px-2" aria-hidden="true">
+                <svg class="rotate-90 md:rotate-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+
+              <!-- Engine 02: Guardrails -->
+              <div class="terminal-panel flex-1 p-6 animate-slideInUp stagger-2">
+                <div class="mb-5 flex items-center gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-cyber/70 text-cyber text-xs font-black shadow-cyber">GR</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber">Engine 02</p>
+                    <p class="text-xs text-emerald-50/45 uppercase tracking-wide">Real-Time</p>
+                  </div>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">Guardrails Engine</h3>
+                <p class="text-sm leading-6 text-emerald-50/70 mb-4">Real-time behavioral enforcement. Semantic firewalls, AI IAM, and blast radius containment that operate continuously &mdash; not just at design time.</p>
+                <ul class="space-y-2 text-xs text-emerald-50/60">
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5 shrink-0">›</span>Intent-based semantic filtering</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5 shrink-0">›</span>AI Identity &amp; Access Management</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5 shrink-0">›</span>Tool sandboxing &amp; blast radius containment</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5 shrink-0">›</span>Memory state provenance tracking</li>
+                </ul>
+              </div>
+
+              <!-- Connector -->
+              <div class="flex items-center justify-center bg-black/40 py-3 text-neon/50 md:py-0 md:px-2" aria-hidden="true">
+                <svg class="rotate-90 md:rotate-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+
+              <!-- Engine 03: Zero Trust -->
+              <div class="cyber-border flex-1 rounded-b-lg p-6 md:rounded-r-lg md:rounded-bl-none animate-slideInUp stagger-3">
+                <div class="mb-5 flex items-center gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-neon/70 text-neon text-xs font-black shadow-neon">ZT</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon">Engine 03</p>
+                    <p class="text-xs text-emerald-50/45 uppercase tracking-wide">Policy-First</p>
+                  </div>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">Zero Trust Enforcer</h3>
+                <p class="text-sm leading-6 text-emerald-50/70 mb-4">Trust no LLM call, tool execution, or data flow by default. Every agent action verified, least-privilege enforced, everything logged.</p>
+                <ul class="space-y-2 text-xs text-emerald-50/60">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5 shrink-0">›</span>Per-action trust verification</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5 shrink-0">›</span>Least-privilege policy enforcement</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5 shrink-0">›</span>Immutable, tamper-proof audit trail</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5 shrink-0">›</span>Agent-to-agent delegation controls</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Platform output: Governance Dashboard -->
+            <div class="mt-4 terminal-panel rounded-lg p-5 sm:p-6">
+              <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[0.22em] text-neon mb-2">Platform Output</p>
+                  <h3 class="text-lg font-black uppercase text-white">Governance Dashboard + Continuous Compliance</h3>
+                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">All three engines feed a unified compliance dashboard. SOC 2, ISO 27001, and HIPAA evidence generated automatically &mdash; every agent action logged, scored, and audit-ready.</p>
+                </div>
+                <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-end">
+                  <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">SOC 2</span>
+                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">ISO 27001</span>
+                  <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">HIPAA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Platform status + CTA -->
+            <div class="mt-5 grid gap-5 sm:grid-cols-[1fr_auto] items-center cyber-border rounded-lg p-5 sm:p-6">
+              <div>
+                <div class="mb-2 inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyber">In Active Development</div>
+                <h3 class="text-base font-black uppercase text-white">Advisory partners get early platform access.</h3>
+                <p class="mt-1 text-sm leading-6 text-emerald-50/70">Every consulting engagement shapes the product roadmap. Join now to secure your AI systems today and co-build the platform that will automate it at scale.</p>
+              </div>
+              <a href="#contact" class="volatile-button shrink-0 inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm" data-text="Become an Early Partner">Become an Early Partner</a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section id="architecture" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-5xl">
+            <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">From Architecture to Implementation</p>
+            <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">How We Help You Build It</h2>
+            <p class="mt-4 text-base leading-8 text-emerald-50/70">We translate this 3-layer architecture into actionable engineering outcomes through our core consulting pillars.</p>
+
+            <div class="mt-10 space-y-5">
+
+              <!-- Layer 1 -->
+              <article class="cyber-border rounded-lg p-6 sm:p-8 animate-fadeInDown stagger-1">
+                <div class="flex items-center gap-4 mb-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-red-500/70 text-red-500 text-sm font-black shadow-[0_0_18px_rgba(239,68,68,.42)]">L1</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-red-400">Layer 1</p>
+                    <h3 class="text-lg font-black uppercase text-white">Reasoning <span class="text-emerald-50/50 font-normal normal-case text-sm">(The LLM)</span></h3>
+                  </div>
+                </div>
+                <ul class="space-y-3 text-sm leading-7 text-emerald-50/75">
+                  <li class="flex items-start gap-3"><span class="text-red-500 mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Risk:</span> Prompt injections entering via direct inputs, indirect RAG sources, or untrusted websites.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-red-500 mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Reality:</span> Relying solely on input filters fails. A sufficiently clever prompt will eventually bypass basic guardrails.</span></li>
+                </ul>
+              </article>
+
+              <!-- Layer 2 -->
+              <article class="cyber-border rounded-lg p-6 sm:p-8 animate-fadeInDown stagger-2">
+                <div class="flex items-center gap-4 mb-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-cyber/70 text-cyber text-sm font-black shadow-cyber">L2</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyber">Layer 2</p>
+                    <h3 class="text-lg font-black uppercase text-white">Orchestration <span class="text-emerald-50/50 font-normal normal-case text-sm">(ACL &amp; Agent Registry)</span></h3>
+                  </div>
+                </div>
+                <ul class="space-y-3 text-sm leading-7 text-emerald-50/75">
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Defense:</span> The reasoning model is strictly isolated from critical system actions.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Execution:</span> The orchestration layer acts as an immutable referee, preventing the LLM from arbitrarily triggering unauthorized operations.</span></li>
+                </ul>
+              </article>
+
+              <!-- Layer 3 -->
+              <article class="cyber-border rounded-lg p-6 sm:p-8 animate-fadeInDown stagger-3">
+                <div class="flex items-center gap-4 mb-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-neon/70 text-neon text-sm font-black shadow-neon">L3</div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-neon">Layer 3</p>
+                    <h3 class="text-lg font-black uppercase text-white">Execution <span class="text-emerald-50/50 font-normal normal-case text-sm">(The Tool Sandbox)</span></h3>
+                  </div>
+                </div>
+                <ul class="space-y-3 text-sm leading-7 text-emerald-50/75">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Fail-Safe:</span> If an exploit bypasses the reasoning and orchestration layers, it hits the tool execution environment.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">The Boundary:</span> Agents run inside isolated, ephemeral sandboxes, keeping your core infrastructure safe from unauthorized data exfiltration or transactions.</span></li>
+                </ul>
+              </article>
+
+            </div>
+
+            <div class="h-12"></div>
+            <div class="h-12"></div>
+
+            <div class="mb-6">
+              <p class="text-sm font-bold uppercase tracking-[0.24em] text-cyber mb-4">The Compliance Problem</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Why Legacy Frameworks Fail the Agentic Stack</h2>
+            </div>
+
+            <div class="cyber-border rounded-lg p-6 sm:p-8 animate-slideInUp">
+              <div class="mb-8">
+                <p class="text-base leading-8 text-emerald-50/75 mb-5">
+                  Traditional application security relies on cataloging software bugs and measuring raw code severity. But an agent's risk isn't hidden in a software flaw—it is embedded in its behavior across your reasoning, orchestration, and execution layers.
+                </p>
+                <p class="text-base leading-8 text-emerald-50/75">
+                  We evolve outdated IT tracking with an <span class="font-bold text-neon">AI-native compliance methodology</span> built for dynamic, autonomous systems.
+                </p>
+              </div>
+
+              <div class="space-y-8">
+                <div class="border-l-2 border-neon/50 pl-6 py-2">
+                  <h3 class="text-lg font-black uppercase text-neon mb-4">Threat Modeling with MAESTRO</h3>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    Agentic systems generate new threat surfaces. Instead of static code review, we dynamically model how agents reason, orchestrate, and execute—mapping attack paths specific to your LLM behavior, API bindings, and data sources.
+                  </p>
+                  <ul class="space-y-3 text-sm leading-6 text-emerald-50/75">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Reasoning Threats:</span> Prompt injection, model confusion, adversarial inputs.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Orchestration Threats:</span> ACL bypass, agent escape, unauthorized delegation.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Execution Threats:</span> Sandbox escape, data exfiltration, unauthorized transactions.</span></li>
+                  </ul>
+                </div>
+
+                <div class="border-l-2 border-cyber/50 pl-6 py-2">
+                  <h3 class="text-lg font-black uppercase text-cyber mb-4">Taxonomy: AVE Instead of CVE</h3>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    <span class="font-bold text-white">CVE (Common Vulnerabilities and Exposures)</span> is built for deterministic, underlying infrastructure code that requires a patch. AVE is a new standard built specifically for non-deterministic, behavioral attack patterns in AI agent components. It handles vulnerabilities written in natural language rather than code binaries.
+                  </p>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    <span class="font-bold text-white">How they Cooperate in Responding Threats:</span> If an attacker discovers a flaw in an AI coding agent, both CVE and AVE track them side-by-side. For example, we look up for the CVE if the underlying Model Context Protocol needs a patch, and look up for AVE to find behavioral indicators of compromise.
+                  </p>
+                </div>
+
+                <div class="border-l-2 border-neon/50 pl-6 py-2">
+                  <h3 class="text-lg font-black uppercase text-neon mb-4">Risk Calculation: AARS &amp; AIVSS</h3>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    <span class="font-bold text-white">AARS (Agentic AI Risk Score):</span> Combines AVE severity, exploit likelihood, and business impact into a single risk metric.
+                  </p>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    <span class="font-bold text-white">AIVSS (AI Vulnerability Scoring System):</span> A standardized scoring framework (0&ndash;10) for agentic vulnerabilities, extending CVSS for AI systems. Factors include:
+                  </p>
+                  <ul class="space-y-3 text-sm leading-6 text-emerald-50/75">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>Attack vector (prompt, API, data source).</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>Autonomous escalation (how an agent might chain exploits).</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>Data sensitivity and scope of compromise.</span></li>
+                  </ul>
+                </div>
+
+                <div class="border-l-2 border-cyber/50 pl-6 py-2">
+                  <h3 class="text-lg font-black uppercase text-cyber mb-4">Audit-Ready Compliance Reporting</h3>
+                  <p class="text-sm leading-7 text-emerald-50/75 mb-4">
+                    We generate compliance dashboards for SOC 2, ISO 27001, and HIPAA auditors—detailing agentic control effectiveness, incident response playbooks, and continuous risk monitoring.
+                  </p>
+                  <p class="text-sm leading-7 text-emerald-50/75">
+                    Every comprehensive assessment report produces a <span class="font-bold text-white">robust audit trail</span> showing which agents accessed what, when, why, and with what permissions—critical for regulatory evidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="mb-10 max-w-3xl">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Advisory Services</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Platform Capabilities, Available Now</h2>
+              <p class="mt-4 text-base leading-7 text-emerald-50/70">Access the platform&rsquo;s three core capabilities today through expert advisory &mdash; while we build the automated system that delivers them continuously.</p>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3">
+
+              <article class="service-card cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-1">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-md border border-red-500/70 text-red-500 shadow-[0_0_18px_rgba(239,68,68,.42)] animate-floatIcon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 3L20 7V12C20 17 16.5 20.5 12 22C7.5 20.5 4 17 4 12V7L12 3Z" stroke="currentColor" stroke-width="1.8"/>
+                      <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <span class="rounded border border-red-500/40 bg-red-500/8 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">RT Engine</span>
+                </div>
+                <h3 class="text-xl font-black uppercase text-white">Red Teaming</h3>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-emerald-50/45">Delivered today via advisory &rarr; automated in the platform</p>
+                <p class="mt-3 leading-7 text-emerald-50/75">Expert-led adversarial testing that mirrors what the platform will automate &mdash; prompts, agents, retrieval systems, tool abuse, and data leakage under realistic attack pressure.</p>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-1">›</span>Prompt injection &amp; jailbreak testing</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-1">›</span>Agent tool-use abuse simulation</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-1">›</span>Data leakage &amp; exfiltration probing</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-1">›</span>RAG poisoning &amp; behavioral drift detection</li>
+                  <li class="flex items-start gap-2"><span class="text-red-500 mt-1">›</span>AVE-scored findings with prioritized remediation</li>
+                </ul>
+              </article>
+
+              <article class="service-card cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-2">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-md border border-cyber/70 text-cyber shadow-cyber animate-floatIcon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M7 4v16M17 4v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <span class="rounded border border-cyber/40 bg-cyber/8 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">GR Engine</span>
+                </div>
+                <h3 class="text-xl font-black uppercase text-white">Guardrails</h3>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-emerald-50/45">Delivered today via advisory &rarr; automated in the platform</p>
+                <p class="mt-3 leading-7 text-emerald-50/75">We design and deploy the guardrails architecture for your stack &mdash; the same defense-in-depth controls the platform will enforce continuously without manual intervention.</p>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Semantic firewalls &amp; intent-based filtering</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>AI Identity &amp; Access Management (IAM)</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Tool sandboxing &amp; blast radius containment</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Memory state provenance tracking</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Guardrails blueprint for your engineering team</li>
+                </ul>
+              </article>
+
+              <article class="service-card cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-3">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-md border border-neon/70 text-neon shadow-neon animate-floatIcon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M7 4H15L19 8V20H7V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M14 4V9H19" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M10 14L12 16L16 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="rounded border border-neon/40 bg-neon/8 px-2 py-1 text-xs font-bold uppercase tracking-wide text-neon">ZT Engine</span>
+                </div>
+                <h3 class="text-xl font-black uppercase text-white">Zero Trust + Compliance</h3>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-emerald-50/45">Delivered today via advisory &rarr; automated in the platform</p>
+                <p class="mt-3 leading-7 text-emerald-50/75">We implement zero trust policy and generate the compliance evidence your auditors require &mdash; the same audit trail the platform will produce automatically, continuously.</p>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Zero trust policy architecture &amp; enforcement</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>AI governance framework mapping</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>SOC 2, ISO 27001 &amp; HIPAA evidence packages</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Continuous risk scoring (AARS &amp; AIVSS)</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Executive briefing &amp; regulatory gap analysis</li>
+                </ul>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="mb-10 max-w-3xl">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Engagement Models</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Advisory Today. Platform Access Tomorrow.</h2>
+              <p class="mt-4 text-base leading-7 text-emerald-50/70">All advisory tiers include priority placement on the platform early access program. Build with us now &mdash; get the automation first.</p>
+            </div>
+
+            <!-- Platform early access banner -->
+            <div class="mb-8 terminal-panel rounded-lg p-5 sm:p-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div class="min-w-0">
+                <div class="mb-2 inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyber">Platform Licensing &mdash; Coming Soon</div>
+                <h3 class="text-base font-black uppercase text-white">Advisory clients get early platform access &amp; co-development priority.</h3>
+                <ul class="mt-2 space-y-1 text-sm leading-6 text-emerald-50/65">
+                  <li class="flex items-start gap-2"><span class="text-cyber shrink-0 mt-0.5">›</span>Every consulting engagement shapes the product roadmap.</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber shrink-0 mt-0.5">›</span>Advisory partners move to the front of the queue at preferred rates when platform licensing launches.</li>
+                </ul>
+              </div>
+              <a href="#contact" class="volatile-button shrink-0 rounded-md px-5 py-3 text-sm whitespace-nowrap" data-text="Join Platform Waitlist">Join Platform Waitlist</a>
+            </div>
+
+            <div class="grid gap-5 lg:grid-cols-3">
+
+              <article class="cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-1 hover:animate-glowPulse">
+                <div class="mb-2 inline-flex rounded border border-neon/50 bg-neon/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-neon animate-scaleIn">Most Popular</div>
+                <h3 class="mt-3 text-xl font-black uppercase text-white">Monthly Retainer</h3>
+                <p class="mt-2 text-sm leading-6 text-emerald-50/70">Ongoing AI security support to build and mature your defenses. 10&ndash;40 hours/month depending on tier.</p>
+                <div class="mt-5 space-y-3">
+                  <div class="rounded-md border border-neon/20 bg-black/40 p-4 transition-all duration-300 hover:border-neon/50 hover:bg-black/60">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm font-bold uppercase tracking-wide text-emerald-100">Small Business</span>
+                      <span class="text-lg font-black text-neon">US$2,000<span class="text-xs font-normal text-emerald-50/60">&ndash;US$4,000/mo</span></span>
+                    </div>
+                    <p class="mt-1 text-xs text-emerald-50/55">~10 hrs/mo &mdash; foundational AI security guidance</p>
+                  </div>
+                  <div class="rounded-md border border-cyber/30 bg-black/40 p-4 transition-all duration-300 hover:border-cyber/60 hover:bg-black/60">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm font-bold uppercase tracking-wide text-emerald-100">Mid-Market</span>
+                      <span class="text-lg font-black text-cyber">US$5,000<span class="text-xs font-normal text-emerald-50/60">&ndash;US$8,000/mo</span></span>
+                    </div>
+                    <p class="mt-1 text-xs text-emerald-50/55">~20&ndash;30 hrs/mo &mdash; deep engagement reviewing the security posture of AI &amp; providing advisory</p>
+                  </div>
+                  <div class="rounded-md border border-neon/30 bg-black/40 p-4 transition-all duration-300 hover:border-neon/50 hover:bg-black/60">
+                    <div class="flex items-baseline justify-between">
+                      <span class="text-sm font-bold uppercase tracking-wide text-emerald-100">Enterprise</span>
+                      <span class="text-lg font-black text-neon">US$10,000<span class="text-xs font-normal text-emerald-50/60">&ndash;US$12,000/mo</span></span>
+                    </div>
+                    <p class="mt-1 text-xs text-emerald-50/55">~40 hrs/mo &mdash; full-spectrum program: red teaming, adversarial defense, compliance &amp; AI Supply Chain security.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="cyber-border corner-grid rounded-lg p-6 flex flex-col animate-slideInUp stagger-2">
+                <div class="mb-2 inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyber animate-scaleIn">Time-Bound</div>
+                <h3 class="mt-3 text-xl font-black uppercase text-white">Project-Based</h3>
+                <p class="mt-2 text-sm leading-6 text-emerald-50/70">Best for one-time security assessments, red team engagements, and compliance preparation with defined deliverables.</p>
+                <div class="mt-5 flex items-baseline gap-1">
+                  <span class="text-4xl font-black gradient-text">US$12,000</span>
+                  <span class="text-md text-emerald-50/60">+</span>
+                </div>
+                <p class="mt-1 text-xs text-emerald-50/55">2 weeks minimum &mdash; scope-dependent</p>
+                <ul class="mt-5 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5">&#10003;</span>Defined scope &amp; deliverables</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5">&#10003;</span>Written assessment report</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5">&#10003;</span>Compliance readiness packages</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-0.5">&#10003;</span>Executive briefing included</li>
+                </ul>
+              </article>
+
+              <article class="cyber-border corner-grid rounded-lg p-6 flex flex-col animate-slideInUp stagger-3">
+                <div class="mb-2 inline-flex rounded border border-neon/50 bg-neon/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-neon animate-scaleIn">Flexible</div>
+                <h3 class="mt-3 text-xl font-black uppercase text-white">Hourly Advisory</h3>
+                <p class="mt-2 text-sm leading-6 text-emerald-50/70">Ad-hoc advisory, intermittent security policy review, or expert consultation on demand. No long-term commitment.</p>
+                <div class="mt-5 flex items-baseline gap-1">
+                  <span class="text-4xl font-black gradient-text">US$250</span>
+                  <span class="text-sm text-emerald-50/60">/hr+</span>
+                </div>
+                <p class="mt-1 text-xs text-emerald-50/55">Billed in 1-hour increments</p>
+                <ul class="mt-5 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5">&#10003;</span>No retainer required</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5">&#10003;</span>Ad-hoc advisory sessions</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5">&#10003;</span>Security policy review</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-0.5">&#10003;</span>On-demand expert access</li>
+                </ul>
+              </article>
+
+            </div>
+
+            <div class="terminal-panel mt-8 rounded-lg p-5 sm:p-7 animate-slideInUp stagger-1">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-sm font-bold uppercase tracking-[0.22em] text-neon">Before You Commit</p>
+                  <h3 class="mt-1 text-lg font-black uppercase text-white">Free Introductory Call &mdash; 30 Minutes</h3>
+                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">
+                    Start with a no-obligation 30-minute call to discuss your AI environment and security needs.
+                  </p>
+                  <p class="mt-1 text-sm text-cyber">45&ndash;60 min Discovery &amp; Scope Assessment credited back in full when a contract is signed.</p>
+                </div>
+                <a href="#contact" class="volatile-button rounded-md px-6 py-3 text-sm" data-text="Book Free Call">Book Free Call</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Assessment Intake Section -->
+        <section id="contact" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.82fr_1.18fr]">
+            <div class="cyber-border rounded-lg p-6 sm:p-8">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Client Onboarding</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Initiate Assessment</h2>
+              <p class="mt-6 leading-8 text-emerald-50/78">
+                Submit the first signal. ZTAI.AI will review your AI architecture, identify the likely threat surface, and prepare an assessment path.
+              </p>
+            </div>
+
+            <form id="assessmentForm" class="terminal-panel rounded-lg p-5 sm:p-7 animate-slideInUp stagger-2">
+              <div class="mb-6 flex items-center justify-between border-b border-neon/30 pb-4">
+                <span class="text-xs font-bold uppercase tracking-[0.22em] text-neon">secure-intake.sh</span>
+                <span id="formStatus" class="text-xs uppercase tracking-[0.18em] text-cyber transition-all duration-300">standby</span>
+              </div>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Enter your digital signature (Email)</span>
+                <input class="terminal-input w-full rounded-md px-4 py-4 transition-all duration-300" type="email" name="email" autocomplete="email" placeholder="customer@company.com" required />
+              </label>
+              <label class="mt-6 block">
+                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Brief Description of your AI Architecture</span>
+                <textarea class="terminal-input min-h-40 w-full resize-y rounded-md px-4 py-4 transition-all duration-300" name="architecture" placeholder="Models, agents, data sources, tools, deployment environment, known concerns..." required></textarea>
+              </label>
+              <button class="volatile-button mt-7 w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]" type="submit" data-text="Initiate Assessment">Initiate Assessment</button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+      <!-- /panel-home -->
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           BLOG PANEL
+           ═══════════════════════════════════════════════════════════════════ -->
+      <div id="panel-blog" class="hidden" role="tabpanel" aria-labelledby="tab-blog">
+        <section class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+
+            <!-- Header -->
+            <div class="mb-12">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Security Intelligence</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">AI Security Blog</h2>
+              <p class="mt-4 text-base leading-7 text-emerald-50/70">Research and insights on AI threat modeling, adversarial defense, and compliance for agentic systems.</p>
+            </div>
+
+            <!-- Blog card grid -->
+            <div class="grid gap-6 md:grid-cols-3 mb-16">
+
+              <!-- Card 1 — locked -->
+              <article
+                class="blog-card cyber-border rounded-lg p-6 relative" data-locked="true"
+                tabindex="0"
+                role="button"
+                aria-label="Subscribers only: Prompt Injection Taxonomy for Agentic Systems"
+                onclick="window.openSubModal(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.openSubModal(this)}"
+              >
+                <div class="lock-badge absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded border border-neon/35 bg-black/70 text-neon/60" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="mb-4 flex items-center gap-3">
+                  <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Red Teaming</span>
+                  <span class="text-xs text-emerald-50/50">Jun 2025</span>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">Prompt Injection Taxonomy for Agentic Systems</h3>
+                <p class="text-sm leading-6 text-emerald-50/68">A systematic classification of prompt injection vectors across direct, indirect, and adversarial RAG attack surfaces in multi-agent pipelines.</p>
+                <div class="lock-footer mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/42">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>Subscribers Only</span>
+                </div>
+              </article>
+
+              <!-- Card 2 — locked -->
+              <article
+                class="blog-card cyber-border rounded-lg p-6 relative" data-locked="true"
+                tabindex="0"
+                role="button"
+                aria-label="Subscribers only: MAESTRO Framework for AI Threat Modeling"
+                onclick="window.openSubModal(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.openSubModal(this)}"
+              >
+                <div class="lock-badge absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded border border-neon/35 bg-black/70 text-neon/60" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="mb-4 flex items-center gap-3">
+                  <span class="inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Threat Modeling</span>
+                  <span class="text-xs text-emerald-50/50">May 2025</span>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">MAESTRO Framework for AI Threat Modeling</h3>
+                <p class="text-sm leading-6 text-emerald-50/68">Dynamic attack-path mapping specific to LLM behavior, API bindings, and data sources—built for teams that can't rely on static code review.</p>
+                <div class="lock-footer mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/42">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>Subscribers Only</span>
+                </div>
+              </article>
+
+              <!-- Card 3 — locked -->
+              <article
+                class="blog-card cyber-border rounded-lg p-6 relative" data-locked="true"
+                tabindex="0"
+                role="button"
+                aria-label="Subscribers only: Zero Trust Principles Applied to LLM Architectures"
+                onclick="window.openSubModal(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.openSubModal(this)}"
+              >
+                <div class="lock-badge absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded border border-neon/35 bg-black/70 text-neon/60" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="mb-4 flex items-center gap-3">
+                  <span class="inline-flex rounded border border-neon/50 bg-neon/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-neon">Zero Trust</span>
+                  <span class="text-xs text-emerald-50/50">Apr 2025</span>
+                </div>
+                <h3 class="text-lg font-black uppercase text-white mb-3">Zero Trust Principles Applied to LLM Architectures</h3>
+                <p class="text-sm leading-6 text-emerald-50/68">Extending classical Zero Trust networking—never trust, always verify—to every LLM call, tool execution, and data flow in your agentic stack.</p>
+                <div class="lock-footer mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/42">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>Subscribers Only</span>
+                </div>
+              </article>
+
+              <!-- Card 4: Shadow AI Case Study — full-width feature card -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6" tabindex="0" aria-label="Read: How a Go-AI-First Company Eliminated Shadow AI Risk">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Case Study</span>
+                    <span class="text-xs text-emerald-50/50">Jun 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">How a &ldquo;Go-AI-First&rdquo; Company Eliminated Shadow AI Risk</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">An enterprise tech firm eliminated unauthorized AI tool usage&mdash;specifically Claude Code running under personal credentials&mdash;by deploying a corporate AI sandbox with EDR and SIEM integration. Achieved 100% AI usage visibility and SOC2/GDPR audit-readiness without slowing developers.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">SOC2</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">GDPR</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">EDR / SIEM</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Zero Trust</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>100% AI usage visibility</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>SOC2 &amp; GDPR audit-ready</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>Zero developer friction</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- ── Case Study: Shadow AI ── -->
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Featured Case Study</p>
+                <h3 class="text-xl font-black uppercase text-white">Enterprise Shadow AI Elimination</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-shadow', 'ztai-shadow-ai-case-study.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download the Shadow AI case study as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-shadow" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Case Study</span>
+                  <span class="text-xs text-emerald-50/50">June 2026 &middot; ZTAI.AI</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  How a &ldquo;Go-AI-First&rdquo; Company Eliminated Shadow AI Risk
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <div class="space-y-5 text-sm leading-8 text-emerald-50/80">
+
+                <!-- Executive Summary -->
+                <div class="border-l-2 border-neon/50 pl-6 py-3">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-2">Executive Summary</p>
+                  <p>An enterprise-level tech firm eliminated Shadow AI risks&mdash;specifically unauthorized AI tools like Claude Code running under personal credentials&mdash;by implementing a secure corporate AI sandbox and deploying targeted EDR and SIEM rules to detect personal API key usage. Using tools like Microsoft Defender KQL and CrowdStrike regex, the firm achieved 100% visibility of AI usage, became audit-ready for SOC2/GDPR, and maintained developer velocity.</p>
+                </div>
+
+                <!-- About ZTAI -->
+                <div class="rounded-lg border border-cyber/25 bg-cyber/5 p-5">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">About ZTAI Security Advisors</p>
+                  <p class="mb-3 text-emerald-50/75">ZTAI helps enterprises adopt AI securely. We offer two complementary approaches:</p>
+                  <ul class="space-y-2">
+                    <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">AI Security Assessments</span> (consulting) &mdash; Zero-trust architecture design and layered defense strategies for AI adoption.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">AI Governance Automation</span> (product in development) &mdash; Continuous red teaming, prompt injection detection, and shadow AI monitoring for enterprises scaling AI safely.</span></li>
+                  </ul>
+                </div>
+
+                <!-- Introduction -->
+                <h3 class="text-base font-black uppercase text-neon mt-6 mb-2">Introduction</h3>
+                <p>In an era where AI is reshaping business operations, the rise of shadow AI&mdash;the unauthorized use of AI tools by employees without organizational oversight&mdash;has emerged as a critical cybersecurity and compliance risk. According to the <span class="font-bold text-white">IBM Cost of a Data Breach Report 2025</span>, incidents involving shadow AI added an average of <span class="font-bold text-neon">$670,000</span> to the total cost of a data breach compared to breaches that did not involve unapproved AI tools.</p>
+                <p>Shadow AI is not a hypothetical threat&mdash;it&apos;s a reality. Developers, analysts, and even executives may use personal API keys or unapproved AI tools to expedite workflows, unaware of the potential for data exfiltration, compliance violations, or system sabotage.</p>
+
+                <!-- Section 1 -->
+                <h3 class="text-base font-black uppercase text-neon mt-6 mb-1">1. Frame the Shadow AI Risk in IT&apos;s Language</h3>
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyber mb-4">Goal: Translate AI security risks into compliance, audit, and operational concerns.</p>
+                <div class="space-y-4">
+                  <div class="border-l-2 border-red-500/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">Shadow Infrastructure / Unmonitored Code Execution</p>
+                    <p>&ldquo;Claude Code is a powerful autonomous agent with shell execution capabilities. When developers use personal API keys, it becomes an unmonitored code execution gateway&mdash;equivalent to allowing shell access without IT oversight. This creates visibility gaps that compliance frameworks like SOC2 and ISO 27001 explicitly prohibit.&rdquo;</p>
+                  </div>
+                  <div class="border-l-2 border-red-500/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">System Destruction Risk</p>
+                    <p>&ldquo;Autonomous code execution without governance can lead to unintended data modifications, production database changes, or system instability. Organizations need centralized oversight of all AI-assisted code modifications.&rdquo;</p>
+                  </div>
+                  <div class="border-l-2 border-red-500/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">Compliance Violations</p>
+                    <p>&ldquo;Personal API keys break our data handling commitments for SOC2/ISO 27001/GDPR. If auditors ask for logs, we&apos;ll fail because there&apos;s no centralized visibility.&rdquo;</p>
+                  </div>
+                </div>
+                <p class="text-xs text-emerald-50/50 italic">Outcome: IT prioritizes risks that directly impact compliance, legal exposure, or operational stability.</p>
+
+                <!-- Section 2 -->
+                <h3 class="text-base font-black uppercase text-cyber mt-6 mb-1">2. Zero-Effort Technical Solutions</h3>
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyber mb-4">Goal: Give IT a clear, actionable path to mitigate risks without deep technical expertise.</p>
+
+                <p class="font-bold text-white">EDR Rule (Microsoft Defender KQL)</p>
+                <p class="text-xs text-emerald-50/55 mb-2">Flags Claude process executions originating outside your approved device group:</p>
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90">DeviceProcessEvents
+| where ProcessVersionInfoFileName =~ "claude" or ProcessName contains "claude"
+| where not(DeviceName in ("Approved-AI-Dev-01", "Approved-AI-Dev-02"))
+| project TimeGenerated, DeviceName, AccountName, FileName, FolderPath, ProcessCommandLine</pre>
+
+                <p class="font-bold text-white mt-4">Regex for CrowdStrike (API Key Detection)</p>
+                <p class="text-xs text-emerald-50/55 mb-2">Catches standard Anthropic personal API key formats in environment variables or command lines:</p>
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90">\bsk-ant-sid\d*-[A-Za-z0-9_-]{32,}\b</pre>
+
+                <p class="font-bold text-white mt-4">SIEM Regex for High-Risk Data (Prompt Monitoring)</p>
+                <p class="text-xs text-emerald-50/55 mb-2">Catches high-risk data types in logs or command lines. Note: may produce false positives on security training materials&mdash;manual tuning per organization is recommended.</p>
+                <pre class="overflow-x-auto rounded-md border border-cyber/30 bg-black/70 p-4 text-xs leading-6 text-cyber/90">(?i)\b(payroll|ssn|social[- ]?security|performance[- ]?review|termination|financials)\b</pre>
+
+                <p class="font-bold text-white mt-4">Automate .claudeignore Deployment</p>
+                <p class="text-xs text-emerald-50/55 mb-2">PowerShell script that prevents Claude Code from accessing sensitive directories across user profiles:</p>
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90">$IgnorePath = "$env:USERPROFILE\.claudeignore"
+$IgnoreContent = @(
+    "**/HR/**",
+    "**/Finance/**",
+    "**/*.xlsx",
+    "**/*.csv",
+    "**/.env*"
+)
+Set-Content -Path $IgnorePath -Value $IgnoreContent -Force</pre>
+                <p class="text-xs text-emerald-50/50 italic">Outcome: IT can deploy blocks with minimal effort, avoiding delays or resistance.</p>
+
+                <!-- Section 3 -->
+                <h3 class="text-base font-black uppercase text-neon mt-6 mb-1">3. Align with the CTO&apos;s &ldquo;AI-First&rdquo; Vision</h3>
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyber mb-4">Goal: Position security as an enabler of innovation, not a blocker.</p>
+                <div class="space-y-4">
+                  <div class="border-l-2 border-cyber/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">Corporate AI Sandbox</p>
+                    <p>&ldquo;We want you to move fast with AI. We&apos;re setting up a company-wide API key with high usage limits&mdash;no personal costs, no billing surprises. Just route requests through our secure dev gateway first.&rdquo;</p>
+                  </div>
+                  <div class="border-l-2 border-cyber/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">Vendor-Recommended Solutions</p>
+                    <p>&ldquo;Cloud providers and AI vendors explicitly recommend enterprise-grade API key management for production use. We&apos;re implementing industry best practices to avoid environmental corruption.&rdquo;</p>
+                  </div>
+                  <div class="border-l-2 border-cyber/50 pl-5 py-1">
+                    <p class="font-bold text-white mb-1">Velocity &amp; Uptime Focus</p>
+                    <p>&ldquo;Personal API keys risk project delays if accounts get flagged. Centralizing keys under a corporate tier ensures unlimited runtime and maximum speed.&rdquo;</p>
+                  </div>
+                </div>
+                <p class="text-xs text-emerald-50/50 italic">Outcome: Security becomes a strategic enabler, not a restriction.</p>
+
+                <!-- Section 4 -->
+                <h3 class="text-base font-black uppercase text-cyber mt-6 mb-1">4. Create a Risk Trail: Formal Documentation</h3>
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyber mb-4">Goal: Establish shared responsibility and create a compliance paper trail.</p>
+                <p class="font-bold text-white">Formal Risk Assessment Email</p>
+                <pre class="mt-2 overflow-x-auto rounded-md border border-cyber/25 bg-black/60 p-5 text-xs leading-7 text-emerald-100/70 whitespace-pre-wrap">Subject: AI Security Risk: Unmonitored AI Tool Usage
+
+To: [IT Lead]
+CC: [Direct Manager]
+
+Issue:
+Developers are running autonomous AI tools (like Claude Code) using unmonitored
+personal credentials, creating visibility gaps and compliance exposure.
+
+Impact:
+Potential for silent data exfiltration, compliance failure, or unintended
+system modifications.
+
+Recommendation:
+Block personal-key execution via EDR and mandate a corporate-monitored gateway
+for all AI-assisted development activities.
+
+Next Steps:
+Please confirm if IT accepts this risk or if you need technical implementation
+blocks to deploy mitigation.
+
+---
+[Your Name]
+AI Security Advisor</pre>
+                <p class="text-xs text-emerald-50/50 italic">Outcome: Legal and professional responsibility is documented. If risks materialize, you&apos;ve established that the issue was flagged and the decision to defer action was made upstream.</p>
+
+                <!-- Section 5 -->
+                <h3 class="text-base font-black uppercase text-neon mt-6 mb-1">5. Monitor and Mitigate Anomalies</h3>
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyber mb-4">Goal: Detect and respond to risky behavior proactively.</p>
+                <ul class="space-y-3 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">SIEM Alerts</span> &mdash; Flag queries containing high-risk keywords like &ldquo;payroll,&rdquo; &ldquo;SSN,&rdquo; or &ldquo;performance review&rdquo; in prompt text.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">API Payload Analysis</span> &mdash; Monitor token volume spikes, which may indicate large data ingestion or unusual usage patterns.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Log Analysis</span> &mdash; Use KQL to search Azure AD/Entra logs for Anthropic activity:</span></li>
+                </ul>
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90">AuditLog
+| where OperationName contains "Anthropic"
+| project TimeGenerated, UserPrincipalName, OperationName, Result</pre>
+                <p class="text-xs text-emerald-50/50 italic">Outcome: Early detection of deviations from normal behavior allows rapid response.</p>
+
+                <!-- Section 6 -->
+                <h3 class="text-base font-black uppercase text-cyber mt-6 mb-2">6. From Manual to Automated: The Path Forward</h3>
+                <p>Once you deploy a corporate sandbox and EDR rules, the next challenge is <span class="font-bold text-white">continuous monitoring</span>&mdash;detecting shadow AI usage, auditing prompts in real-time, and staying compliant as your AI adoption scales. This is where <span class="font-bold text-neon">governance automation</span> becomes essential.</p>
+                <p class="font-bold text-white mt-3">Your AI Security Roadmap</p>
+                <div class="mt-3 space-y-3">
+                  <div class="flex items-start gap-4 rounded-md border border-neon/20 bg-black/40 p-4">
+                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-neon/50 text-xs font-black text-neon">P1</div>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wide text-neon mb-1">Phase 1 &mdash; Immediate</p>
+                      <p class="text-sm text-emerald-50/70">Corporate sandbox + EDR rules + .claudeignore deployment</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 rounded-md border border-cyber/20 bg-black/40 p-4">
+                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-cyber/50 text-xs font-black text-cyber">P2</div>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wide text-cyber mb-1">Phase 2 &mdash; 3&ndash;6 Months</p>
+                      <p class="text-sm text-emerald-50/70">Continuous monitoring with SIEM rules and alert tuning</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 rounded-md border border-neon/20 bg-black/40 p-4">
+                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-neon/50 text-xs font-black text-neon">P3</div>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wide text-neon mb-1">Phase 3 &mdash; 6&ndash;12 Months</p>
+                      <p class="text-sm text-emerald-50/70">Automated governance and continuous red teaming</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Conclusion -->
+                <h3 class="text-base font-black uppercase text-neon mt-6 mb-2">The Shadow AI Problem Is Solvable</h3>
+                <p>Shadow AI isn&apos;t inevitable&mdash;it&apos;s a sign that governance hasn&apos;t kept pace with adoption. The organizations that win at AI are the ones that make security <span class="font-bold text-white">frictionless</span>, not bureaucratic.</p>
+                <p>Whether you&apos;re starting with manual controls (KQL rules, corporate sandboxes) or ready to automate governance end-to-end, ZTAI Security Advisors helps you build a sustainable, scalable AI security program.</p>
+
+                <!-- Two Ways We Help CTAs -->
+                <div class="grid gap-5 sm:grid-cols-2 mt-5">
+                  <div class="cyber-border rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-2">AI Security Assessment</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">Identify shadow AI risks and design zero-trust controls. 30-minute guided assessment with remediation roadmap included.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Start Free Assessment">Start Free Assessment</button>
+                  </div>
+                  <div class="terminal-panel rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-2">Early Access: Governance Automation</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">Continuous red teaming and automated prompt injection audits. Join our early access program for AI governance at scale.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Request Beta Access">Request Beta Access</button>
+                  </div>
+                </div>
+
+                <!-- Author bio -->
+                <footer class="border-t border-neon/20 pt-6 mt-6">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben leads AI security assessments for enterprise clients and is developing automated governance tools for enterprises scaling AI safely.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40">benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published June 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+
+            <!-- ── Featured Research: AVE Standard ── -->
+            <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Featured Research</p>
+                <h3 class="text-xl font-black uppercase text-white">Full Article</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-main', 'ztai-ave-aivss-framework.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this article as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <!-- Full article (PDF target) -->
+            <article id="blog-post-main" class="terminal-panel rounded-lg p-6 sm:p-10">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Taxonomy</span>
+                  <span class="text-xs text-emerald-50/50">June 2025 &middot; ZTAI.AI Security Research</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  Beyond CVE and CVSS: A New AVE + AIVSS Framework for AI Vulnerability Management
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Zata Security Advisors LLC Research Team</p>
+              </header>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <p>The software security community has relied on the <span class="font-bold text-white">Common Vulnerabilities and Exposures (CVE)</span> standard for decades. CVE was designed for a world of deterministic software&mdash;where vulnerabilities are discrete, reproducible bugs in code that can be patched. In that model, a fix is clear: update a binary, patch a library, increment a version.</p>
+
+                <p>Agentic AI systems break this model entirely.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Why CVE Fails for AI</h3>
+
+                <p>An LLM agent&apos;s attack surface isn&apos;t a memory corruption bug&mdash;it&apos;s a behavioral space. The same model, with the same weights, may respond safely to one prompt and dangerously to a subtle variation. This isn&apos;t a code defect. It&apos;s a property of the reasoning layer&apos;s probability distribution, shaped by training data, RLHF fine-tuning, and contextual state.</p>
+
+                <p>CVE requires a <span class="font-bold text-cyber">discrete, reproducible vulnerability</span> tied to a specific software version. AI vulnerabilities are often:</p>
+
+                <ul class="space-y-3 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Non-deterministic</span> &mdash; The same input may trigger the vulnerability only probabilistically.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Context-dependent</span> &mdash; An exploit may require specific conversation history or tool-call state to activate.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Patch-resistant</span> &mdash; Patching an LLM means retraining, fine-tuning, or adding guardrails&mdash;not incrementing a version number.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Behavior-embedded</span> &mdash; The &ldquo;bug&rdquo; is a learned pattern, not a code path.</span></li>
+                </ul>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Introducing the AVE Standard</h3>
+
+                <p>The <span class="font-bold text-white">Agentic Vulnerability Exposure (AVE)</span> standard is ZTAI.AI&apos;s proposed taxonomy for classifying, scoring, and tracking security exposures in AI systems. AVE operates alongside CVE&mdash;it does not replace it. Where CVE handles infrastructure and dependency vulnerabilities (a patched MCP server, a vulnerable API library), AVE handles behavioral and reasoning-layer risks.</p>
+
+                <blockquote class="border-l-2 border-neon/50 pl-6 py-2 my-2">
+                  <p>An AVE entry describes a repeatable attack pattern against an AI agent&apos;s reasoning, orchestration, or execution layer&mdash;documented in natural language, with reproducibility measured by probability distribution rather than deterministic reproduction.</p>
+                </blockquote>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">AVE Classification Dimensions</h3>
+
+                <p>Each AVE entry is classified across five dimensions:</p>
+
+                <ul class="space-y-3 ml-2 mt-3">
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Layer</span> &mdash; Reasoning (L1), Orchestration (L2), or Execution (L3)</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Vector</span> &mdash; Direct prompt, indirect RAG, tool output, memory state, or API response</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Trigger Probability</span> &mdash; Measured across 1,000 standardized probe attempts (p-value reported)</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Blast Radius</span> &mdash; Contained (single interaction), Persistent (session state), or Cascading (multi-agent)</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span><span class="font-bold text-white">Remediation Class</span> &mdash; Guardrail, Fine-tuning, Architecture, or Policy</span></li>
+                </ul>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">CVSS: What It Does Well — and Where It Stops</h3>
+
+                <p>The security industry has relied on the <span class="font-bold text-white">Common Vulnerability Scoring System (CVSS)</span> for decades to quantify infrastructure and software risk on a 0&ndash;10 scale. CVSS scores attack vector, attack complexity, privileges required, user interaction, scope, and impact &mdash; metrics that map cleanly onto deterministic code vulnerabilities with a clear patch path.</p>
+
+                <p class="mt-3">CVSS is not broken. For what it was designed to do &mdash; scoring a memory corruption bug, a misconfigured API endpoint, or a vulnerable library &mdash; it remains the right tool. The problem is that <span class="font-bold text-white">AI behavioral vulnerabilities are a fundamentally different class of risk</span> that CVSS was never built to express.</p>
+
+                <div class="my-5 border border-cyber/25 rounded-lg overflow-hidden">
+                  <div class="grid grid-cols-2 bg-black/60 text-xs font-bold uppercase tracking-[0.16em]">
+                    <div class="border-r border-cyber/25 px-4 py-2 text-cyber">CVSS asks</div>
+                    <div class="px-4 py-2 text-neon">AIVSS asks</div>
+                  </div>
+                  <div class="grid grid-cols-2 text-xs leading-6 text-emerald-50/70 divide-y divide-cyber/15">
+                    <div class="border-r border-cyber/20 px-4 py-2">Can this be exploited over the network?</div>
+                    <div class="px-4 py-2">Can this be triggered through a natural language prompt?</div>
+                    <div class="border-r border-cyber/20 px-4 py-2">Is authentication required to exploit?</div>
+                    <div class="px-4 py-2">Does the attack require context history or specific tool state?</div>
+                    <div class="border-r border-cyber/20 px-4 py-2">What is the fixed severity of this version?</div>
+                    <div class="px-4 py-2">What is the measured trigger probability across 1,000 probes?</div>
+                    <div class="border-r border-cyber/20 px-4 py-2">Can a patch resolve it?</div>
+                    <div class="px-4 py-2">Does remediation require fine-tuning, guardrails, or policy?</div>
+                  </div>
+                </div>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">AIVSS: Transforming CVSS for the Behavioral Domain</h3>
+
+                <p>ZTAI.AI&apos;s <span class="font-bold text-white">AI Vulnerability Scoring System (AIVSS)</span> does not replace CVSS &mdash; it transforms its scoring philosophy for AI behavioral exposures. AIVSS inherits CVSS&apos;s 0&ndash;10 numeric output and its commitment to standardized, comparable scoring. What changes is the input dimensions, which are redesigned for non-deterministic, language-driven systems.</p>
+
+                <p class="mt-3">The two standards are designed to coexist. A chained attack that exploits both an infrastructure flaw and an LLM behavioral weakness would carry both a CVSS score and an AIVSS score &mdash; each measuring a distinct attack surface:</p>
+
+                <div class="my-4 space-y-3">
+                  <div class="flex items-start gap-3 rounded-md border border-cyber/25 bg-black/50 p-4">
+                    <span class="shrink-0 rounded border border-cyber/50 px-1.5 py-0.5 text-xs font-black text-cyber">CVE + CVSS</span>
+                    <span class="text-sm text-emerald-50/75">An attacker exploits a vulnerability in the MCP server binary &mdash; a patched code defect with a fixed severity score.</span>
+                  </div>
+                  <div class="flex items-start gap-3 rounded-md border border-neon/25 bg-black/50 p-4">
+                    <span class="shrink-0 rounded border border-neon/50 px-1.5 py-0.5 text-xs font-black text-neon">AVE + AIVSS</span>
+                    <span class="text-sm text-emerald-50/75">An attacker manipulates the LLM agent via prompt injection &mdash; a behavioral exposure scored by trigger probability and autonomous escalation potential.</span>
+                  </div>
+                  <div class="flex items-start gap-3 rounded-md border border-emerald-50/15 bg-black/50 p-4">
+                    <span class="shrink-0 rounded border border-emerald-50/30 px-1.5 py-0.5 text-xs font-black text-emerald-50/70">BOTH</span>
+                    <span class="text-sm text-emerald-50/75">A chained attack that pivots from an infrastructure flaw into agent behavior &mdash; both frameworks apply simultaneously, giving a complete risk picture.</span>
+                  </div>
+                </div>
+
+                <p>AIVSS produces a 0&ndash;10 score across four AI-native dimensions that have no equivalent in CVSS:</p>
+
+                <ul class="space-y-3 ml-2 mt-3">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Attack accessibility</span> &mdash; can a user trigger this with no prior access, using only natural language?</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Autonomous escalation potential</span> &mdash; will the agent chain exploits or take further actions without user intervention?</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Exfiltration scope</span> &mdash; what data, tools, or downstream systems are accessible to the compromised agent?</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0">›</span><span><span class="font-bold text-white">Remediation complexity</span> &mdash; is the fix a guardrail, a fine-tune, an architecture change, or a policy update &mdash; and how reliable is it?</span></li>
+                </ul>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Practical Implications</h3>
+
+                <p>For teams operating AI in regulated environments (healthcare, finance, defense), AVE + AIVSS provides the evidence framework needed for AI security audits. A finding documented in AVE format gives an auditor:</p>
+
+                <ul class="space-y-3 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>A reproducible proof-of-concept probe set with measured trigger probability.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>A quantified risk score comparable across systems and model versions.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>A remediation plan with measurable success criteria and acceptance thresholds.</span></li>
+                </ul>
+
+                <p class="mt-4">The security industry is at an inflection point. CVE and CVSS remain essential &mdash; they are not going away. AVE and AIVSS are the missing layer that CVE and CVSS were never designed to address. Together, all four standards give security teams a complete picture: code-layer risk scored by CVSS, behavioral-layer risk scored by AIVSS, with CVE and AVE providing the classification vocabulary for each. As agentic AI becomes core infrastructure, organizations that adopt this complete framework now will be best positioned to meet the compliance and audit requirements of tomorrow.</p>
+
+                <footer class="border-t border-neon/20 pt-6 mt-8">
+                  <p class="text-xs uppercase tracking-[0.18em] text-emerald-50/45">ZTAI.AI Security Research &middot; Zata Security Advisors LLC &middot; ztai.ai</p>
+                </footer>
+
+              </div>
+            </article>
+
+          </div>
+        </section>
+      </div>
+      <!-- /panel-blog -->
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           CONTACT PANEL
+           ═══════════════════════════════════════════════════════════════════ -->
+      <div id="panel-contact" class="hidden" role="tabpanel" aria-labelledby="tab-contact">
+        <section class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-5xl">
+
+            <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1fr_1.4fr]">
+
+              <!-- Left info panel -->
+              <div class="cyber-border rounded-lg p-6 sm:p-8">
+                <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Get In Touch</p>
+                <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Contact Us</h2>
+                <p class="mt-6 leading-8 text-emerald-50/75">
+                  Have a question about AI security, our services, or want to explore a partnership? Send us a message and we&apos;ll respond within one business day.
+                </p>
+                <div class="mt-8 space-y-5">
+                  <div class="flex items-start gap-4">
+                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/55">Email</p>
+                      <p class="mt-0.5 text-sm text-emerald-100">contact@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-cyber/50 text-cyber">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/55">Response Time</p>
+                      <p class="mt-0.5 text-sm text-emerald-100">Within 1 business day</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/55">Location</p>
+                      <p class="mt-0.5 text-sm text-emerald-100">Remote &mdash; Serving clients globally</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right contact form -->
+              <form id="contactForm" class="terminal-panel rounded-lg p-5 sm:p-7" novalidate>
+                <div class="mb-6 flex items-center justify-between border-b border-neon/30 pb-4">
+                  <span class="text-xs font-bold uppercase tracking-[0.22em] text-neon">contact-form.sh</span>
+                  <span id="contactStatus" class="text-xs uppercase tracking-[0.18em] text-cyber transition-all duration-300">standby</span>
+                </div>
+
+                <!-- Name -->
+                <div class="form-group mb-5">
+                  <label for="cf-name" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Name</label>
+                  <input
+                    id="cf-name"
+                    type="text"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Jane Smith"
+                    class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300"
+                  />
+                  <p id="err-name" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group mb-5">
+                  <label for="cf-email" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Email</label>
+                  <input
+                    id="cf-email"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@company.com"
+                    class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300"
+                  />
+                  <p id="err-email" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group mb-6">
+                  <label for="cf-message" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Message</label>
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tell us about your AI security needs..."
+                    class="terminal-input min-h-32 w-full resize-y rounded-md px-4 py-3 transition-all duration-300"
+                  ></textarea>
+                  <p id="err-message" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-group">
+                  <button
+                    type="submit"
+                    class="volatile-button w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]"
+                    data-text="Send Message"
+                  >
+                    Send Message
+                  </button>
+                </div>
+
+                <!-- Success banner -->
+                <div
+                  id="contactSuccess"
+                  class="contact-success-banner hidden mt-5 rounded-md p-4 text-center"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <p class="text-sm font-bold uppercase tracking-[0.18em] text-neon">Message transmitted</p>
+                  <p class="mt-1 text-xs text-emerald-50/65">We&apos;ll be in touch within one business day.</p>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <!-- /panel-contact -->
+
+    </main>
+
+    <!-- ── Subscriber gate modal ─────────────────────────────────────────── -->
+    <div
+      id="sub-modal"
+      style="display:none"
+      class="fixed inset-0 z-200 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sub-modal-title"
+    >
+      <!-- Backdrop -->
+      <div id="sub-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+      <!-- Panel -->
+      <div id="sub-modal-panel" class="relative z-10 cyber-border rounded-lg p-6 sm:p-8 w-full max-w-md">
+
+        <!-- Close button -->
+        <button
+          id="sub-modal-close"
+          class="absolute top-4 right-4 text-emerald-50/40 transition-colors hover:text-neon cursor-pointer"
+          aria-label="Close"
+          onclick="window.closeSubModal()"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- ── LOCKED STATE ─────────────────────────────────────────────── -->
+        <div id="sub-modal-locked">
+          <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-md border border-neon/55 text-neon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+
+          <p id="sub-modal-title" class="glow-text text-xl font-black uppercase text-white mb-3">Subscribers Only</p>
+          <p class="text-sm leading-7 text-emerald-50/75">This article is reserved for our subscriber list.</p>
+          <p class="mt-2 text-sm leading-7 text-emerald-50/75 mb-5">Share your email via our Contact form to get an unlock code when new content goes live.</p>
+
+          <button
+            onclick="window.closeSubModal(); window.switchToTab('contact')"
+            class="volatile-button w-full rounded-md px-4 py-3 text-sm font-black uppercase tracking-[0.2em] cursor-pointer"
+            data-text="Get Early Access"
+          >
+            Get Early Access
+          </button>
+
+          <!-- Code input -->
+          <div class="mt-5 border-t border-neon/15 pt-4">
+            <p class="mb-3 text-xs uppercase tracking-[0.16em] text-emerald-50/45">Already have an unlock code?</p>
+            <div class="flex gap-2">
+              <input
+                id="unlock-code-input"
+                type="text"
+                placeholder="Enter your code"
+                autocomplete="off"
+                spellcheck="false"
+                class="terminal-input flex-1 rounded-md px-3 py-2 text-xs uppercase tracking-wider"
+                oninput="this.value=this.value.toUpperCase()"
+                onkeydown="if(event.key==='Enter'){event.preventDefault();window.submitUnlockCode()}"
+              />
+              <button
+                onclick="window.submitUnlockCode()"
+                class="volatile-button rounded-md px-4 py-2 text-xs whitespace-nowrap"
+                data-text="Unlock"
+              >Unlock</button>
+            </div>
+            <p id="unlock-error" class="mt-2 hidden text-xs text-red-400" role="alert"></p>
+          </div>
+
+          <p class="mt-4 text-center text-xs uppercase tracking-[0.16em] text-emerald-50/32">No spam &middot; Unsubscribe anytime</p>
+        </div>
+
+        <!-- ── UNLOCKED STATE ───────────────────────────────────────────── -->
+        <div id="sub-modal-unlocked" style="display:none">
+          <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-md border border-neon/55 text-neon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+
+          <p class="glow-text text-xl font-black uppercase text-white mb-3">Early Access Granted</p>
+          <p class="text-sm leading-7 text-emerald-50/75 mb-6">This article is being prepared for early access subscribers. You&apos;ll be notified by email as soon as it&apos;s published.</p>
+
+          <button
+            onclick="window.closeSubModal()"
+            class="volatile-button w-full rounded-md px-4 py-3 text-sm font-black uppercase tracking-[0.2em] cursor-pointer"
+            data-text="Got It"
+          >Got It</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Unlock success toast -->
+    <div
+      id="unlock-toast"
+      style="display:none"
+      class="fixed top-20 left-1/2 -translate-x-1/2 z-300 terminal-panel rounded-lg px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-neon whitespace-nowrap pointer-events-none"
+      role="status"
+      aria-live="polite"
+    >
+      ✓ &nbsp;Early access granted
+    </div>
+
+    <footer class="border-t border-cyber/30 px-5 py-8 text-center text-xs uppercase tracking-[0.18em] text-emerald-50/60 sm:px-6 lg:px-8">
+      <p>&copy; <span id="year"></span> ZTAI.AI. All rights reserved. Privacy disclaimer: submitted information is used solely for assessment intake and follow-up.</p>
+    </footer>
+  </div>
+
+  <!-- html2pdf.js — UMD bundle (includes html2canvas + jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Matrix rain animation
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const glyphs = "ZTAI01{}[]<>/\\SECURITYMODELAGENTTRUST";
+    let width = 0, height = 0, columns = [];
+    const fontSize = 17;
+
+    function resizeMatrix() {
+      const ratio = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      width = Math.floor(rect.width);
+      height = Math.floor(rect.height);
+      canvas.width = Math.floor(width * ratio);
+      canvas.height = Math.floor(height * ratio);
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      columns = Array.from({ length: Math.ceil(width / fontSize) }, () => Math.random() * -height);
+    }
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.12)";
+      ctx.fillRect(0, 0, width, height);
+      ctx.font = `${fontSize}px JetBrains Mono, Consolas, monospace`;
+      columns.forEach((y, index) => {
+        const char = glyphs[Math.floor(Math.random() * glyphs.length)];
+        const x = index * fontSize;
+        ctx.fillStyle = Math.random() > 0.92 ? "#00E5FF" : "#39FF14";
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = ctx.fillStyle;
+        ctx.fillText(char, x, y);
+        columns[index] = y > height + Math.random() * 800 ? 0 : y + fontSize;
+      });
+      requestAnimationFrame(drawMatrix);
+    }
+
+    if (!prefersReducedMotion) {
+      resizeMatrix();
+      drawMatrix();
+      window.addEventListener("resize", resizeMatrix);
+    }
+
+    // Assessment intake form (panel-home)
+    const assessmentForm = document.getElementById("assessmentForm");
+    const formStatus = document.getElementById("formStatus");
+
+    assessmentForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(assessmentForm));
+      formStatus.textContent = "transmitting...";
+      try {
+        const res = await fetch("/api/intake", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (res.ok) {
+          formStatus.textContent = "transmitted";
+          assessmentForm.classList.add("shadow-neon");
+          setTimeout(() => {
+            formStatus.textContent = "standby";
+            assessmentForm.classList.remove("shadow-neon");
+            assessmentForm.reset();
+          }, 1800);
+        } else {
+          formStatus.textContent = "error";
+        }
+      } catch {
+        formStatus.textContent = "error";
+      }
+    });
+  </script>
+
+  <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
+  <script type="module" src="/js/tabs.js"></script>
+</body>
+</html>
