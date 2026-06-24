@@ -235,6 +235,125 @@ window.submitUnlockCode = function () {
 // Restore session on module init
 _restoreSession();
 
+// ── Pricing NDA unlock ────────────────────────────────────────────────────
+
+function _renderPricingCards(pricing) {
+  const container = document.getElementById("pricing-cards");
+  if (!container || !pricing?.tiers) return;
+  container.className = "grid gap-5 lg:grid-cols-3";
+  container.innerHTML = pricing.tiers.map((tier, i) => {
+    const stagger = `stagger-${i + 1}`;
+    const isCyber = tier.badgeColor === "cyber";
+    const badgeCls = isCyber
+      ? "border-cyber/50 bg-cyber/10 text-cyber"
+      : "border-neon/50 bg-neon/10 text-neon";
+    const accentCls = isCyber ? "text-cyber" : "text-neon";
+
+    if (tier.type === "tiers") {
+      const itemsHtml = tier.items.map((item, j) => {
+        const borderCls = j === 1
+          ? "border-cyber/30 hover:border-cyber/60"
+          : "border-neon/20 hover:border-neon/50";
+        const priceCls = j === 1 ? "text-cyber" : "text-neon";
+        return `<div class="rounded-md border ${borderCls} bg-black/40 p-4 transition-all duration-300 hover:bg-black/60">
+          <div class="flex items-baseline justify-between">
+            <span class="text-sm font-bold uppercase tracking-wide text-emerald-100">${item.label}</span>
+            <span class="text-lg font-black ${priceCls}">${item.price}<span class="text-xs font-normal text-emerald-50/60">${item.period}</span></span>
+          </div>
+          <p class="mt-1 text-xs text-emerald-50/55">${item.detail}</p>
+        </div>`;
+      }).join("");
+      return `<article class="cyber-border corner-grid rounded-lg p-6 animate-slideInUp ${stagger} hover:animate-glowPulse">
+        <div class="mb-2 inline-flex rounded border ${badgeCls} px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] animate-scaleIn">${tier.badge}</div>
+        <h3 class="mt-3 text-xl font-black uppercase text-white">${tier.title}</h3>
+        <p class="mt-2 text-sm leading-6 text-emerald-50/70">${tier.description}</p>
+        <div class="mt-5 space-y-3">${itemsHtml}</div>
+      </article>`;
+    } else {
+      const featuresHtml = (tier.features || []).map(f =>
+        `<li class="flex items-start gap-2"><span class="${accentCls} mt-0.5">&#10003;</span>${f}</li>`
+      ).join("");
+      return `<article class="cyber-border corner-grid rounded-lg p-6 flex flex-col animate-slideInUp ${stagger}">
+        <div class="mb-2 inline-flex rounded border ${badgeCls} px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] animate-scaleIn">${tier.badge}</div>
+        <h3 class="mt-3 text-xl font-black uppercase text-white">${tier.title}</h3>
+        <p class="mt-2 text-sm leading-6 text-emerald-50/70">${tier.description}</p>
+        <div class="mt-5 flex items-baseline gap-1">
+          <span class="text-4xl font-black gradient-text">${tier.price}</span>
+          <span class="text-sm text-emerald-50/60">${tier.suffix}</span>
+        </div>
+        <p class="mt-1 text-xs text-emerald-50/55">${tier.detail}</p>
+        <ul class="mt-5 space-y-2 text-sm text-emerald-50/70">${featuresHtml}</ul>
+      </article>`;
+    }
+  }).join("");
+}
+
+function _revealPricing(withAnim) {
+  const gate = document.getElementById("pricing-nda-gate");
+  const cards = document.getElementById("pricing-cards");
+  if (!cards) return;
+  if (gate) {
+    if (withAnim) animate(gate, { opacity: 0, y: -10 }, { duration: 0.2, ease: "easeIn" });
+    setTimeout(() => { gate.style.display = "none"; }, withAnim ? 220 : 0);
+  }
+  if (withAnim) {
+    setTimeout(() => animate(cards, { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, ease: "easeOut" }), 230);
+  }
+}
+
+function _renderAndRevealPricing(pricing, withAnim) {
+  _renderPricingCards(pricing);
+  _revealPricing(withAnim);
+}
+
+window.submitPricingCode = async function () {
+  const inp = document.getElementById("pricing-code-input");
+  const err = document.getElementById("pricing-code-error");
+  if (!inp || !err) return;
+
+  err.classList.add("hidden");
+  if (!inp.value.trim()) {
+    err.textContent = "Please enter your unlock code.";
+    err.classList.remove("hidden");
+    inp.focus();
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/pricing-unlock", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code: inp.value.trim() }),
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      _renderAndRevealPricing(data.pricing, true);
+    } else {
+      err.textContent = "Invalid code. Please check your email and try again.";
+      err.classList.remove("hidden");
+      animate(inp, { x: [-5, 5, -4, 4, 0] }, { duration: 0.35 });
+      inp.value = "";
+      inp.focus();
+    }
+  } catch {
+    err.textContent = "Network error. Please try again.";
+    err.classList.remove("hidden");
+  }
+};
+
+async function _restorePricingSession() {
+  try {
+    const res = await fetch("/api/pricing-check");
+    if (res.ok) {
+      const data = await res.json();
+      _renderAndRevealPricing(data.pricing, false);
+    }
+  } catch { /* network error — show gate */ }
+}
+
+_restorePricingSession();
+
 // ── Subscriber gate modal ──────────────────────────────────────────────────
 
 const subModal = document.getElementById("sub-modal");

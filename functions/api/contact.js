@@ -8,24 +8,28 @@ export async function onRequestPost({ request, env }) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return Response.json({ error: "Invalid email address" }, { status: 400 });
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "ZTAI Contact <noreply@ztai.ai>",
-        to: "support@ztai.ai",
-        subject: `Contact Form: ${name} <${email}>`,
-        text: [`Name: ${name}`, `Email: ${email}`, "", "Message:", message].join("\n"),
-      }),
-    });
+    if (env.RESEND_API_KEY) {
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "ZTAI Contact <noreply@ztai.ai>",
+          to: "support@ztai.ai",
+          subject: `Contact Form: ${name} <${email}>`,
+          text: [`Name: ${name}`, `Email: ${email}`, "", "Message:", message].join("\n"),
+        }),
+      });
 
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("[contact] Resend error:", err);
-      return Response.json({ error: "Failed to send email" }, { status: 502 });
+      if (!res.ok) {
+        const err = await res.text();
+        console.error("[contact] Resend error:", err);
+        return Response.json({ error: "Failed to send email" }, { status: 502 });
+      }
+    } else {
+      console.log("[contact] RESEND_API_KEY not set — logged only:", { name, email });
     }
 
     return Response.json({ status: "received" });

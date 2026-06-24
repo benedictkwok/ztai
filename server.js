@@ -5,6 +5,7 @@ require("dotenv").config();
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
+const crypto = require("node:crypto");
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
@@ -32,6 +33,71 @@ const MIME_TYPES = {
   ".woff":  "font/woff",
 };
 
+// ── Pricing cookie helpers ────────────────────────────────────────────────
+
+function parseCookies(req) {
+  return Object.fromEntries(
+    (req.headers.cookie || "").split(";")
+      .map(c => c.trim().split("="))
+      .filter(p => p.length === 2)
+      .map(([k, v]) => [k.trim(), decodeURIComponent(v.trim())])
+  );
+}
+
+function signPricingToken() {
+  const secret = process.env.PRICING_SECRET || "dev-secret";
+  const ts = Date.now().toString();
+  const sig = crypto.createHmac("sha256", secret).update(ts).digest("hex");
+  return `${ts}.${sig}`;
+}
+
+function verifyPricingToken(token) {
+  if (!token) return false;
+  const parts = token.split(".");
+  if (parts.length !== 2) return false;
+  const [ts, sig] = parts;
+  if (Date.now() - parseInt(ts, 10) > 7 * 24 * 60 * 60 * 1000) return false;
+  const secret = process.env.PRICING_SECRET || "dev-secret";
+  const expected = crypto.createHmac("sha256", secret).update(ts).digest("hex");
+  try {
+    return crypto.timingSafeEqual(Buffer.from(sig, "hex"), Buffer.from(expected, "hex"));
+  } catch { return false; }
+}
+
+const PRICING_DATA = {
+  tiers: [
+    {
+      badge: "Most Popular", badgeColor: "neon",
+      title: "Monthly Retainer",
+      description: "Ongoing AI security support to build and mature your defenses. 10–40 hours/month depending on tier.",
+      type: "tiers",
+      items: [
+        { label: "Small Business", price: "US$2,000–US$4,000", period: "/mo", detail: "~10 hrs/mo — foundational AI security guidance" },
+        { label: "Mid-Market",     price: "US$5,000–US$8,000", period: "/mo", detail: "~20–30 hrs/mo — deep engagement reviewing the security posture of AI & providing advisory" },
+        { label: "Enterprise",     price: "US$10,000–US$12,000", period: "/mo", detail: "~40 hrs/mo — full-spectrum program: red teaming, adversarial defense, compliance & AI Supply Chain security." },
+      ],
+    },
+    {
+      badge: "Time-Bound", badgeColor: "cyber",
+      title: "Project-Based",
+      description: "Best for one-time security assessments, red team engagements, and compliance preparation with defined deliverables.",
+      type: "fixed",
+      price: "US$12,000", suffix: "+",
+      detail: "2 weeks minimum — scope-dependent",
+      features: ["Defined scope & deliverables", "Written assessment report", "Compliance readiness packages", "Executive briefing included"],
+    },
+    {
+      badge: "Flexible", badgeColor: "neon",
+      title: "Hourly Advisory",
+      description: "Ad-hoc advisory, intermittent security policy review, or expert consultation on demand. No long-term commitment.",
+      type: "fixed",
+      price: "US$250", suffix: "/hr+",
+      detail: "Billed in 1-hour increments",
+      features: ["No retainer required", "Ad-hoc advisory sessions", "Security policy review", "On-demand expert access"],
+    },
+  ],
+};
+
 /**
  * Resolve a URL pathname to an absolute file path inside PUBLIC_DIR.
  * Returns null if the resolved path escapes PUBLIC_DIR (path traversal guard).
@@ -57,6 +123,18 @@ const server = http.createServer((req, res) => {
   // API route: general contact form
   if (req.method === "POST" && req.url === "/api/contact") {
     handleContact(req, res);
+    return;
+  }
+
+  // API route: NDA pricing unlock
+  if (req.method === "POST" && req.url === "/api/pricing-unlock") {
+    handlePricingUnlock(req, res);
+    return;
+  }
+
+  // API route: check existing pricing cookie
+  if (req.method === "GET" && req.url === "/api/pricing-check") {
+    handlePricingCheck(req, res);
     return;
   }
 
@@ -229,6 +307,56 @@ async function handleContact(req, res) {
       }
     }
   });
+}
+
+function handlePricingUnlock(req, res) {
+  let body = "";
+  req.on("data", (chunk) => {
+    body += chunk.toString();
+    if (body.length > 1024) {
+      res.writeHead(413, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ error: "Payload too large" }));
+      req.destroy();
+    }
+  });
+  req.on("end", () => {
+    try {
+      const { code } = JSON.parse(body);
+      const expected = process.env.PRICING_CODE || "";
+      if (!expected) {
+        res.writeHead(503, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Not configured" }));
+        return;
+      }
+      if (!code || String(code).trim().toUpperCase() !== expected.trim().toUpperCase()) {
+        res.writeHead(401, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Invalid code" }));
+        return;
+      }
+      const token = signPricingToken();
+      const maxAge = 7 * 24 * 60 * 60;
+      res.writeHead(200, {
+        "Content-Type": "application/json",
+        "Set-Cookie": `_ztp=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/; Max-Age=${maxAge}`,
+      });
+      res.end(JSON.stringify({ ok: true, pricing: PRICING_DATA }));
+    } catch {
+      res.writeHead(400, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ error: "Invalid request" }));
+    }
+  });
+}
+
+function handlePricingCheck(req, res) {
+  const cookies = parseCookies(req);
+  const token = cookies._ztp || "";
+  if (!verifyPricingToken(token)) {
+    res.writeHead(401, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ error: "Unauthorized" }));
+    return;
+  }
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ ok: true, pricing: PRICING_DATA }));
 }
 
 server.listen(PORT, "127.0.0.1", () => {
