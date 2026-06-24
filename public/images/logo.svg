@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="155 415 890 310">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bolt-halo" x="-200%" y="-80%" width="500%" height="260%">
+      <feGaussianBlur stdDeviation="28" result="blur"/>
+      <feComponentTransfer result="dimmed">
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="dimmed"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bolt-mid" x="-100%" y="-60%" width="300%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bolt-core" x="-60%" y="-40%" width="220%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer frame -->
+  <rect x="100" y="100" width="1000" height="1000" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.35"/>
+
+  <!-- Corner notch cutouts -->
+  <rect x="100" y="100" width="8" height="8" fill="#0a0a0a"/>
+  <rect x="1092" y="100" width="8" height="8" fill="#0a0a0a"/>
+  <rect x="100" y="1092" width="8" height="8" fill="#0a0a0a"/>
+  <rect x="1092" y="1092" width="8" height="8" fill="#0a0a0a"/>
+
+  <!-- Left bracket -->
+  <rect x="185" y="490" width="12" height="220" fill="#39FF14" filter="url(#glow)"/>
+  <rect x="185" y="490" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+  <rect x="185" y="698" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+
+  <!-- ZT -->
+  <text x="390" y="682"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="220" font-weight="700"
+    fill="#39FF14" text-anchor="middle" dominant-baseline="auto"
+    letter-spacing="4px" filter="url(#glow)"
+  >ZT</text>
+
+  <!-- Lightning bolt — filled IEC high-voltage polygon, 4-layer glow -->
+  <polygon points="625,450 575,450 546,600 595,600 568,748 650,600 608,600"
+    fill="#00E5FF" opacity="0.08" filter="url(#bolt-halo)"/>
+  <polygon points="625,450 575,450 546,600 595,600 568,748 650,600 608,600"
+    fill="#00E5FF" opacity="0.35" filter="url(#bolt-mid)"/>
+  <polygon points="625,450 575,450 546,600 595,600 568,748 650,600 608,600"
+    fill="#00E5FF" opacity="1" filter="url(#bolt-core)"/>
+  <polygon points="617,468 583,468 558,594 597,594 574,730 636,594 610,594"
+    fill="#ffffff" opacity="0.55"/>
+
+  <!-- AI -->
+  <text x="810" y="682"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="220" font-weight="700"
+    fill="#39FF14" text-anchor="middle" dominant-baseline="auto"
+    filter="url(#glow)"
+  >AI</text>
+
+  <!-- Right bracket -->
+  <rect x="1003" y="490" width="12" height="220" fill="#39FF14" filter="url(#glow)"/>
+  <rect x="943" y="490" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+  <rect x="943" y="698" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+
+</svg>
