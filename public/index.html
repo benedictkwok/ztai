@@ -24,7 +24,6 @@
           <div class="hidden items-center justify-center gap-8 text-sm uppercase tracking-[0.22em] text-emerald-100 md:flex">
             <a class="transition hover:text-neon" href="#platform">Platform</a>
             <a class="transition hover:text-neon" href="#services">Advisory</a>
-            <a class="transition hover:text-neon" href="#pricing">Pricing</a>
             <a class="transition hover:text-neon" href="#contact">Contact</a>
           </div>
           <a href="#contact" class="volatile-button rounded-md px-4 py-2 text-xs sm:px-5" data-text="Get Early Access">Get Early Access</a>
@@ -454,87 +453,6 @@
           </div>
         </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="px-5 py-20 sm:px-6 lg:px-8">
-          <div class="mx-auto max-w-7xl">
-            <div class="mb-10 max-w-3xl">
-              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Engagement Models</p>
-              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Advisory Today. Platform Access Tomorrow.</h2>
-              <p class="mt-4 text-base leading-7 text-emerald-50/70">Engagement details and pricing are shared exclusively with qualified prospects under a mutual NDA. Express your interest below to begin the process.</p>
-            </div>
-
-            <!-- Platform early access banner -->
-            <div class="mb-8 terminal-panel rounded-lg p-5 sm:p-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="min-w-0">
-                <div class="mb-2 inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyber">Platform Licensing &mdash; Coming Soon</div>
-                <h3 class="text-base font-black uppercase text-white">Advisory clients get early platform access &amp; co-development priority.</h3>
-                <ul class="mt-2 space-y-1 text-sm leading-6 text-emerald-50/65">
-                  <li class="flex items-start gap-2"><span class="text-cyber shrink-0 mt-0.5">›</span>Every consulting engagement shapes the product roadmap.</li>
-                  <li class="flex items-start gap-2"><span class="text-cyber shrink-0 mt-0.5">›</span>Advisory partners move to the front of the queue at preferred rates when platform licensing launches.</li>
-                </ul>
-              </div>
-              <a href="#contact" class="volatile-button shrink-0 rounded-md px-5 py-3 text-sm whitespace-nowrap" data-text="Join Platform Waitlist">Join Platform Waitlist</a>
-            </div>
-
-            <!-- NDA-gated pricing -->
-            <div id="pricing-nda-gate" class="cyber-border corner-grid rounded-lg p-10 sm:p-14 flex flex-col items-center text-center animate-slideInUp stagger-1">
-              <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-md border border-neon/55 text-neon shadow-neon">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-              </div>
-              <div class="mb-3 inline-flex rounded border border-neon/50 bg-neon/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-neon">Confidential Pricing</div>
-              <h3 class="mt-2 text-2xl font-black uppercase text-white">Pricing Shared Under NDA</h3>
-              <p class="mt-4 max-w-lg text-sm leading-7 text-emerald-50/70">Our engagement models and pricing structures are disclosed exclusively to qualified prospects after a mutual NDA is executed. This protects both parties and keeps our service details confidential.</p>
-              <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-                <a href="#contact" class="volatile-button rounded-md px-7 py-3 text-sm" data-text="Express Interest">Express Interest</a>
-              </div>
-              <p class="mt-5 text-xs text-emerald-50/40">Reach out via the contact form &rarr; we'll send a mutual NDA &rarr; pricing and engagement details follow upon signing.</p>
-
-              <!-- Code input for NDA-signed customers -->
-              <div class="mt-6 border-t border-neon/15 pt-5 w-full max-w-sm">
-                <p class="mb-3 text-xs uppercase tracking-[0.16em] text-emerald-50/45">Already signed the NDA? Enter your code</p>
-                <div class="flex gap-2">
-                  <input
-                    id="pricing-code-input"
-                    type="text"
-                    placeholder="Enter unlock code"
-                    autocomplete="off"
-                    spellcheck="false"
-                    class="terminal-input flex-1 rounded-md px-3 py-2 text-xs uppercase tracking-wider"
-                    oninput="this.value=this.value.toUpperCase()"
-                    onkeydown="if(event.key==='Enter'){event.preventDefault();window.submitPricingCode()}"
-                  />
-                  <button
-                    onclick="window.submitPricingCode()"
-                    class="volatile-button rounded-md px-4 py-2 text-xs whitespace-nowrap"
-                    data-text="Unlock"
-                  >Unlock</button>
-                </div>
-                <p id="pricing-code-error" class="mt-2 hidden text-xs text-red-400" role="alert"></p>
-              </div>
-            </div>
-
-            <!-- Pricing cards mount point — populated by JS after NDA code unlock -->
-            <div id="pricing-cards"></div>
-
-            <div class="terminal-panel mt-8 rounded-lg p-5 sm:p-7 animate-slideInUp stagger-1">
-              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm font-bold uppercase tracking-[0.22em] text-neon">Before You Commit</p>
-                  <h3 class="mt-1 text-lg font-black uppercase text-white">Free Introductory Call &mdash; 30 Minutes</h3>
-                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">
-                    Start with a no-obligation 30-minute call to discuss your AI environment and security needs.
-                  </p>
-                  <p class="mt-1 text-sm text-cyber">45&ndash;60 min Discovery &amp; Scope Assessment credited back in full when a contract is signed.</p>
-                </div>
-                <a href="#contact" class="volatile-button rounded-md px-6 py-3 text-sm" data-text="Book Free Call">Book Free Call</a>
-              </div>
-            </div>
-
-          </div>
-        </section>
 
         <!-- Assessment Intake Section -->
         <section id="contact" class="px-5 py-20 sm:px-6 lg:px-8">
