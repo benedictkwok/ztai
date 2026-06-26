@@ -7,6 +7,11 @@ const panels = {
   founder: document.getElementById("panel-founder"),
 };
 
+const BLOG_SLUGS = {
+  shadow_ai: "article-wrap-shadow",
+  skills:    "article-wrap-skills",
+};
+
 let currentTab = "home";
 
 function setTabBtnState(activeTab) {
@@ -21,6 +26,8 @@ function setTabBtnState(activeTab) {
 
 function switchTab(newTab) {
   if (!panels[newTab] || newTab === currentTab) return;
+
+  if (currentTab === "blog") history.pushState({}, "", window.location.pathname);
 
   const outEl = panels[currentTab];
   const inEl = panels[newTab];
@@ -178,6 +185,8 @@ window.showBlogArticle = function (wrapperId) {
     el.style.opacity = "0";
     animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, ease: "easeOut" });
   }
+  const slug = Object.keys(BLOG_SLUGS).find(k => BLOG_SLUGS[k] === wrapperId);
+  if (slug) history.pushState({ blogname: slug }, "", `?blogname=${slug}`);
   setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
 };
 
@@ -294,6 +303,14 @@ window.submitUnlockCode = function () {
 
 // Restore session on module init
 _restoreSession();
+
+// Deep-link: ?blogname=shadow_ai opens the blog tab and reveals the article
+(function handleDeepLink() {
+  const slug = new URLSearchParams(window.location.search).get("blogname");
+  if (!slug || !BLOG_SLUGS[slug]) return;
+  switchTab("blog");
+  setTimeout(() => window.showBlogArticle(BLOG_SLUGS[slug]), 450);
+})();
 
 
 // ── Subscriber gate modal ──────────────────────────────────────────────────
