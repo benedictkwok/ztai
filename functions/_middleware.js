@@ -25,23 +25,17 @@ export async function onRequest(context) {
 
   let html = await response.text();
 
-  const ogTags = `
-  <meta property="og:title" content="${article.title}" />
-  <meta property="og:description" content="${article.description}" />
-  <meta property="og:url" content="${url.href}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="ZTAI.AI" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${article.title}" />
-  <meta name="twitter:description" content="${article.description}" />`;
+  // Replace <title>
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${article.title}</title>`);
 
-  // Replace default title and inject article-specific OG tags
+  // Replace content attributes in-place for each existing OG/twitter tag
   html = html
-    .replace(/<title>.*?<\/title>/, `<title>${article.title}</title>`)
-    .replace(/(<meta property="og:title"[^>]*>)/, ogTags + "\n  <!-- og:replaced -->")
-    .replace(/\s*<meta property="og:(?!replaced)[^>]*>\n?/g, "")
-    .replace(/\s*<meta name="twitter:[^>]*>\n?/g, "")
-    .replace("<!-- og:replaced -->", "");
+    .replace(/(<meta property="og:title"\s+content=")[^"]*(")/,       `$1${article.title}$2`)
+    .replace(/(<meta property="og:description"\s+content=")[^"]*(")/,  `$1${article.description}$2`)
+    .replace(/(<meta property="og:url"\s+content=")[^"]*(")/,          `$1${url.href}$2`)
+    .replace(/(<meta property="og:type"\s+content=")[^"]*(")/,         `$1article$2`)
+    .replace(/(<meta name="twitter:title"\s+content=")[^"]*(")/,       `$1${article.title}$2`)
+    .replace(/(<meta name="twitter:description"\s+content=")[^"]*(")/,  `$1${article.description}$2`);
 
   return new Response(html, {
     status: response.status,
