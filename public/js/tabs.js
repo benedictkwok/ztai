@@ -121,6 +121,18 @@ window.downloadBlogPdf = function (elementId = "blog-post-main", filename = "zta
 // Expose tab switcher for in-article CTA buttons
 window.switchToTab = switchTab;
 
+// Reveal and scroll to a full blog article section by wrapper ID
+window.showBlogArticle = function (wrapperId) {
+  const el = document.getElementById(wrapperId);
+  if (!el) return;
+  if (el.classList.contains("hidden")) {
+    el.classList.remove("hidden");
+    el.style.opacity = "0";
+    animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, ease: "easeOut" });
+  }
+  setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+};
+
 // ── Blog content unlock ────────────────────────────────────────────────────
 
 // In-memory unlock flag — not inspectable in DevTools Application tab
@@ -298,8 +310,20 @@ function showFieldErr(id, msg) {
   if (inputEl) inputEl.classList.add("input-error");
 }
 
+const PERSONAL_EMAIL_DOMAINS = new Set([
+  "gmail.com","googlemail.com","outlook.com","hotmail.com","live.com","msn.com",
+  "yahoo.com","ymail.com","aol.com","icloud.com","me.com","mac.com",
+  "protonmail.com","proton.me","mail.com","gmx.com","gmx.net","zohomail.com",
+  "qq.com","163.com","126.com","sina.com","sohu.com",
+]);
+
+function isPersonalEmail(email) {
+  const domain = email.split("@")[1]?.toLowerCase();
+  return domain ? PERSONAL_EMAIL_DOMAINS.has(domain) : false;
+}
+
 function clearContactErrors() {
-  ["name", "email", "message"].forEach((id) => {
+  ["name", "company", "email", "website", "message"].forEach((id) => {
     const errEl = document.getElementById("err-" + id);
     const inputEl = document.getElementById("cf-" + id);
     if (errEl) { errEl.textContent = ""; errEl.classList.add("hidden"); }
@@ -313,15 +337,25 @@ if (contactForm) {
     clearContactErrors();
 
     const name = document.getElementById("cf-name").value.trim();
+    const company = document.getElementById("cf-company").value.trim();
     const email = document.getElementById("cf-email").value.trim();
+    const website = document.getElementById("cf-website").value.trim();
     const message = document.getElementById("cf-message").value.trim();
 
     let ok = true;
-    if (!name) { showFieldErr("name", "Name is required."); ok = false; }
+    if (!name) { showFieldErr("name", "Full name is required."); ok = false; }
+    if (!company) { showFieldErr("company", "Company name is required."); ok = false; }
     if (!email) {
-      showFieldErr("email", "Email is required."); ok = false;
+      showFieldErr("email", "Work email is required."); ok = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       showFieldErr("email", "Enter a valid email address."); ok = false;
+    } else if (isPersonalEmail(email)) {
+      showFieldErr("email", "Please use your company email address. Personal email providers are not accepted."); ok = false;
+    }
+    if (!website) {
+      showFieldErr("website", "Company website is required."); ok = false;
+    } else if (!/^https?:\/\/.+\..+/.test(website)) {
+      showFieldErr("website", "Enter a valid URL (e.g. https://acme.com)."); ok = false;
     }
     if (!message) { showFieldErr("message", "Message is required."); ok = false; }
     if (!ok) return;
@@ -334,7 +368,7 @@ if (contactForm) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, company, email, website, message }),
       });
 
       if (res.ok) {

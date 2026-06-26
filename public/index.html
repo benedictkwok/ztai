@@ -576,7 +576,7 @@
               </article>
 
               <!-- Card 4: Shadow AI Case Study — full-width feature card -->
-              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6" tabindex="0" aria-label="Read: How a Go-AI-First Company Eliminated Shadow AI Risk">
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: How a Go-AI-First Company Eliminated Shadow AI Risk" onclick="window.showBlogArticle('article-wrap-shadow')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-shadow')}">
                 <div class="flex-1 min-w-0">
                   <div class="mb-4 flex flex-wrap items-center gap-3">
                     <span class="inline-flex rounded border border-cyber/50 bg-cyber/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Case Study</span>
@@ -605,7 +605,7 @@
               </article>
 
               <!-- Card: AI Skills Supply Chain -->
-              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6" tabindex="0" aria-label="Read: The Hidden Threat in Your AI Toolchain">
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Hidden Threat in Your AI Toolchain" onclick="window.showBlogArticle('article-wrap-skills')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-skills')}">
                 <div class="flex-1 min-w-0">
                   <div class="mb-4 flex flex-wrap items-center gap-3">
                     <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Supply Chain</span>
@@ -635,6 +635,7 @@
 
             </div>
 
+            <div id="article-wrap-shadow" class="hidden">
             <!-- ── Case Study: Shadow AI ── -->
             <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -866,7 +867,9 @@ AI Security Advisor</pre>
 
               </div>
             </article>
+            </div><!-- /article-wrap-shadow -->
 
+            <div id="article-wrap-main" class="hidden">
             <!-- ── Featured Research: AVE Standard ── -->
             <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -1010,7 +1013,9 @@ AI Security Advisor</pre>
 
               </div>
             </article>
+            </div><!-- /article-wrap-main -->
 
+            <div id="article-wrap-skills" class="hidden">
             <!-- ── Featured Research: AI Skills Supply Chain ── -->
             <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -1313,6 +1318,7 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
 
               </div>
             </article>
+            </div><!-- /article-wrap-skills -->
 
           </div>
         </section>
@@ -1375,7 +1381,7 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
 
                 <!-- Name -->
                 <div class="form-group mb-5">
-                  <label for="cf-name" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Name</label>
+                  <label for="cf-name" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Full Name</label>
                   <input
                     id="cf-name"
                     type="text"
@@ -1387,18 +1393,47 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                   <p id="err-name" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
                 </div>
 
-                <!-- Email -->
+                <!-- Company Name -->
                 <div class="form-group mb-5">
-                  <label for="cf-email" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Email</label>
+                  <label for="cf-company" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Company Full Name</label>
+                  <input
+                    id="cf-company"
+                    type="text"
+                    name="company"
+                    autocomplete="organization"
+                    placeholder="Acme Corporation"
+                    class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300"
+                  />
+                  <p id="err-company" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Work Email -->
+                <div class="form-group mb-5">
+                  <label for="cf-email" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Work Email</label>
                   <input
                     id="cf-email"
                     type="email"
                     name="email"
-                    autocomplete="email"
-                    placeholder="you@company.com"
+                    autocomplete="work email"
+                    placeholder="jane@acme.com"
                     class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300"
                   />
+                  <p class="mt-1 text-xs text-emerald-50/40">Company email required &mdash; personal addresses (Gmail, Outlook, etc.) are not accepted.</p>
                   <p id="err-email" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Company Website -->
+                <div class="form-group mb-5">
+                  <label for="cf-website" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Company Website</label>
+                  <input
+                    id="cf-website"
+                    type="url"
+                    name="website"
+                    autocomplete="url"
+                    placeholder="https://acme.com"
+                    class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300"
+                  />
+                  <p id="err-website" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
                 </div>
 
                 <!-- Message -->
@@ -1412,6 +1447,12 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                     class="terminal-input min-h-32 w-full resize-y rounded-md px-4 py-3 transition-all duration-300"
                   ></textarea>
                   <p id="err-message" class="contact-field-error mt-1 hidden text-xs text-red-400" role="alert"></p>
+                </div>
+
+                <!-- Export Control Notice -->
+                <div class="form-group mb-5 rounded-md border border-cyber/30 bg-cyber/5 px-4 py-4">
+                  <p class="mb-1.5 text-xs font-bold uppercase tracking-[0.18em] text-cyber">U.S. Export Control &amp; Trade Compliance</p>
+                  <p class="text-xs leading-5 text-emerald-50/60">Due to U.S. Export Control and Trade Compliance Regulations, our company is legally bound by the U.S. Department of Commerce Export Administration Regulations. Because AI and cybersecurity reviews fall under sensitive &ldquo;dual-use&rdquo; technology frameworks, U.S. law mandates that we perform a standard &ldquo;Know Your Customer&rdquo; screening prior to any technical exchange.</p>
                 </div>
 
                 <!-- Submit -->
