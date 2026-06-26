@@ -4,13 +4,18 @@ const panels = {
   home: document.getElementById("panel-home"),
   blog: document.getElementById("panel-blog"),
   contact: document.getElementById("panel-contact"),
+  founder: document.getElementById("panel-founder"),
 };
 
 let currentTab = "home";
 
 function setTabBtnState(activeTab) {
-  document.querySelectorAll("[data-tab]").forEach((btn) => {
-    btn.classList.toggle("tab-active", btn.dataset.tab === activeTab);
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
+    if (btn.dataset.tab) {
+      btn.classList.toggle("tab-active", btn.dataset.tab === activeTab);
+    } else {
+      btn.classList.remove("tab-active"); // clear Platform / Consulting scroll buttons
+    }
   });
 }
 
@@ -46,6 +51,18 @@ function switchTab(newTab) {
       }
     }
 
+    // Stagger-animate founder sections on founder tab entry
+    if (newTab === "founder") {
+      const sections = inEl.querySelectorAll(".founder-section");
+      if (sections.length) {
+        animate(
+          sections,
+          { opacity: [0, 1], y: [20, 0] },
+          { delay: stagger(0.08), duration: 0.35, ease: "easeOut" }
+        );
+      }
+    }
+
     // Stagger-animate form groups on contact tab entry
     if (newTab === "contact") {
       const groups = inEl.querySelectorAll(".form-group");
@@ -65,9 +82,40 @@ function switchTab(newTab) {
   setTabBtnState(newTab);
 }
 
-// Wire tab button clicks
+// Wire panel tab button clicks
 document.querySelectorAll("[data-tab]").forEach((btn) => {
-  btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+  btn.addEventListener("click", () => {
+    const tab = btn.dataset.tab;
+    if (tab === "home" && currentTab === "home") {
+      // Already on home — just scroll to top and clear scroll-btn active states
+      setTabBtnState("home");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    switchTab(tab);
+  });
+});
+
+// Wire scroll-within-home buttons (Platform, Consulting)
+document.querySelectorAll("[data-scroll]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.scroll;
+    // Mark this button active, clear others
+    document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("tab-active"));
+    btn.classList.add("tab-active");
+
+    const scrollToTarget = () => {
+      const el = document.querySelector(target);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    if (currentTab !== "home") {
+      switchTab("home");
+      setTimeout(scrollToTarget, 430);
+    } else {
+      scrollToTarget();
+    }
+  });
 });
 
 // Logo: if not on home tab, switch back home and scroll to top

@@ -13,34 +13,22 @@
 <body class="font-mono antialiased">
   <div class="page-shell min-h-screen">
 
-    <!-- Navigation + Tab Bar (unified sticky wrapper) -->
-    <div class="sticky top-0 z-50">
-
-      <nav class="border-b border-neon/30 bg-black/80 backdrop-blur-xl">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
-          <a href="#top" aria-label="ZTAI.AI home">
+    <nav class="sticky top-0 z-50 border-b border-neon/30 bg-black/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-1 sm:px-6 lg:px-8">
+          <a href="#top" aria-label="ZTAI.AI home" class="shrink-0">
             <img src="/images/logo.svg" alt="ZTAI.AI" class="h-9 w-auto" />
           </a>
-          <div class="hidden items-center justify-center gap-8 text-sm uppercase tracking-[0.22em] text-emerald-100 md:flex">
-            <a class="transition hover:text-neon" href="#platform">Platform</a>
-            <a class="transition hover:text-neon" href="#services">Advisory</a>
-            <a class="transition hover:text-neon" href="#contact">Contact</a>
+          <div class="flex items-center" role="tablist" aria-label="Page sections">
+            <button class="tab-btn tab-active" data-tab="home" role="tab" aria-selected="true" aria-controls="panel-home">Home</button>
+            <button class="tab-btn" data-scroll="#platform" role="button">Platform</button>
+            <button class="tab-btn" data-scroll="#services" role="button">Consulting</button>
+            <button class="tab-btn" data-tab="blog" role="tab" aria-selected="false" aria-controls="panel-blog">Blog</button>
+            <button class="tab-btn" data-tab="contact" role="tab" aria-selected="false" aria-controls="panel-contact">Contact Us</button>
+            <button class="tab-btn" data-tab="founder" role="tab" aria-selected="false" aria-controls="panel-founder">About the Founder</button>
           </div>
-          <a href="#contact" class="volatile-button rounded-md px-4 py-2 text-xs sm:px-5" data-text="Get Early Access">Get Early Access</a>
+          <a href="#contact" class="volatile-button hidden shrink-0 rounded-md px-4 py-2 text-xs sm:inline-flex sm:px-5" data-text="Get Early Access">Get Early Access</a>
         </div>
-      </nav>
-
-      <!-- Tab Bar -->
-      <div class="border-b border-neon/20 bg-black/70 backdrop-blur-xl" role="tablist" aria-label="Page sections">
-        <div class="mx-auto flex max-w-7xl items-center px-5 sm:px-6 lg:px-8">
-          <button class="tab-btn tab-active" data-tab="home" role="tab" aria-selected="true" aria-controls="panel-home">Home</button>
-          <button class="tab-btn" data-tab="blog" role="tab" aria-selected="false" aria-controls="panel-blog">Blog</button>
-          <button class="tab-btn" data-tab="contact" role="tab" aria-selected="false" aria-controls="panel-contact">Contact Us</button>
-        </div>
-      </div>
-
-    </div>
-    <!-- /sticky wrapper -->
+    </nav>
 
     <main id="top">
 
@@ -50,7 +38,7 @@
       <div id="panel-home" role="tabpanel" aria-labelledby="tab-home">
 
         <!-- Hero Section -->
-        <section class="relative flex min-h-[calc(100vh-73px)] items-center overflow-hidden">
+        <section class="relative flex min-h-[calc(100vh-57px)] items-center overflow-hidden">
           <canvas id="matrixCanvas" class="matrix-canvas" aria-hidden="true"></canvas>
           <div class="scanline"></div>
           <div class="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-5 py-20 sm:px-6 min-[788px]:grid-cols-2 lg:px-8">
@@ -84,7 +72,7 @@
                 <p><span class="text-neon">&gt;</span> red-team engine: <span class="text-cyber">1,247 vectors tested</span></p>
                 <p><span class="text-neon">&gt;</span> guardrails: <span class="text-cyber">14 behavioral policies enforced</span></p>
                 <p><span class="text-neon">&gt;</span> zero-trust: <span class="text-cyber">all agent calls verified ✓</span></p>
-                <p><span class="text-neon">&gt;</span> compliance: <span class="text-cyber">SOC2 · ISO27001 · HIPAA</span></p>
+                <p><span class="text-neon">&gt;</span> compliance: <span class="text-cyber">SOC2 · ISO42001 · HIPAA · EU AI Act</span></p>
                 <p class="border-l-2 border-neon/70 pl-4 text-neon">GOVERNANCE: ACTIVE<span class="animate-pulse">_</span></p>
               </div>
             </aside>
@@ -137,9 +125,9 @@
         <section id="platform" class="px-5 py-20 sm:px-6 lg:px-8">
           <div class="mx-auto max-w-7xl">
 
-            <div class="mb-12 max-w-3xl">
-              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">The Platform</p>
-              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">One System. Three Engines. Fully Automated.</h2>
+            <div class="mb-12" style="max-width: 80rem;">
+              <p class="mb-2 text-sm font-bold uppercase tracking-[0.24em] text-cyber">The Platform</p>
+              <h2 class="glow-text font-black uppercase text-white" style="font-size: 1.6rem; line-height: 1.2; white-space: nowrap;">One System. Three Engines. Fully Automated.</h2>
               <p class="mt-4 text-base leading-7 text-emerald-50/70">
                 Not point solutions. Not one-time audits. A continuously operating AI governance system that discovers threats, enforces boundaries, and verifies every action across your entire agentic stack.
               </p>
@@ -223,12 +211,30 @@
                 <div>
                   <p class="text-xs font-bold uppercase tracking-[0.22em] text-neon mb-2">Platform Output</p>
                   <h3 class="text-lg font-black uppercase text-white">Governance Dashboard + Continuous Compliance</h3>
-                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">All three engines feed a unified compliance dashboard. SOC 2, ISO 27001, and HIPAA evidence generated automatically &mdash; every agent action logged, scored, and audit-ready.</p>
+                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">All three engines feed a unified compliance dashboard. SOC 2, ISO 42001, HIPAA, and EU AI Act evidence generated automatically &mdash; every agent action logged, scored, and audit-ready.</p>
                 </div>
                 <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-end">
                   <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">SOC 2</span>
-                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">ISO 27001</span>
+                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">ISO 42001</span>
                   <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">HIPAA</span>
+                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">EU AI Act</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Platform output: AI Impact Assessment -->
+            <div class="mt-4 terminal-panel rounded-lg p-5 sm:p-6">
+              <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[0.22em] text-neon mb-2">Assessment Output</p>
+                  <h3 class="text-lg font-black uppercase text-white">AI Impact Assessment Report</h3>
+                  <p class="mt-2 text-sm leading-6 text-emerald-50/70">The platform continuously generates structured AI Impact Assessment reports &mdash; satisfying EU AI Act Article 9 conformity requirements and ISO 42001 Clause 6.1 risk planning obligations automatically.</p>
+                </div>
+                <div class="flex shrink-0 flex-wrap gap-2 sm:flex-col sm:items-end">
+                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">EU AI Act Art. 9</span>
+                  <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">ISO 42001 §6.1</span>
+                  <span class="rounded border border-cyber/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyber">Rights Analysis</span>
+                  <span class="rounded border border-neon/45 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neon">Risk Class</span>
                 </div>
               </div>
             </div>
@@ -302,8 +308,12 @@
 
             </div>
 
-            <div class="h-12"></div>
-            <div class="h-12"></div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
 
             <div class="mb-6">
               <p class="text-sm font-bold uppercase tracking-[0.24em] text-cyber mb-4">The Compliance Problem</p>
@@ -361,7 +371,7 @@
                 <div class="border-l-2 border-cyber/50 pl-6 py-2">
                   <h3 class="text-lg font-black uppercase text-cyber mb-4">Audit-Ready Compliance Reporting</h3>
                   <p class="text-sm leading-7 text-emerald-50/75 mb-4">
-                    We generate compliance dashboards for SOC 2, ISO 27001, and HIPAA auditors—detailing agentic control effectiveness, incident response playbooks, and continuous risk monitoring.
+                    We generate compliance dashboards for SOC 2, ISO 42001, HIPAA, and EU AI Act auditors—detailing agentic control effectiveness, incident response playbooks, and continuous risk monitoring.
                   </p>
                   <p class="text-sm leading-7 text-emerald-50/75">
                     Every comprehensive assessment report produces a <span class="font-bold text-white">robust audit trail</span> showing which agents accessed what, when, why, and with what permissions—critical for regulatory evidence.
@@ -369,18 +379,13 @@
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        <!-- Services Section -->
-        <section id="services" class="px-5 py-20 sm:px-6 lg:px-8">
-          <div class="mx-auto max-w-7xl">
-            <div class="mb-10 max-w-3xl">
-              <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Advisory Services</p>
-              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Platform Capabilities, Available Now</h2>
-              <p class="mt-4 text-base leading-7 text-emerald-50/70">Access the platform&rsquo;s three core capabilities today through expert advisory &mdash; while we build the automated system that delivers them continuously.</p>
+            <div class="mb-10" style="margin-top: 6rem; max-width: 80rem;">
+              <p class="mb-2 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Advisory Services</p>
+              <h2 class="glow-text font-black uppercase text-white" style="font-size: 1.6rem; line-height: 1.2; white-space: nowrap;">Platform Capabilities, Available Now</h2>
+              <p class="mt-4 text-base leading-7 text-emerald-50/70">Access the platform&rsquo;s four core capabilities today through expert advisory &mdash; while we build the automated system that delivers them continuously.</p>
             </div>
-            <div class="grid gap-5 md:grid-cols-3">
+            <div class="grid gap-5 sm:grid-cols-2">
 
               <article class="service-card cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-1">
                 <div class="mb-4 flex items-center justify-between">
@@ -443,9 +448,33 @@
                 <ul class="mt-4 space-y-2 text-sm text-emerald-50/70">
                   <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Zero trust policy architecture &amp; enforcement</li>
                   <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>AI governance framework mapping</li>
-                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>SOC 2, ISO 27001 &amp; HIPAA evidence packages</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>SOC 2, ISO 42001, HIPAA &amp; EU AI Act evidence packages</li>
                   <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Continuous risk scoring (AARS &amp; AIVSS)</li>
                   <li class="flex items-start gap-2"><span class="text-neon mt-1">›</span>Executive briefing &amp; regulatory gap analysis</li>
+                </ul>
+              </article>
+
+              <!-- Service Card 4: AI Impact Assessment -->
+              <article class="service-card cyber-border corner-grid rounded-lg p-6 animate-slideInUp stagger-4">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-md border border-cyber/70 text-cyber shadow-cyber animate-floatIcon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M9 12H15M9 8H15M9 16H12M5 4H19C19.5523 4 20 4.44772 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44772 4 5 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="18" cy="18" r="4" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M16.5 18L17.5 19L19.5 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="rounded border border-cyber/40 bg-cyber/8 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cyber">IA Service</span>
+                </div>
+                <h3 class="text-xl font-black uppercase text-white">AI Impact Assessment</h3>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-emerald-50/45">Delivered today via advisory &rarr; required by EU AI Act &amp; ISO 42001</p>
+                <p class="mt-3 leading-7 text-emerald-50/75">A structured, evidence-backed assessment of your AI system&rsquo;s impact on fundamental rights, safety, and regulatory obligations &mdash; the mandatory first step before deploying high-risk AI under EU law.</p>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-50/70">
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>EU AI Act Article 9 conformity assessment</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>ISO 42001 Clause 6.1 risk planning documentation</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Fundamental rights &amp; fairness impact analysis</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>AI risk classification (prohibited / high-risk / limited-risk)</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1">›</span>Regulatory gap report with remediation roadmap</li>
                 </ul>
               </article>
 
@@ -465,20 +494,55 @@
               </p>
             </div>
 
-            <form id="assessmentForm" class="terminal-panel rounded-lg p-5 sm:p-7 animate-slideInUp stagger-2">
+            <form id="assessmentForm" class="terminal-panel rounded-lg p-5 sm:p-7 animate-slideInUp stagger-2" novalidate>
               <div class="mb-6 flex items-center justify-between border-b border-neon/30 pb-4">
                 <span class="text-xs font-bold uppercase tracking-[0.22em] text-neon">secure-intake.sh</span>
                 <span id="formStatus" class="text-xs uppercase tracking-[0.18em] text-cyber transition-all duration-300">standby</span>
               </div>
-              <label class="block">
-                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Enter your digital signature (Email)</span>
-                <input class="terminal-input w-full rounded-md px-4 py-4 transition-all duration-300" type="email" name="email" autocomplete="email" placeholder="customer@company.com" required />
-              </label>
-              <label class="mt-6 block">
-                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Brief Description of your AI Architecture</span>
-                <textarea class="terminal-input min-h-40 w-full resize-y rounded-md px-4 py-4 transition-all duration-300" name="architecture" placeholder="Models, agents, data sources, tools, deployment environment, known concerns..." required></textarea>
-              </label>
-              <button class="volatile-button mt-7 w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]" type="submit" data-text="Initiate Assessment">Initiate Assessment</button>
+
+              <!-- Full Name -->
+              <div class="mb-5">
+                <label for="ia-name" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Full Name</label>
+                <input id="ia-name" class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300" type="text" name="name" autocomplete="name" placeholder="Jane Smith" />
+                <p id="ia-err-name" class="mt-1 hidden text-xs text-red-400" role="alert"></p>
+              </div>
+
+              <!-- Company Name -->
+              <div class="mb-5">
+                <label for="ia-company" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Company Full Name</label>
+                <input id="ia-company" class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300" type="text" name="company" autocomplete="organization" placeholder="Acme Corporation" />
+                <p id="ia-err-company" class="mt-1 hidden text-xs text-red-400" role="alert"></p>
+              </div>
+
+              <!-- Work Email -->
+              <div class="mb-5">
+                <label for="ia-email" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Work Email</label>
+                <input id="ia-email" class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300" type="email" name="email" autocomplete="email" placeholder="jane@acme.com" />
+                <p class="mt-1 text-xs text-emerald-50/40">Company email required &mdash; personal addresses (Gmail, Outlook, etc.) are not accepted.</p>
+                <p id="ia-err-email" class="mt-1 hidden text-xs text-red-400" role="alert"></p>
+              </div>
+
+              <!-- Company Website -->
+              <div class="mb-5">
+                <label for="ia-website" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Company Website</label>
+                <input id="ia-website" class="terminal-input w-full rounded-md px-4 py-3 transition-all duration-300" type="url" name="website" autocomplete="url" placeholder="https://acme.com" />
+                <p id="ia-err-website" class="mt-1 hidden text-xs text-red-400" role="alert"></p>
+              </div>
+
+              <!-- AI Architecture -->
+              <div class="mb-5">
+                <label for="ia-architecture" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-emerald-100">Brief Description of your AI Architecture</label>
+                <textarea id="ia-architecture" class="terminal-input min-h-40 w-full resize-y rounded-md px-4 py-4 transition-all duration-300" name="architecture" placeholder="Models, agents, data sources, tools, deployment environment, known concerns..."></textarea>
+                <p id="ia-err-architecture" class="mt-1 hidden text-xs text-red-400" role="alert"></p>
+              </div>
+
+              <!-- Export Control Notice -->
+              <div class="mb-6 rounded-md border border-cyber/30 bg-cyber/5 px-4 py-4">
+                <p class="mb-1.5 text-xs font-bold uppercase tracking-[0.18em] text-cyber">U.S. Export Control &amp; Trade Compliance</p>
+                <p class="text-xs leading-5 text-emerald-50/60">Due to U.S. Export Control and Trade Compliance Regulations, our company is legally bound by the U.S. Department of Commerce Export Administration Regulations. Because AI and cybersecurity reviews fall under sensitive &ldquo;dual-use&rdquo; technology frameworks, U.S. law mandates that we perform a standard &ldquo;Know Your Customer&rdquo; screening prior to any technical exchange.</p>
+              </div>
+
+              <button class="volatile-button w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]" type="submit" data-text="Initiate Assessment">Initiate Assessment</button>
             </form>
           </div>
         </section>
@@ -697,7 +761,7 @@
                 <div class="space-y-4">
                   <div class="border-l-2 border-red-500/50 pl-5 py-1">
                     <p class="font-bold text-white mb-1">Shadow Infrastructure / Unmonitored Code Execution</p>
-                    <p>&ldquo;Claude Code is a powerful autonomous agent with shell execution capabilities. When developers use personal API keys, it becomes an unmonitored code execution gateway&mdash;equivalent to allowing shell access without IT oversight. This creates visibility gaps that compliance frameworks like SOC2 and ISO 27001 explicitly prohibit.&rdquo;</p>
+                    <p>&ldquo;Claude Code is a powerful autonomous agent with shell execution capabilities. When developers use personal API keys, it becomes an unmonitored code execution gateway&mdash;equivalent to allowing shell access without IT oversight. This creates visibility gaps that compliance frameworks like SOC2 and ISO 42001 explicitly prohibit.&rdquo;</p>
                   </div>
                   <div class="border-l-2 border-red-500/50 pl-5 py-1">
                     <p class="font-bold text-white mb-1">System Destruction Risk</p>
@@ -705,7 +769,7 @@
                   </div>
                   <div class="border-l-2 border-red-500/50 pl-5 py-1">
                     <p class="font-bold text-white mb-1">Compliance Violations</p>
-                    <p>&ldquo;Personal API keys break our data handling commitments for SOC2/ISO 27001/GDPR. If auditors ask for logs, we&apos;ll fail because there&apos;s no centralized visibility.&rdquo;</p>
+                    <p>&ldquo;Personal API keys break our data handling commitments for SOC2/ISO 42001/GDPR. If auditors ask for logs, we&apos;ll fail because there&apos;s no centralized visibility.&rdquo;</p>
                   </div>
                 </div>
                 <p class="text-xs text-emerald-50/50 italic">Outcome: IT prioritizes risks that directly impact compliance, legal exposure, or operational stability.</p>
@@ -1485,6 +1549,123 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
       </div>
       <!-- /panel-contact -->
 
+      <!-- ── About the Founder panel ─────────────────────────────────────── -->
+      <div id="panel-founder" class="hidden" role="tabpanel" aria-labelledby="tab-founder">
+        <div class="mx-auto max-w-4xl px-5 py-16 sm:px-6 lg:px-8">
+
+          <!-- Header -->
+          <div class="mb-12">
+            <p class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber">ZTAI Security Advisors LLC</p>
+            <h1 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl">Benedict Kwok</h1>
+            <p class="mt-2 text-base font-bold uppercase tracking-wide text-emerald-50/60">Founder &amp; Principal Security Advisor</p>
+          </div>
+
+          <!-- Executive Profile -->
+          <section class="founder-section mb-10">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Executive Profile</h2>
+            <p class="leading-7 text-emerald-50/80">Benedict Kwok is a security architect and entrepreneur building the infrastructure layer for secure AI adoption at enterprise scale. As founder of ZTAI Security Advisors, he combines deep expertise in zero-trust architecture, agentic AI systems, and DevSecOps practices to help companies eliminate shadow AI risks while maintaining developer velocity. He is currently building a SaaS platform for automated AI red teaming, guardrails, and governance.</p>
+          </section>
+
+          <!-- Current Work -->
+          <section class="founder-section mb-10">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Current Work</h2>
+            <p class="mb-6 text-sm font-bold uppercase tracking-wide text-emerald-50/50">ZTAI Security Advisors LLC &mdash; 2026&ndash;Present</p>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="cyber-border rounded-lg p-5">
+                <p class="mb-3 text-sm font-bold uppercase tracking-wide text-neon">AI Security Consulting (B2B)</p>
+                <p class="mb-3 text-xs text-emerald-50/50 uppercase tracking-wide">Helping enterprises adopt AI with confidence</p>
+                <ul class="space-y-2 text-sm text-emerald-50/75">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Real-world vulnerability assessments on multi-agent systems</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Design review based on Zero-trust and layer of defense design, leveraging customer's existing security tooling</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>AI Security Awareness Training</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Security Blog</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Immediate revenue to fund product development</li>
+                </ul>
+              </div>
+              <div class="cyber-border rounded-lg p-5">
+                <p class="mb-3 text-sm font-bold uppercase tracking-wide text-cyber">AI Governance Automation (SaaS)</p>
+                <p class="mb-3 text-xs text-emerald-50/50 uppercase tracking-wide">Scaling security without friction</p>
+                <ul class="space-y-2 text-sm text-emerald-50/75">
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1 shrink-0">›</span>Continuous red teaming and prompt injection auditing</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1 shrink-0">›</span>Shadow AI detection and API key governance</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1 shrink-0">›</span>Real-time compliance monitoring and risk reporting</li>
+                  <li class="flex items-start gap-2"><span class="text-cyber mt-1 shrink-0">›</span>Building toward enterprise-grade deployment via strategic partnerships</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Recognized by Peers -->
+          <section class="founder-section mb-10">
+            <h2 class="mb-6 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Recognized by Peers</h2>
+            <div class="space-y-5">
+              <blockquote class="cyber-border rounded-lg p-5">
+                <p class="leading-7 text-emerald-50/80 italic">&ldquo;Benedict is a highly respected security expert with comprehensive knowledge in system architecture and software development. He drives security-by-design as a &ldquo;big picture&rdquo; vision. He is hands-on and resourceful when implementing security measures to build our data pipeline on cloud. His leadership motivates innovation and inspire those around him.&rdquo;</p>
+                <footer class="mt-3 text-xs font-bold uppercase tracking-wide text-cyber/70">&mdash; Senior Software Engineering Manager</footer>
+              </blockquote>
+              <blockquote class="cyber-border rounded-lg p-5">
+                <p class="leading-7 text-emerald-50/80 italic">&ldquo;Benedict is technically sound in the Security field and has deep knowledge on protecting products and companies from modern day hackers.&rdquo;</p>
+                <footer class="mt-3 text-xs font-bold uppercase tracking-wide text-cyber/70">&mdash; IT Professional with experience in US and Asia</footer>
+              </blockquote>
+            </div>
+          </section>
+
+          <!-- Background & Experience -->
+          <section class="founder-section mb-10">
+            <h2 class="mb-6 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Background &amp; Experience</h2>
+            <div class="space-y-6">
+              <div>
+                <p class="mb-3 text-sm font-bold uppercase tracking-wide text-neon">Security Architecture &amp; DevOps</p>
+                <ul class="space-y-2 text-sm text-emerald-50/75">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Built endpoint security practices and security intelligence capabilities at enterprise scale</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Led security operations initiatives with KPI tracking and compliance transparency</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Implemented cloud-native security architectures using Microsoft Defender, CrowdStrike, and SIEM platforms</li>
+                </ul>
+              </div>
+              <div>
+                <p class="mb-3 text-sm font-bold uppercase tracking-wide text-neon">Technical Depth</p>
+                <ul class="space-y-2 text-sm text-emerald-50/75">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Fluent in EDR Query (KQL, CQL) and SIEM query optimization</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Hands-on experience in cloud infrastructure (Azure, AWS)</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Hands-on experience in OAuth implementation (Auth0)</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Understanding of transformer models, autonomous agents, and LLM security implications</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Practical knowledge of API key lifecycle management</li>
+                </ul>
+              </div>
+              <div>
+                <p class="mb-3 text-sm font-bold uppercase tracking-wide text-neon">Startup DNA</p>
+                <ul class="space-y-2 text-sm text-emerald-50/75">
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Based in California &mdash; hub of emerging AI/security ventures</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Actively pursuing strategic partnerships</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Building a lean go-to-market with consulting revenue enabling product innovation</li>
+                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Focus on solving real enterprise problems, not theoretical threats</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Vision -->
+          <section class="founder-section mb-10">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Vision</h2>
+            <p class="mb-4 leading-7 text-emerald-50/80">Benedict is building the security abstraction layer for AI-first enterprises. As agentic AI systems proliferate, organizations face a critical dilemma: they want the productivity gains AI offers, but lack the visibility, governance, and controls to adopt it without compliance risk. ZTAI bridges this gap &mdash; starting with consulting-driven assessments and scaling to automated, continuous governance.</p>
+            <p class="cyber-border rounded-lg p-4 text-sm font-bold uppercase tracking-wide text-neon">His thesis: Security doesn&rsquo;t slow innovation; poor governance does.</p>
+          </section>
+
+          <!-- Contact -->
+          <section class="founder-section">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-cyber border-b border-cyber/20 pb-2">Contact &amp; Links</h2>
+            <ul class="space-y-2 text-sm text-emerald-50/75">
+              <li class="flex items-center gap-2"><span class="text-cyber">›</span><span class="text-emerald-50/50 uppercase tracking-wide text-xs w-20">Email</span><a href="mailto:benedictkwok@ztai.ai" class="text-neon hover:text-neon/80">benedictkwok@ztai.ai</a></li>
+              <li class="flex items-center gap-2"><span class="text-cyber">›</span><span class="text-emerald-50/50 uppercase tracking-wide text-xs w-20">LinkedIn</span><a href="https://linkedin.com/in/benedict-kwok-2018/" target="_blank" rel="noopener" class="text-neon hover:text-neon/80">linkedin.com/in/benedict-kwok-2018/</a></li>
+              <li class="flex items-center gap-2"><span class="text-cyber">›</span><span class="text-emerald-50/50 uppercase tracking-wide text-xs w-20">Website</span><a href="https://ztai.ai" class="text-neon hover:text-neon/80">ztai.ai</a></li>
+              <li class="flex items-center gap-2"><span class="text-cyber">›</span><span class="text-emerald-50/50 uppercase tracking-wide text-xs w-20">Location</span>California, USA</li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+      <!-- /panel-founder -->
+
     </main>
 
     <!-- ── Subscriber gate modal ─────────────────────────────────────────── -->
@@ -1650,15 +1831,69 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
     const assessmentForm = document.getElementById("assessmentForm");
     const formStatus = document.getElementById("formStatus");
 
+    const INTAKE_PERSONAL_DOMAINS = new Set([
+      "gmail.com","googlemail.com","outlook.com","hotmail.com","live.com","msn.com",
+      "yahoo.com","ymail.com","aol.com","icloud.com","me.com","mac.com",
+      "protonmail.com","proton.me","mail.com","gmx.com","gmx.net","zohomail.com",
+      "qq.com","163.com","126.com","sina.com","sohu.com",
+    ]);
+
+    function iaShowErr(id, msg) {
+      const el = document.getElementById("ia-err-" + id);
+      const inp = document.getElementById("ia-" + id);
+      if (el) { el.textContent = msg; el.classList.remove("hidden"); }
+      if (inp) inp.classList.add("input-error");
+    }
+
+    function iaClearErrors() {
+      ["name","company","email","website","architecture"].forEach((id) => {
+        const el = document.getElementById("ia-err-" + id);
+        const inp = document.getElementById("ia-" + id);
+        if (el) { el.textContent = ""; el.classList.add("hidden"); }
+        if (inp) inp.classList.remove("input-error");
+      });
+    }
+
     assessmentForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const data = Object.fromEntries(new FormData(assessmentForm));
+      iaClearErrors();
+
+      const name = document.getElementById("ia-name").value.trim();
+      const company = document.getElementById("ia-company").value.trim();
+      const email = document.getElementById("ia-email").value.trim();
+      const website = document.getElementById("ia-website").value.trim();
+      const architecture = document.getElementById("ia-architecture").value.trim();
+
+      let ok = true;
+      if (!name) { iaShowErr("name", "Full name is required."); ok = false; }
+      if (!company) { iaShowErr("company", "Company name is required."); ok = false; }
+      if (!email) {
+        iaShowErr("email", "Work email is required."); ok = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        iaShowErr("email", "Enter a valid email address."); ok = false;
+      } else {
+        const domain = email.split("@")[1]?.toLowerCase();
+        if (domain && INTAKE_PERSONAL_DOMAINS.has(domain)) {
+          iaShowErr("email", "Please use your company email address. Personal email providers are not accepted."); ok = false;
+        }
+      }
+      if (!website) {
+        iaShowErr("website", "Company website is required."); ok = false;
+      } else if (!/^https?:\/\/.+\..+/.test(website)) {
+        iaShowErr("website", "Enter a valid URL (e.g. https://acme.com)."); ok = false;
+      }
+      if (!architecture) { iaShowErr("architecture", "Please describe your AI architecture."); ok = false; }
+      if (!ok) return;
+
       formStatus.textContent = "transmitting...";
+      const submitBtn = assessmentForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
       try {
         const res = await fetch("/api/intake", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ name, company, email, website, architecture }),
         });
         if (res.ok) {
           formStatus.textContent = "transmitted";
@@ -1673,6 +1908,8 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
         }
       } catch {
         formStatus.textContent = "error";
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
   </script>
