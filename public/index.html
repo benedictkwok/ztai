@@ -74,6 +74,7 @@
                 <span class="h-3 w-3 rounded-full bg-yellow-300 shadow-[0_0_12px_rgba(253,224,71,.8)]"></span>
                 <span class="h-3 w-3 rounded-full bg-neon shadow-[0_0_12px_rgba(57,255,20,.85)]"></span>
                 <span class="ml-3 text-xs uppercase tracking-[0.22em] text-cyber">ztai-console</span>
+                <span class="ml-auto text-xs italic text-emerald-50/35">Platform preview &mdash; in development</span>
               </div>
               <div class="space-y-4 text-sm leading-7 text-emerald-100">
                 <p><span class="text-neon">&gt;</span> ai-governance --init --mode continuous</p>
@@ -81,7 +82,7 @@
                 <p><span class="text-neon">&gt;</span> guardrails: <span class="text-cyber">14 behavioral policies enforced</span></p>
                 <p><span class="text-neon">&gt;</span> zero-trust: <span class="text-cyber">all agent calls verified ✓</span></p>
                 <p><span class="text-neon">&gt;</span> compliance: <span class="text-cyber">SOC2 · ISO42001 · HIPAA · EU AI Act</span></p>
-                <p class="border-l-2 border-neon/70 pl-4 text-neon">GOVERNANCE: ACTIVE<span class="animate-pulse">_</span></p>
+                <p class="border-l-2 border-neon/70 pl-4 text-neon">GOVERNANCE ENGINE &mdash; coming 2027<span class="animate-pulse">_</span></p>
               </div>
             </aside>
           </div>
@@ -364,10 +365,10 @@
                 <div class="border-l-2 border-neon/50 pl-6 py-2">
                   <h3 class="text-lg font-black uppercase text-neon mb-4">Risk Calculation: AARS &amp; AIVSS</h3>
                   <p class="text-sm leading-7 text-emerald-50/75 mb-4">
-                    <span class="font-bold text-white">AARS (Agentic AI Risk Score):</span> Combines AVE severity, exploit likelihood, and business impact into a single risk metric.
+                    <span class="font-bold text-white">AARS (Agentic AI Risk Score):</span> Combines AVE severity, exploit likelihood, and business impact into a single risk metric. ZTAI was among its early practitioner adopters and applies AARS in every agentic risk assessment.
                   </p>
                   <p class="text-sm leading-7 text-emerald-50/75 mb-4">
-                    <span class="font-bold text-white">AIVSS (AI Vulnerability Scoring System):</span> A standardized scoring framework (0&ndash;10) for agentic vulnerabilities, extending CVSS for AI systems. Factors include:
+                    <a href="https://aivss.owasp.org" target="_blank" rel="noopener noreferrer" class="font-bold text-white underline decoration-neon/40 hover:text-neon transition-colors">OWASP AIVSS (AI Vulnerability Scoring System)</a>: A standardized scoring framework (0&ndash;10) for agentic vulnerabilities, extending CVSS for AI systems. ZTAI applies AIVSS scoring in every assessment and was among its early practitioner adopters. Factors include:
                   </p>
                   <ul class="space-y-3 text-sm leading-6 text-emerald-50/75">
                     <li class="flex items-start gap-3"><span class="text-cyber mt-1 shrink-0">›</span><span>Attack vector (prompt, API, data source).</span></li>
@@ -551,6 +552,7 @@
               </div>
 
               <button class="volatile-button w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]" type="submit" data-text="Initiate Assessment">Initiate Assessment</button>
+              <p class="mt-3 text-xs leading-5 text-emerald-50/40 text-center">Submitted information is used solely for assessment intake and follow-up. See our <a href="/privacy.html" class="underline underline-offset-2 hover:text-neon transition-colors">Privacy Policy</a> for your CCPA rights.</p>
             </form>
           </div>
         </section>
@@ -972,7 +974,7 @@ AI Security Advisor</pre>
                 <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
                   Beyond CVE and CVSS: A New AVE + AIVSS Framework for AI Vulnerability Management
                 </h2>
-                <p class="text-sm text-emerald-50/55">By Zata Security Advisors LLC Research Team</p>
+                <p class="text-sm text-emerald-50/55">By ZTAI Security Advisors LLC Research Team</p>
               </header>
 
               <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
@@ -1039,7 +1041,7 @@ AI Security Advisor</pre>
 
                 <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">AIVSS: Transforming CVSS for the Behavioral Domain</h3>
 
-                <p>ZTAI.AI&apos;s <span class="font-bold text-white">AI Vulnerability Scoring System (AIVSS)</span> does not replace CVSS &mdash; it transforms its scoring philosophy for AI behavioral exposures. AIVSS inherits CVSS&apos;s 0&ndash;10 numeric output and its commitment to standardized, comparable scoring. What changes is the input dimensions, which are redesigned for non-deterministic, language-driven systems.</p>
+                <p>The <a href="https://aivss.owasp.org" target="_blank" rel="noopener noreferrer" class="font-bold text-white underline decoration-neon/40 hover:text-neon transition-colors">OWASP AI Vulnerability Scoring System (AIVSS)</a> does not replace CVSS &mdash; it extends its scoring philosophy for AI behavioral exposures. AIVSS inherits CVSS&apos;s 0&ndash;10 numeric output and its commitment to standardized, comparable scoring. What changes is the input dimensions, which are redesigned for non-deterministic, language-driven systems. ZTAI applies AIVSS scoring in every assessment and was among its early practitioner adopters.</p>
 
                 <p class="mt-3">The two standards are designed to coexist. A chained attack that exploits both an infrastructure flaw and an LLM behavioral weakness would carry both a CVSS score and an AIVSS score &mdash; each measuring a distinct attack surface:</p>
 
@@ -1080,7 +1082,7 @@ AI Security Advisor</pre>
                 <p class="mt-4">The security industry is at an inflection point. CVE and CVSS remain essential &mdash; they are not going away. AVE and AIVSS are the missing layer that CVE and CVSS were never designed to address. Together, all four standards give security teams a complete picture: code-layer risk scored by CVSS, behavioral-layer risk scored by AIVSS, with CVE and AVE providing the classification vocabulary for each. As agentic AI becomes core infrastructure, organizations that adopt this complete framework now will be best positioned to meet the compliance and audit requirements of tomorrow.</p>
 
                 <footer class="border-t border-neon/20 pt-6 mt-8">
-                  <p class="text-xs uppercase tracking-[0.18em] text-emerald-50/45">ZTAI.AI Security Research &middot; Zata Security Advisors LLC &middot; ztai.ai</p>
+                  <p class="text-xs uppercase tracking-[0.18em] text-emerald-50/45">ZTAI.AI Security Research &middot; ZTAI Security Advisors LLC &middot; ztai.ai</p>
                 </footer>
 
               </div>
@@ -1656,7 +1658,6 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                 <ul class="space-y-2 text-sm text-emerald-50/75">
                   <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Based in California &mdash; hub of emerging AI/security ventures</li>
                   <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Actively pursuing strategic partnerships</li>
-                  <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Building a lean go-to-market with consulting revenue enabling product innovation</li>
                   <li class="flex items-start gap-2"><span class="text-neon mt-1 shrink-0">›</span>Focus on solving real enterprise problems, not theoretical threats</li>
                 </ul>
               </div>
@@ -1794,7 +1795,7 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
     </div>
 
     <footer class="border-t border-cyber/30 px-5 py-8 text-center text-xs uppercase tracking-[0.18em] text-emerald-50/60 sm:px-6 lg:px-8">
-      <p>&copy; <span id="year"></span> ZTAI.AI. All rights reserved. Privacy disclaimer: submitted information is used solely for assessment intake and follow-up.</p>
+      <p>&copy; <span id="year"></span> ZTAI.AI &mdash; ZTAI Security Advisors LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="/privacy.html" class="hover:text-neon transition-colors underline underline-offset-2">Privacy Policy</a></p>
     </footer>
   </div>
 
