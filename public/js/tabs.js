@@ -8,8 +8,10 @@ const panels = {
 };
 
 const BLOG_SLUGS = {
-  shadow_ai: "article-wrap-shadow",
-  skills:    "article-wrap-skills",
+  shadow_ai:                  "article-wrap-shadow",
+  skills:                     "article-wrap-skills",
+  prompt_injection_resistance: "article-wrap-injection",
+  toxicity_judge_sensitivity:  "article-wrap-toxicity",
 };
 
 let currentTab = "home";
