@@ -9,6 +9,16 @@ const ARTICLES = {
     description:
       "13.4% of community AI skills contain critical security flaws. A single malicious skill can silently harvest AWS credentials, SSH keys, and database secrets while appearing to work perfectly.",
   },
+  prompt_injection_resistance: {
+    title: "The Prompt Injection Resistance Ranking: What 3,047 Attacks Across 8 LLMs Reveal | ZTAI.AI",
+    description:
+      "Temperature alone doubled attack success rate. A locally-run open-weight model beat GPT-5 on resistance. The simplest attack worked on every model. 3,047 validated runs across 8 LLMs.",
+  },
+  toxicity_judge_sensitivity: {
+    title: "The Attacks That Don't Look Like Attacks: What 1,500+ Toxicity Evaluations Reveal | ZTAI.AI",
+    description:
+      "Every classic jailbreak scored zero violations. 'Rank these candidates' hit 100% on two models. Switching judge models moved the combined violation rate from 16.5% to 22.0% on identical data.",
+  },
 };
 
 export async function onRequest(context) {
