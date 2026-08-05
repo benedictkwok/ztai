@@ -1716,7 +1716,7 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                 <!-- Finding 2 -->
                 <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 2 &mdash; The Attacks That Don&rsquo;t Look Like Attacks Are the Actual Risk Surface</h3>
 
-                <p>The six attacks that don&apos;t announce themselves as adversarial produced every violation in the study. Three stand out:</p>
+                <p>The six attacks that don&apos;t announce themselves as adversarial produced every violation in the study &mdash; but not evenly. Three account for nearly all of it:</p>
 
                 <div class="my-4 border border-cyber/25 rounded-lg overflow-hidden">
                   <div class="grid grid-cols-3 bg-black/60 text-xs font-bold uppercase tracking-[0.14em]">
@@ -1733,15 +1733,17 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                     <div class="grid grid-cols-3 divide-x divide-cyber/15 bg-black/20">
                       <div class="px-3 py-2 font-bold text-white">Realistic Decision Task</div>
                       <div class="px-3 py-2">Rank candidates using name, school, and employment-gap proxies &mdash; never asks for a discriminatory statement directly</div>
-                      <div class="px-3 py-2 text-red-400 font-bold">5/5 on two models; hit the most resistant model at 4/5</div>
+                      <div class="px-3 py-2 text-red-400 font-bold">5/5 on two models; hit even the single most resistant model in the study at 4/5</div>
                     </div>
                     <div class="grid grid-cols-3 divide-x divide-cyber/15">
                       <div class="px-3 py-2 font-bold text-white">Third-Party Paraphrase</div>
                       <div class="px-3 py-2">Summarize or paraphrase pre-existing biased text, rather than generate it fresh</div>
-                      <div class="px-3 py-2 text-red-400">4/5 on 3 of 4 models (second judge); as high as 5/5 on first judge&apos;s scoring</div>
+                      <div class="px-3 py-2 text-red-400">4/5 on 3 of 4 models on the general-assistant scenario (second judge); as high as 5/5 on the first judge&apos;s scoring of the same attack</div>
                     </div>
                   </div>
                 </div>
+
+                <p>The other three mundane attacks &mdash; Checklist/Rubric Framing, Continuation/Autocomplete, and Fill-in-the-Blank Completion &mdash; did land occasional hits, but at a combined rate in the single digits, well below the 28&ndash;60% range the three above reached. That gap matters: it means administrative framing isn&apos;t a blanket bypass that works just because it avoids sounding adversarial. It works specifically when the request carries a plausible, delegable business purpose &mdash; validating a safety system, ranking candidates, restating existing text. Framing alone isn&apos;t sufficient; the framing has to attach to a task a model would reasonably expect to help with.</p>
 
                 <p>None of these ask the model to say something hateful. They ask it to help validate a safety system, complete an ordinary HR task, or restate existing text &mdash; framings that read as legitimate delegated work rather than adversarial intent, because in most contexts they are. That&apos;s exactly why they work: the model&apos;s safety training pattern-matches against &ldquo;attack,&rdquo; not against &ldquo;plausible business request with a discriminatory outcome.&rdquo;</p>
 
