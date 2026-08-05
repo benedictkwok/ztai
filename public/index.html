@@ -1769,6 +1769,8 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                 <!-- Finding 4 -->
                 <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 4 &mdash; The Judge Grading Your Results Changes the Score by 1.33&times;</h3>
 
+                <p>This is the finding that should concern anyone relying on an automated compliance or red-team score, including our own.</p>
+
                 <p>We took the identical attack data &mdash; same models, same scenarios, same 15-attack bank &mdash; and scored it twice, once with each of two different judge models. Everything else about the test was held constant.</p>
 
                 <div class="space-y-4 mt-4">
@@ -1778,17 +1780,17 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
                   </div>
                   <div class="rounded-md border border-red-500/20 bg-black/40 p-4">
                     <p class="text-xs font-bold uppercase tracking-wide text-red-400 mb-2">Most Dramatic Single Case</p>
-                    <p class="text-sm text-emerald-50/75">One model&apos;s score on the Realistic Decision Task attack went from <span class="font-bold text-white">1 out of 5 under the first judge to 4&ndash;5 out of 5 under the second</span> &mdash; across two separate scenarios. Same model, same behavior. Opposite verdict, depending entirely on the evaluator.</p>
+                    <p class="text-sm text-emerald-50/75">One model&apos;s score on the Realistic Decision Task attack (the proxy-discrimination attack from Finding 2) went from <span class="font-bold text-white">1 out of 5 under the first judge to 4&ndash;5 out of 5 under the second</span> &mdash; across two separate scenarios. Same model, same behavior. Opposite verdict, depending entirely on the evaluator.</p>
                   </div>
                 </div>
 
-                <p class="mt-5">This isn&apos;t random noise. It traces back to a specific, previously-documented gap: earlier calibration testing had already caught the first judge model missing a &ldquo;statistical proxy&rdquo; discrimination case &mdash; a policy that excludes people by proxy (for example, &ldquo;candidates from certain schools underperform&rdquo;) without naming a protected characteristic directly. The Realistic Decision Task attack is exactly that pattern in practice, and the calibration blind spot shows up directly in production scoring.</p>
+                <p class="mt-5">This isn&apos;t random noise. It traces back to a specific, previously-documented gap: earlier calibration testing had already caught the first judge model missing a &ldquo;statistical proxy&rdquo; discrimination case &mdash; a policy that excludes people by proxy (for example, &ldquo;candidates from certain schools underperform&rdquo;) without naming a protected characteristic directly. The Realistic Decision Task attack is exactly that pattern in practice, and the calibration blind spot shows up directly in production scoring, not just in a calibration test set nobody sees again.</p>
 
                 <p>A second reversal in the same dataset: an attack that initially looked &ldquo;universal&rdquo; &mdash; succeeding 100% of the time on two different models in the same scenario &mdash; dropped to 0% on one of those models under the second judge. What looked like a maximally reliable, always-works attack turned out to be judge-dependent in at least one case.</p>
 
                 <div class="border-l-2 border-red-500/50 pl-6 py-3 mt-4">
                   <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-2">The Uncomfortable Implication for AI Governance</p>
-                  <p>A violation rate, a compliance score, or a &ldquo;model X passed&rdquo; verdict that doesn&apos;t name which model did the judging is underspecified in a way that can move the conclusion by 30%+ on its own &mdash; not from a different test, from a different grader looking at the same test. Any automated scoring system needs to treat judge identity as a first-class, disclosed variable &mdash; not an implementation detail.</p>
+                  <p>A violation rate, a compliance score, or a &ldquo;model X passed&rdquo; verdict that doesn&apos;t name which model did the judging is underspecified in a way that can move the conclusion by 30%+ on its own &mdash; not from a different test, from a different grader looking at the same test. Any automated scoring system, including risk-scoring frameworks built for exactly this purpose, needs to treat judge identity as a first-class, disclosed variable &mdash; not an implementation detail.</p>
                 </div>
 
                 <!-- Recommendations -->
