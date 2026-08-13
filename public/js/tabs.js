@@ -10,6 +10,7 @@ const panels = {
 const BLOG_SLUGS = {
   shadow_ai:                  "article-wrap-shadow",
   skills:                     "article-wrap-skills",
+  skill_isolation:            "article-wrap-skill-isolation",
   prompt_injection_resistance: "article-wrap-injection",
   toxicity_judge_sensitivity:  "article-wrap-toxicity",
 };

@@ -635,6 +635,35 @@
                 </div>
               </article>
 
+              <!-- Card: AI Skill Isolation — Part 2 -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: Don't Trust the Skill — Contain It: A Practical Guide to Evaluating Unknown Claude Skills" onclick="window.showBlogArticle('article-wrap-skill-isolation')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-skill-isolation')}">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Supply Chain &middot; Part 2</span>
+                    <span class="text-xs text-emerald-50/50">Aug 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">Don&rsquo;t Trust the Skill &mdash; Contain It: A Practical Guide to Evaluating Unknown Claude Skills</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">Part one covered the numbers: 13.4% of community skills contain critical flaws. This piece walks through actually doing it &mdash; a real evaluation of a Claude skills repo inside a network-isolated devcontainer, five build failures documented, firewall packet counters as ground truth, and what the 2026 sandbox-escape research changes about what &ldquo;isolated&rdquo; needs to mean.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Skill Isolation</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Devcontainer</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">AI Security</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Supply Chain</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>Network-isolated devcontainer setup</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>Firewall counters, not README, as proof</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>IPC bridge escape risk explained</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
               <!-- Card: Prompt Injection Resistance Ranking -->
               <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Prompt Injection Resistance Ranking: What 3,047 Attacks Across 8 LLMs Reveal" onclick="window.showBlogArticle('article-wrap-injection')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-injection')}">
                 <div class="flex-1 min-w-0">
@@ -1820,6 +1849,236 @@ Render the YouTube summary cleanly. Do not print verbose logs.</pre>
 
             </article>
             </div><!-- /article-wrap-toxicity -->
+
+
+            <div id="article-wrap-skill-isolation" class="hidden">
+            <!-- ── Research: Don't Trust the Skill — Contain It ── -->
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Security Research &middot; Part 2</p>
+                <h3 class="text-xl font-black uppercase text-white">AI Skill Isolation &amp; Evaluation</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-skill-isolation', 'ztai-skill-isolation-evaluation.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this article as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-skill-isolation" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Supply Chain &middot; Part 2</span>
+                  <span class="text-xs text-emerald-50/50">August 2026 &middot; ZTAI.AI Security Research</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  Don&rsquo;t Trust the Skill &mdash; Contain It: A Practical Guide to Evaluating Unknown Claude Skills
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <!-- Executive Summary -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">Executive Summary</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p><span onclick="window.showBlogArticle('article-wrap-skills')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-skills')}" class="text-neon underline underline-offset-2 cursor-pointer hover:text-cyber transition-colors focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">Part one</span> of this series documented the numbers: 13.4% of community-published Claude skills contain critical security flaws. This piece documents what evaluating a specific skill actually looks like &mdash; building a network-isolated devcontainer, running the skill under firewall monitoring with packet counters as the ground truth, and documenting five build failures before the setup worked correctly.</p>
+                  <p>The evaluated skill &mdash; the <span class="text-cyber font-bold">ai-security</span> module inside <span class="text-cyber font-bold">alirezarezvani/claude-skills</span> &mdash; passed: stdlib-only imports, real MITRE ATLAS technique mappings, an explicit <span class="text-cyber">--authorized</span> gate before any invasive testing, and zero network activity confirmed by firewall counters.</p>
+                  <p>The 2026 Pillar Security sandbox-escape research adds a critical constraint: isolating what a skill can <em>reach</em> only closes half the gap. The failure mode in every disclosed vulnerability wasn&apos;t a container escape &mdash; it was a file or credential written inside the sandbox surviving to be trusted by something un-sandboxed later.</p>
+                  <p class="text-cyber font-bold">Bottom line: Isolation is the evaluation method, not the README. Firewall counters &mdash; not documentation &mdash; are what confirm nothing phoned home.</p>
+                </div>
+              </div>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Why This One Specifically</h3>
+
+                <p><button onclick="window.showBlogArticle('article-wrap-skills')" class="underline underline-offset-2 text-neon/70 hover:text-neon transition-colors cursor-pointer bg-transparent border-0 p-0 font-mono text-sm">Part one</button> was about awareness &mdash; the general case for not installing community skills on reflex. This piece needed a real skill to evaluate, and the choice wasn&apos;t arbitrary.</p>
+
+                <p><span class="text-cyber font-bold">alirezarezvani/claude-skills</span> caught my attention because its stated capabilities aren&apos;t generic productivity tooling &mdash; it claims to help with AI pentesting: prompt injection testing, jailbreak probing, adversarial evaluation of LLM behavior. That&apos;s directly in ZTAI&apos;s lane. If it does what it claims and holds up under scrutiny, it&apos;s a candidate for the toolbox. If it doesn&apos;t, that&apos;s exactly the kind of skill where installing it carelessly would be worst-case &mdash; a tool meant to attack AI systems, sitting on a machine with real credentials, of unverified provenance.</p>
+
+                <p>That combination &mdash; genuinely useful <em>if</em> legitimate, genuinely risky <em>if</em> not &mdash; is why this one got the full isolated evaluation instead of a five-minute skim of the README.</p>
+
+                <p><span class="font-bold text-white">One scope note:</span> this piece is not an audit of that tool, and it doesn&apos;t render a verdict on the whole repository. What follows is what actually happened evaluating one specific skill inside it &mdash; the process is the point, not a rating of everything the repo contains.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">The Problem With &ldquo;Just Read the Code First&rdquo;</h3>
+
+                <p>The standard advice for vetting an unfamiliar package is &ldquo;read the source before you install it.&rdquo; Still necessary, not sufficient for AI skills specifically: a skill&apos;s <span class="text-cyber">SKILL.md</span> and any scripts it ships get read by an agent with real permissions, not executed once by a script runner. If it does something unexpected &mdash; reaches a domain you didn&apos;t anticipate, writes somewhere outside its own directory, tries to read a credential file &mdash; you want to find that out in an environment where the answer to &ldquo;what could it reach?&rdquo; is &ldquo;nothing that matters.&rdquo;</p>
+
+                <p>Isolation isn&apos;t optional due diligence here. It&apos;s the actual evaluation method.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Building the Container</h3>
+
+                <p>Three files, adapted from Anthropic&apos;s own reference devcontainer, tightened for a one-off adversarial eval rather than daily development. This is the version that actually works &mdash; every line below survived contact with a real build.</p>
+
+                <div class="my-5 rounded-lg overflow-hidden" style="border:1px solid rgba(0,229,255,0.35);">
+                  <div class="flex items-center gap-2 px-4 py-2.5" style="border-bottom:1px solid rgba(0,229,255,0.2);background:rgba(0,229,255,0.07);">
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(239,68,68,.82)"></span>
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(253,224,71,.82)"></span>
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(57,255,20,.82)"></span>
+                    <span class="ml-2 text-xs uppercase tracking-[0.22em] text-cyber">.devcontainer/devcontainer.json</span>
+                  </div>
+                  <pre class="overflow-x-auto p-4 text-xs leading-6 text-emerald-100" style="background:rgba(0,0,0,0.88);">{
+  "name": "untrusted-skill-eval",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "DISABLE_AUTOUPDATER": "1"
+  },
+  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "postCreateCommand": "sudo bash .devcontainer/init-firewall.sh"
+}</pre>
+                </div>
+
+                <p>No persisted <span class="text-cyber">~/.claude</span> volume &mdash; authentication doesn&apos;t survive a rebuild, on purpose. Sign in with a short-lived or scoped credential each time, so there&apos;s nothing long-lived inside the container worth stealing.</p>
+
+                <div class="my-5 rounded-lg overflow-hidden" style="border:1px solid rgba(0,229,255,0.35);">
+                  <div class="flex items-center gap-2 px-4 py-2.5" style="border-bottom:1px solid rgba(0,229,255,0.2);background:rgba(0,229,255,0.07);">
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(239,68,68,.82)"></span>
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(253,224,71,.82)"></span>
+                    <span class="h-2.5 w-2.5 rounded-full" style="background:rgba(57,255,20,.82)"></span>
+                    <span class="ml-2 text-xs uppercase tracking-[0.22em] text-cyber">.devcontainer/Dockerfile</span>
+                  </div>
+                  <pre class="overflow-x-auto p-4 text-xs leading-6 text-emerald-100" style="background:rgba(0,0,0,0.88);">FROM mcr.microsoft.com/devcontainers/base:ubuntu
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+    iptables ipset jq dnsutils python3 \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+COPY init-firewall.sh /usr/local/bin/init-firewall.sh
+RUN chmod +x /usr/local/bin/init-firewall.sh
+
+USER vscode
+WORKDIR /workspace</pre>
+                </div>
+
+                <p>The <span class="text-cyber">init-firewall.sh</span> script sets up default-deny egress with an allowlist limited to Anthropic&apos;s domains and GitHub&apos;s. Everything else gets silently dropped &mdash; and a dropped packet on a rule you weren&apos;t expecting to fire is itself a finding.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">What Broke, Building This for Real</h3>
+
+                <p>None of the above worked on the first try. The failures are worth walking through &mdash; each one is a small lesson about how these environments actually fail.</p>
+
+                <ul class="space-y-4 ml-2 mt-4">
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-400 mt-1 shrink-0">›</span>
+                    <span><span class="font-bold text-white"><span class="text-cyber">init-firewall.sh</span> needs <span class="text-cyber">dig</span>, and the base image doesn&apos;t ship it.</span> The script resolves the allowlisted domains to IPs before locking the firewall down. <span class="text-cyber">dnsutils</span> provides <span class="text-cyber">dig</span>; it wasn&apos;t in the original package list. Silent, immediate failure the moment the script ran.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-400 mt-1 shrink-0">›</span>
+                    <span><span class="font-bold text-white">The container wouldn&apos;t start:</span> <span class="text-red-400">unable to find user node: no matching entries in passwd file.</span> Setting <span class="text-cyber">remoteUser: "node"</span> copies a pattern from Anthropic&apos;s own example without checking that it applies to this base image. <span class="text-cyber">mcr.microsoft.com/devcontainers/base:ubuntu</span> creates a <span class="text-cyber">vscode</span> user, not <span class="text-cyber">node</span>. The build succeeded anyway, because nothing in the Dockerfile ever ran a command as that user to expose the problem &mdash; it only surfaced when the container actually tried to start a shell.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-400 mt-1 shrink-0">›</span>
+                    <span><span class="font-bold text-white">The Claude Code devcontainer feature failed installing itself, buried under a generic exit-code-1.</span> The feature tries to install Node.js when the base image doesn&apos;t provide it, and that self-install can fail in ways the outer error message doesn&apos;t explain &mdash; Anthropic&apos;s own docs flag this as a known gap. Fix: add the official Node feature ahead of it in the features list, so Node&apos;s already there and the Claude Code feature never has to improvise.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-400 mt-1 shrink-0">›</span>
+                    <span><span class="font-bold text-white">A plain <span class="text-cyber">docker run</span> &mdash; no VS Code, no bind mount &mdash; couldn&apos;t find the firewall script at all.</span> It had only ever worked because VS Code&apos;s bind-mounted workspace put it on disk where <span class="text-cyber">postCreateCommand</span> expected it. A bare <span class="text-cyber">docker run</span> has no such mount. Bind-mounting the project directory to fix this would have quietly undermined the entire point &mdash; anything the evaluated skill wrote would land back on the real filesystem. Fixed by baking the script into the image at build time (<span class="text-cyber">COPY init-firewall.sh /usr/local/bin/</span>) instead.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-red-400 mt-1 shrink-0">›</span>
+                    <span><span class="font-bold text-white"><span class="text-cyber">python3: command not found</span>, mid-evaluation.</span> The Ubuntu devcontainer base doesn&apos;t include Python, and most skills worth evaluating ship Python scripts. Added explicitly rather than discovered missing at the worst moment.</span>
+                  </li>
+                </ul>
+
+                <p>Every one of these is now fixed in the Dockerfile above. None of them were exotic &mdash; they&apos;re the ordinary friction of assuming a reference config transfers cleanly to a different base image. It didn&apos;t build clean the first time. It built clean the fifth time, after checking each failure against what actually happened rather than the first plausible guess.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">The Step Most Guides Skip: How You Connect Matters</h3>
+
+                <p>VS Code Desktop&apos;s Dev Containers extension bridges an IPC socket into the container (<span class="text-cyber">VSCODE_IPC_HOOK_CLI</span>) and re-injects host-facing environment variables &mdash; <span class="text-cyber">GIT_ASKPASS</span>, <span class="text-cyber">BROWSER</span>, and others &mdash; so the integrated terminal can talk back to the editor. That bridge means a process running <em>inside</em> the container can invoke VS Code&apos;s own TerminalService API, which executes on your <em>host</em>. Filesystem isolation and a locked-down firewall don&apos;t close this path &mdash; it isn&apos;t a filesystem or network channel, it&apos;s an IPC socket the editor itself installs.</p>
+
+                <p>Fine for daily development. Defeats the point for evaluating something you specifically don&apos;t trust yet. So the actual evaluation skips the bridge entirely:</p>
+
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90 my-5">docker build -t skill-eval .devcontainer
+docker run --rm -it --cap-add=NET_ADMIN --cap-add=NET_RAW skill-eval bash
+sudo bash /usr/local/bin/init-firewall.sh
+git clone https://github.com/alirezarezvani/claude-skills</pre>
+
+                <p>No bind mount on that <span class="text-cyber">docker run</span>. The container gets its own throwaway filesystem; whatever the skill under evaluation writes has no path back to the host disk, because there isn&apos;t one.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">The Real Evaluation</h3>
+
+                <p>The clone landed, and the first surprise was scale: this isn&apos;t one skill. <span class="text-cyber">find . -iname "SKILL.md" | wc -l</span> came back <span class="font-bold text-white">798</span>. A <span class="text-cyber">STORE.md</span> at the repo root explained why &mdash; this is a commercial operation: five paid bundles on Stan Store and Gumroad ranging $39&ndash;$99, an 86-skill &ldquo;Complete Collection&rdquo; for $99, with the public GitHub repo positioned as the free-tier funnel. &ldquo;Solo, unverified provenance&rdquo; is still accurate &mdash; nothing here has been independently audited &mdash; but &ldquo;casual side project&rdquo; isn&apos;t. This is a maintained product with commercial incentive behind it, which cuts both ways: more reason not to ship something obviously malicious, and a much larger surface than a five-minute skim can cover.</p>
+
+                <p>Locating the actual security tooling meant grepping across all 798 files for injection/jailbreak/pentest language, which surfaced a cluster under <span class="text-cyber">engineering-team/skills/</span>: <span class="text-cyber">ai-security</span>, <span class="text-cyber">red-team</span>, <span class="text-cyber">security-pen-testing</span>, <span class="text-cyber">threat-detection</span>, <span class="text-cyber">adversarial-reviewer</span>, and others. <span class="text-cyber">ai-security</span> was the direct match.</p>
+
+                <p><span class="text-cyber">SKILL.md</span> described a <span class="text-cyber">ai_threat_scanner.py</span> tool: static regex-based detection of prompt injection, jailbreak, and tool-abuse signatures, mapped to real MITRE ATLAS technique IDs (<span class="font-bold text-white">AML.T0051</span>, <span class="font-bold text-white">AML.T0051.001</span>, <span class="font-bold text-white">AML.T0056</span>, and others &mdash; verified against the actual ATLAS taxonomy, not just plausible-looking labels), with an explicit <span class="text-cyber">--authorized</span> gate required before any invasive (gray-box/white-box) testing mode. That authorization requirement matters &mdash; it mirrors a rule I already hold to before scanning anything I don&apos;t own.</p>
+
+                <p>Documentation isn&apos;t behavior, though, so the script itself came next. 564 lines. A grep for the actual danger signs &mdash; <span class="text-cyber">subprocess</span>, <span class="text-cyber">socket</span>, <span class="text-cyber">requests</span>, <span class="text-cyber">eval</span>, <span class="text-cyber">os.system</span>, path traversal &mdash; returned exactly one hit, and it was a false positive: the English phrase &ldquo;refuse prompt-reveal requests&rdquo; inside a recommendation string, not an import of Python&apos;s <span class="text-cyber">requests</span> library. Confirmed by checking the real import block: <span class="text-cyber">argparse</span>, <span class="text-cyber">json</span>, <span class="text-cyber">re</span>, <span class="text-cyber">sys</span>. Standard library only. No network, no subprocess, nothing that reaches outside the interpreter.</p>
+
+                <p>Then the behavioral test &mdash; captured the firewall&apos;s packet counters before running anything, ran the scanner against its own built-in seed prompts, captured the counters again:</p>
+
+                <pre class="overflow-x-auto rounded-md border border-neon/30 bg-black/70 p-4 text-xs leading-6 text-neon/90 my-5">sudo iptables -L -v -n   # before: 1 packet / 60 bytes on the allowlist rule
+
+python3 scripts/ai_threat_scanner.py --target-type llm --access-level black-box --json
+
+sudo iptables -L -v -n   # after: identical &mdash; 1 packet / 60 bytes, unchanged</pre>
+
+                <p>Unchanged. The scanner produced a full JSON report &mdash; injection score, ATLAS-mapped findings, risk-scored recommendations &mdash; against ten hardcoded example prompts, and touched the network for exactly nothing. Static review said &ldquo;this should be self-contained&rdquo;; the firewall counters said it actually was.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Why Bother With All This &mdash; The Short Version of the 2026 Sandbox-Escape Research</h3>
+
+                <p>In July 2026, Pillar Security&apos;s &ldquo;Week of Sandbox Escapes&rdquo; research, later summarized in a CSA research note, disclosed seven vulnerabilities across four AI coding agents &mdash; Cursor (4 findings), Codex CLI, Gemini CLI, and Google Antigravity &mdash; that let content processed inside an agent&apos;s sandbox eventually execute with full user privileges outside it.</p>
+
+                <p>The OpenAI Codex CLI case is the cleanest illustration. Its command allowlist trusted <span class="text-cyber">git show</span> as safe because the command name looked read-only &mdash; but <span class="text-cyber">git show --output=&lt;path&gt;</span> writes its content to a file, turning a &ldquo;safe&rdquo; read command into an arbitrary file-write primitive. A prompt-injected payload used that gap to plant a malicious entry in <span class="text-cyber">.git/config</span>. Nothing was violated in that moment &mdash; the write happened inside the sandbox, following every rule the sandbox enforced. The exploit fired later, when the actual developer ran an ordinary <span class="text-cyber">git diff</span>, and git consulted the config file it had no reason to distrust.</p>
+
+                <p>CVSS 8.6. Fixed in Codex CLI v0.95.0. Structurally identical to three of Cursor&apos;s four findings and both of Antigravity&apos;s.</p>
+
+                <p><span class="font-bold text-white">The pattern across all seven: the sandbox boundary held in every case.</span> Nobody broke out of a container. The failure was always downstream &mdash; a file, a socket, or a shared credential that survived the sandboxed session and got trusted by something un-sandboxed later, with no way to check where it came from.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">The Stand</h3>
+
+                <p>A sandbox that isolates a skill&apos;s filesystem and network access is necessary and still not sufficient, because the actual failure mode in every 2026 disclosure wasn&apos;t the box breaking &mdash; it was something inside the box surviving long enough to be trusted by whatever came next. Isolating what a skill can <em>reach</em> only closes half the gap. The other half is making sure that if the sandbox ever does hand something to the outside world &mdash; a config file, a cached token, a written artifact &mdash; there&apos;s nothing valuable in it to hand off in the first place.</p>
+
+                <p>That&apos;s why this setup doesn&apos;t just wall the skill off. It makes sure there&apos;s no real credential inside the wall to begin with, and it doesn&apos;t stop at documentation &mdash; the firewall counters, not the README, are what actually confirmed nothing phoned home.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">The Verdict, Scoped</h3>
+
+                <p><span class="text-cyber">engineering-team/skills/ai-security</span> checked out clean: sound methodology, real ATLAS mapping, an authorization gate that matches good practice, stdlib-only code, and behavioral confirmation of zero network activity during execution. That&apos;s a genuinely clean result for this one skill.</p>
+
+                <p>It&apos;s one skill out of 798 in a commercial bundle. It says nothing about <span class="text-cyber">red-team</span>, <span class="text-cyber">security-pen-testing</span>, or anything else in the repository without running each one through the same process. Which is the actual point of writing this up &mdash; not &ldquo;this repo is safe,&rdquo; but &ldquo;here&apos;s what checking actually looks like, including the parts that break.&rdquo;</p>
+
+                <p class="text-emerald-50/55 italic">Companion files &mdash; devcontainer.json, Dockerfile, init-firewall.sh, and a README with the full troubleshooting log &mdash; are in the <a href="https://github.com/benedictkwok/skill-eval-devcontainer" target="_blank" rel="noopener noreferrer" class="font-bold not-italic text-neon underline underline-offset-2 hover:text-cyber transition-colors">skill-eval-devcontainer</a> repo.</p>
+
+                <footer class="border-t border-neon/20 pt-6 mt-6">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben leads AI security assessments for enterprise clients and is developing automated governance tools for enterprises scaling AI safely.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40">benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 border-t border-neon/10 pt-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/40 mb-2">Primary Sources</p>
+                    <ul class="space-y-1 text-xs text-emerald-50/50">
+                      <li>&rarr; <a href="https://github.com/alirezarezvani/claude-skills" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">alirezarezvani/claude-skills &mdash; GitHub repository (798 skills, commercial bundle)</a></li>
+                      <li>&rarr; <a href="https://atlas.mitre.org/techniques/AML.T0051" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">MITRE ATLAS &mdash; AML.T0051 (Prompt Injection)</a></li>
+                      <li>&rarr; <a href="https://atlas.mitre.org/techniques/AML.T0056" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">MITRE ATLAS &mdash; AML.T0056</a></li>
+                      <li>&rarr; Pillar Security &mdash; &ldquo;Week of Sandbox Escapes&rdquo; (July 2026), summarized in CSA research note</li>
+                      <li>&rarr; OpenAI Codex CLI v0.95.0 &mdash; CVSS 8.6 patch (git show --output path-write primitive)</li>
+                      <li>&rarr; <a href="https://github.com/anthropics/devcontainer-features" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Anthropic devcontainer-features &mdash; claude-code:1.0</a></li>
+                      <li>&rarr; <a href="https://github.com/benedictkwok/skill-eval-devcontainer" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">benedictkwok/skill-eval-devcontainer &mdash; companion files (devcontainer.json, Dockerfile, init-firewall.sh, README)</a></li>
+                    </ul>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published August 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+            </div><!-- /article-wrap-skill-isolation -->
 
           </div>
         </section>

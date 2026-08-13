@@ -14,6 +14,11 @@ const ARTICLES = {
     description:
       "Temperature alone doubled attack success rate. A locally-run open-weight model beat GPT-5 on resistance. The simplest attack worked on every model. 3,047 validated runs across 8 LLMs.",
   },
+  skill_isolation: {
+    title: "Don't Trust the Skill — Contain It: A Practical Guide to Evaluating Unknown Claude Skills | ZTAI.AI",
+    description:
+      "Part two of the AI supply chain security series. A real evaluation of alirezarezvani/claude-skills inside a network-isolated devcontainer — five build failures documented, IPC bridge escape risk explained, firewall counters as ground truth.",
+  },
   toxicity_judge_sensitivity: {
     title: "The Attacks That Don't Look Like Attacks: What 1,500+ Toxicity Evaluations Reveal | ZTAI.AI",
     description:
