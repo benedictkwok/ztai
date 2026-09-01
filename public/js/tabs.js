@@ -11,6 +11,7 @@ const BLOG_SLUGS = {
   shadow_ai:                  "article-wrap-shadow",
   skills:                     "article-wrap-skills",
   skill_isolation:            "article-wrap-skill-isolation",
+  instruction_manipulation:   "article-wrap-instruction-manipulation",
   prompt_injection_resistance: "article-wrap-injection",
   toxicity_judge_sensitivity:  "article-wrap-toxicity",
 };
