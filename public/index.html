@@ -693,6 +693,35 @@
                 </div>
               </article>
 
+              <!-- Card: MCP OAuth Incident -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: When Your MCP Server's OAuth Races Itself" onclick="window.showBlogArticle('article-wrap-mcp-oauth-incident')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-mcp-oauth-incident')}">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Supply Chain Risk</span>
+                    <span class="text-xs text-emerald-50/50">Sep 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">When Your MCP Server&rsquo;s OAuth Races Itself: A Real Incident, a False Positive, and a Leaked Secret</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">A first-person incident report from our own environment, N=1, dated and verifiable. Diagnosing why a self-hosted Google Workspace MCP server broke surfaced three unrelated findings: a boot-time OAuth port race matching upstream issue #754, an automated scanner that returned &ldquo;DANGEROUS 28/100&rdquo; against a completely unrelated artifact, and a live OAuth client secret sitting in a config screenshot.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">MCP</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">OAuth</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Incident Report</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Supply Chain</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>Port 8000 race matches upstream #754</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>Scanner scored the wrong artifact</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>OAuth secret found in a screenshot</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
               <!-- Card: Prompt Injection Resistance Ranking -->
               <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Prompt Injection Resistance Ranking: What 3,047 Attacks Across 8 LLMs Reveal" onclick="window.showBlogArticle('article-wrap-injection')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-injection')}">
                 <div class="flex-1 min-w-0">
@@ -2334,6 +2363,192 @@ SSD-4 &ndash; Narrative / gradual deception
             </article>
             </div><!-- /article-wrap-instruction-manipulation -->
 
+            <div id="article-wrap-mcp-oauth-incident" class="hidden">
+            <!-- ── Incident Report: MCP OAuth Race ── -->
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Incident Report &middot; September 2026</p>
+                <h3 class="text-xl font-black uppercase text-white">MCP OAuth Race, False Positive &amp; Leaked Secret</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-mcp-oauth-incident', 'ztai-mcp-oauth-incident.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this incident report as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-mcp-oauth-incident" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border border-red-500/50 bg-red-500/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-red-400">Supply Chain Risk</span>
+                  <span class="text-xs text-emerald-50/50">September 2026 &middot; ZTAI.AI Incident Report</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  When Your MCP Server&rsquo;s OAuth Races Itself: A Real Incident, a False Positive, and a Leaked Secret
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <!-- Executive Summary -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">Executive Summary</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p>Most of what we publish is structured research &mdash; N=5 or N=10 runs, stated configs, controlled attack banks. This piece is different: a first-person incident report from our own environment, documented as it happened rather than constructed as a test. We ran a third-party, self-hosted Model Context Protocol (MCP) server for Google Workspace access (a community clone of a popular open-source project) alongside Hermes and Claude Code sessions. It broke. Diagnosing why it broke surfaced three separate, unrelated findings worth publishing on their own.</p>
+                  <p>This is a single incident, not a statistical study &mdash; that limitation is stated plainly rather than dressed up. Its value is different from our usual research: it is a concrete, dated, independently-verifiable example of exactly the pattern recent academic literature describes at scale (rapid, unreviewed MCP deployment cycles), caught and diagnosed in a real working environment rather than measured from the outside.</p>
+                  <ol class="space-y-3 ml-1">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">1.</span><span><span class="text-cyber font-bold">The server&rsquo;s own OAuth callback server raced itself on boot.</span> A hardcoded local port was claimed twice by two concurrent connection pools, producing a silent, hard-to-diagnose &ldquo;Connection closed&rdquo; failure with no indication of the actual cause.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">2.</span><span><span class="text-cyber font-bold">An automated security scanner returned a &ldquo;DANGEROUS 28/100&rdquo; verdict &mdash; against a completely unrelated artifact.</span> The tool&rsquo;s own report text admitted it had evaluated a failed, unrelated clone, not the server actually in use. Caught before it was acted on, not after.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">3.</span><span><span class="text-cyber font-bold">A live Google OAuth client secret was sitting in plaintext</span> in a configuration screenshot, discovered during cleanup and revoked directly in Google Cloud Console.</span></li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Provenance &amp; Verification</h3>
+
+                <p><span class="font-bold text-white">Server:</span> a self-hosted clone of <a href="https://github.com/taylorwilsdon/google_workspace_mcp" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors"><span class="text-cyber">taylorwilsdon/google_workspace_mcp</span></a> (a community MCP server providing Gmail/Calendar/Drive tool access), cloned into a local project directory roughly one year before the incident and never updated in that time.</p>
+
+                <p><span class="font-bold text-white">Why this server, and why it sat untouched for a year:</span> it was installed on August 26, 2025 &mdash; during Claude Desktop&rsquo;s early setup. At the time, Anthropic&rsquo;s own Google Workspace connector existed only as a narrow, read-only &ldquo;Research&rdquo; beta feature (launched April 2025, gated by admin approval on paid plans) &mdash; not the general-purpose, full read/write Gmail/Calendar/Drive plugin that shipped later. This community MCP server was found via a general web search and was, at the time, a reasonable way to get real Gmail/Calendar/Drive tool access. It was configured against a personal, non-business Gmail account, not any ZTAI or client-facing system. Once installed and working, it had no reason to be revisited &mdash; until it broke, over a year later. That gap between &ldquo;install once&rdquo; and &ldquo;next look a year later&rdquo; is not a personal lapse specific to this case; it&rsquo;s the exact deployment pattern the Governance Gap callout in Finding 1 describes, and this incident is a first-person instance of it, not a hypothetical one.</p>
+
+                <p class="font-bold text-white">Timeline, dated and verifiable:</p>
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0,229,255,0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit; min-width: 560px;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1); width: 22%;">Date</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.6);">Event</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">April 15, 2025</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Anthropic launches a narrow, read-only Google Workspace &ldquo;Research&rdquo; beta &mdash; not general Gmail/Calendar/Drive tool access, gated by admin approval on paid plans</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">August 26, 2025</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">This MCP server installed &mdash; the only realistic way at the time to get real, general-purpose Gmail/Calendar/Drive tool access in Claude Desktop, found via a general web search. No dedicated MCP security scanner existed yet to run against it.</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">February 13, 2026</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Oathe (the scanner used in Finding 2) founded &mdash; its GitHub organization and first tooling repos created this month, nearly six months after this server was installed</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">February 24, 2026</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Anthropic&rsquo;s first-party Google Workspace connector (Gmail, Calendar, Drive &mdash; full read/write) reaches general availability, six months after this server was installed</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">September 2026</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">This incident: the server&rsquo;s OAuth callback races itself, the port-collision bug is diagnosed, an Oathe scan is finally run (see Finding 2), and the setup is retired in favor of Anthropic&rsquo;s now-available first-party connector</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>At the point of installation, this was the only practical option for the intended use case &mdash; not a shortcut taken in place of a first-party alternative that already existed. The first-party alternative arrived six months later, and the switch happened as soon as it was available and this incident forced a second look at the setup.</p>
+
+                <p><span class="font-bold text-white">What wasn&rsquo;t done, and should have been:</span> no security scan or code review was run on this server before it was installed and connected to a real Google account in August 2025 &mdash; just a clone from a search result, straight into use. Worth being precise here rather than overstating the lapse: Oathe itself didn&rsquo;t exist yet at install time &mdash; its GitHub organization was created February 13, 2026, nearly six months later &mdash; so there was no equivalent scan available to skip in August 2025. The real gap is the year after that: once tools like this existed, the setup was never revisited to check it against them until this incident forced a second look. That&rsquo;s still a common mistake, and still avoidable &mdash; &ldquo;install once, never re-check once better tooling exists&rdquo; is its own failure mode, distinct from and arguably more common than &ldquo;skip an available check.&rdquo; This is the first specific thing this practice is doing differently going forward: any MCP server, new or already in use, gets reviewed against current tooling on a real cadence, not only when something breaks.</p>
+
+                <p><span class="font-bold text-white">Nature of this piece:</span> an incident report, not a controlled experiment. N=1. No attack bank, no repeated trials &mdash; the value here is that every claim traces to a concrete, checkable artifact: a process list, an MCP server log, and a public upstream GitHub issue, not a synthetic test we constructed to make a point.</p>
+
+                <p><span class="font-bold text-white">Independent verification:</span> every external claim below was checked live against the upstream repository at the time of writing, not cited from memory or from our own internal notes alone. The referenced GitHub issue (<a href="https://github.com/taylorwilsdon/google_workspace_mcp/issues/754" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">#754</a>) was confirmed open-source, real, and currently closed with a description matching the mechanism described here; the repository itself was confirmed active (3,145 stars, pushed within the same week this piece was written).</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Finding 1 &mdash; The OAuth Callback Server Raced Itself</h3>
+
+                <p>The server began failing to connect for tool calls issued from concurrent sessions, surfacing only as a generic <span class="text-cyber">&ldquo;Couldn&rsquo;t start&hellip; Connection closed&rdquo;</span> error &mdash; no indication in the visible error of what had actually gone wrong.</p>
+
+                <p>Root cause, confirmed directly against the server&rsquo;s own MCP log: the server starts a local OAuth callback listener on a hardcoded port (<span class="text-cyber">localhost:8000</span>) at boot. When a second, independent connection pool later triggered its own OAuth flow, it attempted to bind the same port a second time while the first connection already held it &mdash; a race condition in the server&rsquo;s own startup logic, not a network or credentials problem.</p>
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0,229,255,0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit; min-width: 560px;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1); width: 32%;">Check</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.6);">Result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">Process list (<span class="text-cyber">ps aux</span>)</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Two instances of the server genuinely running concurrently &mdash; exactly matching the diagnosed port race, not a hypothesis</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.75); vertical-align: top;">Upstream issue tracker</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Matches a real, closed issue (<a href="https://github.com/taylorwilsdon/google_workspace_mcp/issues/754" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">#754</a>) on the upstream project describing the identical mechanism: an eagerly-started OAuth server at boot, re-triggered by a later auth flow, whose running-instance check fails to detect the existing listener</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="rounded-lg border border-red-500/30 bg-red-500/5 p-5 my-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-3">The Governance Gap</p>
+                  <p class="text-sm leading-7 text-emerald-50/80">This class of bug is specific to MCP&rsquo;s deployment pattern: a locally-run process managing its own OAuth surface, often installed by an individual developer rather than reviewed as production infrastructure. The failure mode here was a stability bug, not an exploit &mdash; but the same architecture (an unreviewed local process holding live OAuth credentials) is exactly the shape of risk that scales badly. A one-person clone that&rsquo;s never updated in a year, run alongside a real credential, is not a hypothetical edge case; it&rsquo;s the default way most people actually deploy MCP servers today.</p>
+                </div>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Finding 2 &mdash; An Automated Security Scanner Flagged the Wrong Artifact Entirely</h3>
+
+                <p>Before trusting the server, we ran it through an automated AI-security scanning tool (<a href="https://github.com/oathe-ai" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">Oathe</a>). The result: a <span class="text-red-400 font-bold">&ldquo;DANGEROUS 28/100&rdquo;</span> verdict &mdash; a serious, actionable-sounding score.</p>
+
+                <p>It was wrong, and demonstrably so on inspection: the scanner&rsquo;s own report text self-admitted it had evaluated a different, unrelated artifact &mdash; a failed clone, not the server actually in use. The 28/100 score was real output from a real tool run, attached to nothing relevant to the actual deployment.</p>
+
+                <div class="rounded-lg border border-red-500/30 bg-red-500/5 p-5 my-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-3">Why This Matters More Than the Number Itself</p>
+                  <p class="text-sm leading-7 text-emerald-50/80">A &ldquo;DANGEROUS 28/100&rdquo; verdict is the kind of output that gets copy-pasted into a ticket, a risk register, or a go/no-go decision without anyone re-deriving it by hand &mdash; that&rsquo;s the entire point of running an automated scanner instead of a manual review. Here, the number was not just imprecise; it was attached to the wrong subject entirely, and the report explained why, if anyone read past the headline score.</p>
+                </div>
+
+                <div class="rounded-lg border border-red-500/30 bg-red-500/5 p-5 my-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-3">The Uncomfortable Implication</p>
+                  <p class="text-sm leading-7 text-emerald-50/80">Automated AI security tooling &mdash; including the kind ZTAI itself builds and recommends &mdash; is not self-verifying. A scanner that can silently evaluate the wrong artifact and still emit a confident, specific-looking risk score is a real, current failure mode, not a hypothetical one. Any automated verdict feeding a governance decision needs a named, checkable subject &mdash; the exact artifact scanned, confirmed to be the one actually in use &mdash; or it should not be trusted at face value, the same standard this piece holds its own claims to.</p>
+                </div>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Finding 3 &mdash; A Live OAuth Client Secret Was Sitting in Plaintext</h3>
+
+                <p>During cleanup, a <span class="text-cyber">GOOGLE_OAUTH_CLIENT_SECRET</span> was found exposed in plaintext inside a configuration screenshot &mdash; the kind of artifact that gets shared, saved, or referenced without a second thought precisely because a screenshot doesn&rsquo;t read as a credentials file.</p>
+
+                <p>Resolution: the exposed secret was deleted directly from Google Cloud Console, revoking it at the source rather than simply removing the screenshot. Both live server processes were also killed and the local MCP configuration entry removed.</p>
+
+                <div class="rounded-lg border border-red-500/30 bg-red-500/5 p-5 my-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-3">Credential Hygiene Note</p>
+                  <p class="text-sm leading-7 text-emerald-50/80">OAuth client secrets for a self-hosted MCP server carry the same sensitivity as any other API credential, but rarely get treated with the same discipline &mdash; they don&rsquo;t look like a typical secret when they surface in a config screen or troubleshooting screenshot. Revocation at the provider (not just deleting the artifact that exposed it) is the only way to actually close the exposure.</p>
+                </div>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Resolution</h3>
+
+                <p>Rather than patch the port-collision bug in a year-old, unmaintained local clone, we switched to Anthropic&rsquo;s first-party Google Workspace connectors &mdash; OAuth handled directly by Anthropic, no locally-managed process or port to defend. This is the underlying recommendation of this whole piece in one decision: prefer a maintained, first-party integration over a self-hosted community clone wherever one exists, rather than debugging and re-securing infrastructure that a vendor already operates and patches for you.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Recommendations for Anyone Running Self-Hosted MCP Servers</h3>
+
+                <ol class="space-y-4 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">Revisit third-party MCP servers against current tooling on a real cadence, not just at install time.</span> New scanners and first-party alternatives appear constantly &mdash; a server that had nothing to check it against on day one may have several options a year later. Waiting for an incident to force that check, as happened here, is the more basic version of every recommendation below.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Prefer a maintained first-party integration over a self-hosted clone</span> whenever one exists. A locally-run OAuth-holding process is infrastructure you now own and must patch &mdash; most individual users and small teams won&rsquo;t.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">Check whether a local clone has been updated recently</span> before trusting it with live credentials. A year-old, never-updated clone of an actively maintained upstream project is a specific, checkable red flag (<span class="text-cyber">git log</span>/<span class="text-cyber">git reflog</span>, not a guess).</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">Never trust an automated security verdict without confirming its subject.</span> A specific-looking score is not evidence the tool evaluated the right artifact &mdash; read past the headline number to what was actually scanned.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">5.</span><span><span class="font-bold text-white">Treat OAuth client secrets with the same discipline as any other credential,</span> including when they appear somewhere that doesn&rsquo;t look like a secrets file &mdash; a config screenshot, a troubleshooting message, a shared terminal log.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">6.</span><span><span class="font-bold text-white">Revoke exposed credentials at the provider,</span> not just delete the artifact that exposed them. Deleting a screenshot doesn&rsquo;t invalidate the secret it showed.</span></li>
+                </ol>
+
+                <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mt-8">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">How ZTAI Can Help</p>
+                  <div class="space-y-3 text-sm text-emerald-50/80">
+                    <p>This incident is a single, first-person data point &mdash; not a claim about MCP servers broadly. But it is a concrete, dated instance of a pattern independent academic research has already measured at scale: MCP integrations deployed and abandoned faster than they can be reviewed, holding live credentials the whole time.</p>
+                    <p>ZTAI&rsquo;s AI security assessments include supply-chain review of third-party MCP servers and skill integrations &mdash; checking maintenance status, credential handling, and whether an automated risk score can actually be traced back to the artifact it claims to have evaluated, the exact gap Finding 2 surfaced here. <a href="#contact" onclick="window.switchToTab('contact')" class="text-neon underline underline-offset-2 hover:text-cyber transition-colors">Get in touch</a>.</p>
+                  </div>
+                </div>
+
+                <footer class="border-t border-neon/20 pt-6 mt-8">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben leads AI security assessments for enterprise clients and is developing automated governance tools for enterprises scaling AI safely.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40">benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 border-t border-neon/10 pt-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/40 mb-2">Primary Sources</p>
+                    <ul class="space-y-1 text-xs text-emerald-50/50">
+                      <li>&rarr; <a href="https://github.com/taylorwilsdon/google_workspace_mcp" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">taylorwilsdon/google_workspace_mcp &mdash; GitHub repository (3,145 stars, actively maintained)</a></li>
+                      <li>&rarr; <a href="https://github.com/taylorwilsdon/google_workspace_mcp/issues/754" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">taylorwilsdon/google_workspace_mcp #754 &mdash; &ldquo;OAuth callback &lsquo;Port 8000 already in use&rsquo; in stdio mode&rdquo; (closed issue, confirms the port-collision mechanism)</a></li>
+                      <li>&rarr; <a href="https://github.com/oathe-ai" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">oathe-ai &mdash; GitHub organization for Oathe, the scanner referenced in Finding 2 (organization created February 13, 2026)</a></li>
+                      <li>&rarr; <a href="https://www.anthropic.com/news/integrations" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Anthropic &mdash; &ldquo;Claude can now connect to your world&rdquo; (May 1, 2025)</a></li>
+                      <li>&rarr; <a href="https://techcrunch.com/2025/04/15/anthropics-claude-now-read-your-gmail/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">TechCrunch &mdash; coverage of the original Google Workspace beta (April 15, 2025)</a></li>
+                    </ul>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published September 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+            </div><!-- /article-wrap-mcp-oauth-incident -->
+
           </div>
         </section>
       </div>
@@ -2772,6 +2987,6 @@ SSD-4 &ndash; Narrative / gradual deception
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=4"></script>
+  <script type="module" src="/js/tabs.js?v=5"></script>
 </body>
 </html>
