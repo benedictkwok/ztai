@@ -751,6 +751,35 @@
                 </div>
               </article>
 
+              <!-- Card: Same Test, Different Gateway / agentgateway -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: Same Test, Different Gateway: What agentgateway's MCP Support Actually Covers" onclick="window.showBlogArticle('article-wrap-agentgateway')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-agentgateway')}">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border border-neon/50 bg-neon/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-neon">Security Research</span>
+                    <span class="text-xs text-emerald-50/50">Sep 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">Same Test, Different Gateway: What agentgateway&rsquo;s MCP Support Actually Covers</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">We ran the identical ten DVMCP challenges against agentgateway (Linux Foundation, Rust, ~5,000 stars). All ten passed default config. Then we configured the same regex guardrail that worked against ContextForge &mdash; and found it never engaged with MCP traffic at all, not even the literal phrase it was told to block. Three independent verifications later: this is by design, not a bug.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">MCP</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">agentgateway</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Guardrail Scope</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Gateway Comparison</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>10/10 exploits pass default config</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>Guardrails don&rsquo;t engage with MCP traffic</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">&rsaquo;</span>Control test confirms guard works on LLM traffic</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
               <!-- Card: Prompt Injection Resistance Ranking -->
               <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Prompt Injection Resistance Ranking: What 3,047 Attacks Across 8 LLMs Reveal" onclick="window.showBlogArticle('article-wrap-injection')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-injection')}">
                 <div class="flex-1 min-w-0">
@@ -2945,6 +2974,260 @@ Result:  Passed through completely unmodified. Full text reflected
             </article>
             </div><!-- /article-wrap-mcp-gateway -->
 
+            <!-- ── Security Research: Same Test, Different Gateway / agentgateway ── -->
+            <div id="article-wrap-agentgateway" class="hidden">
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Security Research &middot; September 2026</p>
+                <h3 class="text-xl font-black uppercase text-white">Same Test, Different Gateway &mdash; agentgateway MCP Scope</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-agentgateway', 'ztai-agentgateway-mcp-scope.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this security research as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-agentgateway" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border border-neon/50 bg-neon/10 px-2 py-1 text-xs font-bold uppercase tracking-wide text-neon">Security Research</span>
+                  <span class="text-xs text-emerald-50/50">September 2026 &middot; ZTAI.AI Security Research</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  Same Test, Different Gateway: What agentgateway&rsquo;s MCP Support Actually Covers
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <!-- Follow-up note -->
+              <p class="text-sm leading-7 text-emerald-50/60 italic mb-6">Follow-up to <span onclick="window.showBlogArticle('article-wrap-mcp-gateway')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-mcp-gateway')}" class="not-italic text-neon underline underline-offset-2 cursor-pointer hover:text-cyber transition-colors focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">Blocked &ne; Protected: What Ten Real MCP Exploits Taught Us About IBM mcp-context-forge&rsquo;s Plugins</span>. That piece tested one open-source MCP gateway against ten real exploits. This piece repeats the same test against a second, architecturally different gateway &mdash; agentgateway &mdash; and finds a materially different kind of gap.</p>
+
+              <!-- Scoping Note -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">A Scoping Note Before Any Findings &mdash; Because This Comparison Is Easy to Get Wrong</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p>agentgateway is not a narrower version of ContextForge. It&rsquo;s a broader product: a general AI-traffic gateway that handles LLM provider proxying (OpenAI, Anthropic, Bedrock, Google, local models via Ollama), agent-to-agent (A2A) traffic, and MCP federation, with a shared &ldquo;Guardrails&rdquo; feature (regex, OpenAI Moderation, AWS Bedrock Guardrails, Google Model Armor, custom webhooks) that&rsquo;s meant to apply across that traffic.</p>
+                  <p><span class="font-bold text-white">This piece tested exactly one slice of that: MCP tool-call traffic</span>, using the same DVMCP methodology as the ContextForge piece. We did not evaluate agentgateway&rsquo;s LLM-provider routing as a general capability, its A2A support, its rate limiting, or four of its five guardrail types (only regex was tested). Where this piece says &ldquo;agentgateway doesn&rsquo;t protect X,&rdquo; it means specifically and only: <span class="italic">the MCP tool-call surface, as shipped, with the guardrail types we tested</span>. It is not a verdict on agentgateway as a product.</p>
+                  <p>We&rsquo;re stating this up front because the finding below is stark enough that it would be easy to over-read. It isn&rsquo;t &ldquo;agentgateway is broken.&rdquo; It&rsquo;s &ldquo;agentgateway&rsquo;s guardrails are built for a different traffic type than the one this test &mdash; and DVMCP&rsquo;s own threat model &mdash; is about,&rdquo; and we proved that distinction empirically rather than just inferring it from documentation.</p>
+                </div>
+              </div>
+
+              <!-- Executive Summary -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">Executive Summary</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p>We ran the identical ten DVMCP challenges from the ContextForge piece against <a href="https://github.com/agentgateway/agentgateway" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">agentgateway</a> (Linux Foundation project, Rust, ~5,000 GitHub stars), Docker-deployed with the same default-then-guardrail test protocol. Then, to make sure we weren&rsquo;t just looking at a misconfiguration on our end, we ran a control test: the identical guardrail, against real LLM chat-completion traffic via local Ollama models, to see whether it worked correctly on the traffic type it was actually designed for.</p>
+                  <ol class="space-y-3 ml-1">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">1.</span><span><span class="text-cyber font-bold">Default configuration: 10 of 10 exploits succeed &mdash; identical to ContextForge.</span> Neither gateway ships MCP-facing protection active out of the box. This part is not surprising and not a criticism unique to either tool.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">2.</span><span><span class="text-cyber font-bold">agentgateway&rsquo;s guardrails do not engage with MCP tool-call traffic at all &mdash; not &ldquo;engage and fail,&rdquo; don&rsquo;t engage.</span> We configured the exact same regex rule ContextForge&rsquo;s <code class="text-neon/80 text-xs">SearchReplacePlugin</code> used to successfully catch a literal injection phrase. Against MCP traffic, both the literal phrase and a rephrased version of it passed through completely unfiltered &mdash; same result for both, which was the tell that something more fundamental than detection quality was going on.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">3.</span><span><span class="text-cyber font-bold">We confirmed this is by design, not a bug, three independent ways.</span> The gateway&rsquo;s own admin API confirmed our rule loaded correctly (not a config typo). agentgateway&rsquo;s own GitHub pull request history states plainly that its prompt-guard mechanism works by parsing LLM chat-completion request shapes (OpenAI/Anthropic message formats) &mdash; a pure MCP proxy route has no such body for it to inspect. And the only documented path to inspect MCP tool-call content at all requires standing up a custom external gRPC server from scratch &mdash; no built-in option ships.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">4.</span><span><span class="text-cyber font-bold">The control test proves the guard mechanism itself isn&rsquo;t broken &mdash; it just isn&rsquo;t pointed at MCP traffic.</span> We added a real LLM route via local Ollama (tested with two different models, <code class="text-neon/80 text-xs">qwen3:8b</code> and <code class="text-neon/80 text-xs">llama3.2:latest</code>) and re-ran the identical rule. On that traffic type, it worked exactly as intended: blocked the literal phrase, missed the rephrase &mdash; the same detection ceiling ContextForge&rsquo;s plugin has, just reached correctly this time.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">5.</span><span><span class="text-cyber font-bold">What happens after a bypass is model-dependent, and that&rsquo;s the point of a gateway-level control.</span> When the rephrased attack got through to the model, <code class="text-neon/80 text-xs">qwen3:8b</code> at least partially declined to fully comply; <code class="text-neon/80 text-xs">llama3.2:latest</code> fully complied and fabricated invented technical specifications about itself as if disclosing them factually. A gateway-level guard exists specifically to not have to rely on which model happens to be deployed behind it &mdash; and for MCP traffic, agentgateway currently provides none.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">6.</span><span><span class="text-cyber font-bold">No code-level bug was found in agentgateway &mdash; and that&rsquo;s not a point in its favor.</span> ContextForge&rsquo;s MCP-facing plugins had real, findable bugs (a dead-code linter, a false-positive detector) because they were features attempting the job. agentgateway&rsquo;s MCP guardrail surface is thin enough that there was no comparable feature to find a bug in. A thinner, non-functional surface is a worse starting position than a real surface with some working and some broken parts.</span></li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Methodology</h3>
+
+                <p><span class="font-bold text-white">Platform:</span> <a href="https://github.com/agentgateway/agentgateway" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">agentgateway</a> (Linux Foundation, Rust), image <code class="text-neon/80 text-xs">cr.agentgateway.dev/agentgateway:latest-dev</code>, deployed via Docker locally against the same <a href="https://github.com/harishsg993010/damn-vulnerable-MCP-server" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">DVMCP</a> instance used in the ContextForge test, for direct comparability.</p>
+
+                <p><span class="font-bold text-white">Models tested (control test only):</span> <code class="text-neon/80 text-xs">qwen3:8b</code> and <code class="text-neon/80 text-xs">llama3.2:latest</code>, both via local Ollama &mdash; chosen to check whether the gateway-level result held independent of which model sat behind it.</p>
+
+                <p><span class="font-bold text-white">Test protocol:</span></p>
+                <ol class="space-y-3 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">Stage 1 &mdash; default configuration.</span> All 10 DVMCP challenges registered as MCP targets, zero guardrails configured, exploits replayed to confirm the transparent-proxy baseline.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Stage 2 &mdash; MCP-traffic guardrail test.</span> Configured a regex rule (<code class="text-neon/80 text-xs">ai.promptGuard</code>) targeting a literal injection phrase &mdash; the identical phrase and mechanism ContextForge&rsquo;s plugin caught successfully &mdash; then tested both that exact phrase and a semantically identical rephrase.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">Stage 3 &mdash; root-cause verification.</span> Before concluding anything from Stage 2&rsquo;s result, checked the gateway&rsquo;s own admin API to rule out a config error, read agentgateway&rsquo;s public GitHub pull-request history for the guard&rsquo;s documented scope, and read the official documentation for the only alternative MCP-facing control path.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">Stage 4 &mdash; control test.</span> Added a real LLM route (local Ollama), re-ran the identical rule against real chat-completion traffic, to confirm the guard mechanism itself functions correctly on its intended traffic type &mdash; repeated against two different models to separate gateway-level behavior from model-level behavior.</span></li>
+                </ol>
+
+                <p><span class="font-bold text-white">Validation discipline:</span> every result below is a literal <code class="text-neon/80 text-xs">curl</code> request/response pair against a running gateway, cross-checked against the gateway&rsquo;s own reported configuration &mdash; not a documentation claim taken at face value, and not a single test result generalized without a control.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 1 &mdash; Default Configuration: Identical Transparent-Proxy Result to ContextForge</h3>
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0, 229, 255, 0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.6);">Challenge</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Attack</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Result through agentgateway (default)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch1</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Prompt injection</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Payload reflected verbatim, unfiltered</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch2</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Command injection</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);"><code class="text-neon/80 text-xs">whoami</code> / <code class="text-neon/80 text-xs">/etc/passwd</code> disclosed</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch3</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Path traversal</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Full <code class="text-neon/80 text-xs">/etc/passwd</code> disclosed</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch4</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Rug pull</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Baseline behavior-mutation captured</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch5</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Tool shadowing</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Shadow tool escalated a user to admin/superuser/system</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch6</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Indirect injection</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Payload reflected verbatim inside output</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch7</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Weak token verification</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">All-zero forged token accepted as valid</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch8</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);"><code class="text-neon/80 text-xs">eval()</code> RCE</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Arbitrary OS command executed, returned <code class="text-neon/80 text-xs">root</code></td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch9</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Weak authorization</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Remote access and permission grant, unauthenticated</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Ch10</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Multi-vector</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Injection reflected; no security block observed</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>10 of 10 &mdash; identical to ContextForge&rsquo;s default-config result. A zero-policy deployment of either gateway is a transparent proxy. Neither vendor markets a default install as sufficient protection, so this isn&rsquo;t a criticism on its own; it&rsquo;s the necessary baseline for what follows.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 2 &mdash; The Same Guardrail Rule That Worked for ContextForge Does Not Engage With agentgateway&rsquo;s MCP Traffic at All</h3>
+
+                <p>We configured <code class="text-neon/80 text-xs">ai.promptGuard</code> with a regex rule for the literal phrase <code class="text-neon/80 text-xs">IGNORE ALL PREVIOUS INSTRUCTIONS</code> &mdash; the identical phrase and <code class="text-neon/80 text-xs">action: reject</code> mechanism that ContextForge&rsquo;s <code class="text-neon/80 text-xs">SearchReplacePlugin</code> used successfully &mdash; against the same DVMCP Challenge 1 target.</p>
+
+                <div class="border-l-2 border-red-500/50 pl-6 py-3 mt-5 mb-3">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-2">Request A &mdash; the exact phrase the rule targets</p>
+                  <p class="text-sm text-emerald-50/75">Result: <span class="font-bold text-white">HTTP 200, passed through unmodified.</span> The injected string reached the tool and was reflected in the response, exactly as it would with no guardrail configured at all.</p>
+                </div>
+
+                <div class="border-l-2 border-red-500/50 pl-6 py-3 mb-5">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-400 mb-2">Request B &mdash; rephrased, zero literal overlap</p>
+                  <p class="text-sm text-emerald-50/75">Result: <span class="font-bold text-white">also HTTP 200, also passed through unmodified.</span></p>
+                </div>
+
+                <p>Both requests produced the identical outcome. That&rsquo;s the tell: if this were a detection-quality problem (the regex is too narrow), the literal phrase should have been blocked and only the rephrase should have slipped through &mdash; exactly what happened with ContextForge&rsquo;s plugin. Getting the same result on <span class="italic">both</span> tests meant the rule wasn&rsquo;t evaluating the traffic at all, in either direction.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 3 &mdash; Confirmed the Cause Three Independent Ways, Not Asserted From One Test</h3>
+
+                <ol class="space-y-4 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">Config verification.</span> Queried the running gateway&rsquo;s own admin API and confirmed the rule loaded exactly as written. This ruled out a typo or a silently-rejected configuration.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Architecture, confirmed from agentgateway&rsquo;s own public development history.</span> <a href="https://github.com/agentgateway/agentgateway/pull/3000" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">PR #3000</a> states plainly that the guard works by &ldquo;doing a recursive JSON walk on a hardcoded set of keys <span class="font-bold text-white">per provider API</span> (Responses, Completions, Messages)&rdquo; &mdash; meaning it&rsquo;s built to parse LLM chat-completion request bodies in OpenAI/Anthropic message shapes. A pure MCP-to-MCP-server proxy route has no such body for it to walk.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">Documentation.</span> The only officially documented path to inspect MCP tool-call content is <code class="text-neon/80 text-xs">mcpGuardrails</code> &mdash; which requires standing up and operating your own external gRPC server implementing a custom protocol. Every guardrail type agentgateway advertises &mdash; regex, OpenAI Moderation, AWS Bedrock Guardrails, Google Model Armor, custom webhooks &mdash; is documented exclusively under LLM/chat-completion routes, not MCP routes.</span></li>
+                </ol>
+
+                <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 my-6">
+                  <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">Why This Is a Different Kind of Gap Than ContextForge&rsquo;s</p>
+                  <p class="text-sm leading-7 text-emerald-50/80">ContextForge&rsquo;s plugins genuinely see MCP tool-call arguments &mdash; the failure mode there is a detection-quality ceiling (regex misses meaning). agentgateway&rsquo;s guardrails, evaluated on MCP traffic specifically, never reach that ceiling because they don&rsquo;t engage with the traffic in the first place. One is a limitation on a working feature; the other is the absence of a working feature for this traffic type.</p>
+                </div>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 4 &mdash; The Control Test: Same Guard, Real LLM Traffic, Works Exactly as Documented</h3>
+
+                <p>To avoid resting this conclusion on documentation and a GitHub thread alone, we added a genuine LLM chat-completion route to the same gateway configuration &mdash; using local Ollama models rather than a hosted API &mdash; and re-ran the identical regex rule against real LLM traffic.</p>
+
+                <div class="my-4 border border-cyber/25 rounded-lg overflow-hidden">
+                  <div class="grid grid-cols-3 bg-black/60 text-xs font-bold uppercase tracking-[0.14em]">
+                    <div class="border-r border-cyber/25 px-3 py-2 text-emerald-50/60">Test</div>
+                    <div class="border-r border-cyber/25 px-3 py-2 text-cyber">MCP traffic (Finding 2)</div>
+                    <div class="px-3 py-2 text-neon">LLM traffic via Ollama (control)</div>
+                  </div>
+                  <div class="divide-y divide-cyber/15 text-xs leading-6 text-emerald-50/70">
+                    <div class="grid grid-cols-3 divide-x divide-cyber/15">
+                      <div class="px-3 py-2 font-bold text-white">Literal phrase</div>
+                      <div class="px-3 py-2 text-red-400">Passed through (HTTP 200)</div>
+                      <div class="px-3 py-2 text-neon">Blocked (HTTP 403)</div>
+                    </div>
+                    <div class="grid grid-cols-3 divide-x divide-cyber/15">
+                      <div class="px-3 py-2 font-bold text-white">Rephrased attack</div>
+                      <div class="px-3 py-2 text-red-400">Passed through (HTTP 200)</div>
+                      <div class="px-3 py-2 text-yellow-400">Passed through (HTTP 200)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <p>On real LLM traffic, the guard performs exactly as documented: it catches the literal phrase and misses the rephrase &mdash; the same detection-quality ceiling ContextForge&rsquo;s plugin has. This closes the investigation decisively: <span class="font-bold text-white">the mechanism is not broken. It simply isn&rsquo;t pointed at MCP traffic.</span></p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 5 &mdash; What Happens After a Bypass Is Model-Dependent, Which Is Exactly the Risk a Gateway-Level Control Exists to Remove</h3>
+
+                <p>We repeated the control test&rsquo;s rephrase-bypass against two different local models to check whether the gateway-level result held independent of which model sat behind it.</p>
+
+                <div class="my-4 border border-cyber/25 rounded-lg overflow-hidden">
+                  <div class="grid grid-cols-3 bg-black/60 text-xs font-bold uppercase tracking-[0.14em]">
+                    <div class="border-r border-cyber/25 px-3 py-2 text-emerald-50/60">Model</div>
+                    <div class="border-r border-cyber/25 px-3 py-2 text-cyber">Gateway verdict</div>
+                    <div class="px-3 py-2 text-neon">Model&rsquo;s own behavior once bypassed</div>
+                  </div>
+                  <div class="divide-y divide-cyber/15 text-xs leading-6 text-emerald-50/70">
+                    <div class="grid grid-cols-3 divide-x divide-cyber/15">
+                      <div class="px-3 py-2 font-bold text-white">qwen3:8b</div>
+                      <div class="px-3 py-2">Bypassed (200)</div>
+                      <div class="px-3 py-2">Engaged, but partially self-limited &mdash; declined verbatim disclosure</div>
+                    </div>
+                    <div class="grid grid-cols-3 divide-x divide-cyber/15">
+                      <div class="px-3 py-2 font-bold text-white">llama3.2:latest</div>
+                      <div class="px-3 py-2">Bypassed (200)</div>
+                      <div class="px-3 py-2 text-red-400">Fully complied &mdash; <span class="font-bold">fabricated invented technical specs about itself, presented as fact</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <p>The gateway-level result was identical for both models &mdash; expected, since the regex evaluates raw request text before any model inference happens. What varied was the outcome once the bypass succeeded: one model showed some independent resistance, the other showed none and confabulated. <span class="font-bold text-white">This is precisely why a gateway-level guardrail matters</span> &mdash; it exists so protection doesn&rsquo;t depend on which model happens to be deployed behind it. For MCP tool-call traffic specifically, agentgateway currently provides none of that backstop.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 6 &mdash; No Bug Found, and That&rsquo;s Not a Point in agentgateway&rsquo;s Favor</h3>
+
+                <p>The ContextForge piece found and filed real code-level bugs: a security plugin (<code class="text-neon/80 text-xs">CodeSafetyLinterPlugin</code>) that was dead code and never actually scanned anything, and a detector (<code class="text-neon/80 text-xs">SecretsDetection</code>) that blocked a legitimate login token exactly as readily as a forged one. This test found no equivalent bug in agentgateway.</p>
+
+                <p>That&rsquo;s worth being precise about rather than reading as a point in agentgateway&rsquo;s favor. ContextForge&rsquo;s bugs exist because it has MCP-facing plugins actively attempting the job, some of which are broken. agentgateway&rsquo;s MCP guardrail surface, as tested here, is thin enough that there was no comparable feature to find a bug in. <span class="font-bold text-white">A thinner, non-functional surface producing zero findable defects is a worse security starting position than a real surface with a mix of working, broken, and misleading parts &mdash; not a better one.</span></p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">What This Means If You&rsquo;re Evaluating agentgateway</h3>
+
+                <p>If your deployment need is protecting MCP tool-call traffic specifically &mdash; the exact threat model DVMCP tests &mdash; agentgateway&rsquo;s shipped guardrail feature set does not currently reach that traffic, confirmed empirically rather than assumed. If your need is broader &mdash; routing and applying guardrails to LLM provider traffic, which this test confirms works correctly &mdash; that&rsquo;s a different evaluation than the one this piece ran, and this piece&rsquo;s finding does not speak against it.</p>
+
+                <p>We are deliberately not recommending &ldquo;don&rsquo;t use agentgateway.&rdquo; We&rsquo;re reporting: for the specific traffic type this test targeted, its flagship protection feature does not apply, and a reader choosing a gateway specifically to defend MCP tool calls needs that distinction stated plainly rather than left to be discovered after deployment.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Recommendations</h3>
+
+                <ol class="space-y-4 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">If evaluating an MCP gateway specifically for MCP-traffic protection, verify guardrail scope before deployment &mdash; don&rsquo;t infer it from a feature list.</span> &ldquo;Has guardrails&rdquo; and &ldquo;guardrails apply to this traffic type&rdquo; are separable claims that need independent verification, as this test and the earlier ContextForge piece both demonstrate.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Don&rsquo;t treat &ldquo;no bug found&rdquo; as equivalent to &ldquo;secure.&rdquo;</span> A thin, non-engaging control surface can look cleaner in a pen-test report than a real surface with some broken parts, while actually offering less protection.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">If MCP tool-call inspection is a hard requirement today, ContextForge&rsquo;s plugin architecture &mdash; despite its own real limitations documented in our prior piece &mdash; currently offers more paths to a working (if narrow) mitigation than agentgateway&rsquo;s default MCP guardrail surface.</span></span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">Test the traffic type you actually have, not the traffic type the vendor&rsquo;s example configs assume.</span> Our control test needed a real <code class="text-neon/80 text-xs">llm:</code> route with a real backend model to reveal that the same rule worked correctly elsewhere &mdash; a config-only review would not have surfaced this.</span></li>
+                </ol>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">How ZTAI Can Help</h3>
+
+                <p>Evaluating a gateway, plugin framework, or &ldquo;AI-native&rdquo; security control before it goes into production? We run exactly this kind of test &mdash; real exploits, real controls, a control group to rule out false positives &mdash; against your actual stack, not a vendor&rsquo;s example configuration.</p>
+
+                <div class="grid gap-5 sm:grid-cols-2 mt-5">
+                  <div class="cyber-border rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-2">Gateway &amp; Guardrail Validation</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">We test whether your MCP gateway, LLM proxy, or guardrail stack actually covers the traffic you think it covers &mdash; before an incident tells you otherwise.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Book an Assessment">Book an Assessment</button>
+                  </div>
+                  <div class="terminal-panel rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-2">Early Access: Governance Automation</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">We&rsquo;re building continuous, automated red-teaming and guardrail-verification tooling for agentic stacks. Advisory clients get early access.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Request Beta Access">Request Beta Access</button>
+                  </div>
+                </div>
+
+                <footer class="border-t border-neon/20 pt-6 mt-8">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben leads AI security assessments for enterprise clients and is developing automated governance tools for enterprises scaling AI safely.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40">benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 border-t border-neon/10 pt-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/40 mb-2">Primary Sources</p>
+                    <ul class="space-y-1 text-xs text-emerald-50/50">
+                      <li>&rarr; <a href="https://github.com/agentgateway/agentgateway" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">agentgateway (GitHub) &mdash; Linux Foundation, Rust</a></li>
+                      <li>&rarr; <a href="https://github.com/agentgateway/agentgateway/pull/3000" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">agentgateway PR #3000 &mdash; &ldquo;promptGuard: opt-in tool call coverage with scope&rdquo;</a></li>
+                      <li>&rarr; <a href="https://agentgateway.dev/docs/standalone/latest/documentation/mcp/guardrails/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">agentgateway documentation &mdash; MCP Guardrails</a></li>
+                      <li>&rarr; <a href="https://github.com/harishsg993010/damn-vulnerable-MCP-server" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Damn Vulnerable MCP Server (DVMCP)</a></li>
+                      <li>&rarr; <span onclick="window.showBlogArticle('article-wrap-mcp-gateway')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-mcp-gateway')}" class="underline underline-offset-2 hover:text-neon transition-colors cursor-pointer focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">Blocked &ne; Protected &mdash; the ContextForge companion piece</span></li>
+                    </ul>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published September 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+            </div><!-- /article-wrap-agentgateway -->
+
           </div>
         </section>
       </div>
@@ -3383,6 +3666,6 @@ Result:  Passed through completely unmodified. Full text reflected
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=6"></script>
+  <script type="module" src="/js/tabs.js?v=8"></script>
 </body>
 </html>

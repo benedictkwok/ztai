@@ -14,6 +14,7 @@ const BLOG_SLUGS = {
   instruction_manipulation:   "article-wrap-instruction-manipulation",
   mcp_oauth_incident:         "article-wrap-mcp-oauth-incident",
   blocked_not_protected:       "article-wrap-mcp-gateway",
+  agentgateway_mcp_scope:      "article-wrap-agentgateway",
   prompt_injection_resistance: "article-wrap-injection",
   toxicity_judge_sensitivity:  "article-wrap-toxicity",
 };
