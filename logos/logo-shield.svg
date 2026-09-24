@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      .cursor-blink {
+        animation: blink 1.1s step-end infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Black background -->
+  <rect width="1200" height="1200" fill="#0a0a0a"/>
+
+  <!--
+    Shield path: Angular / armor-plate style
+    Flat top edge, angled sides tapering to a sharp point at bottom.
+    Canvas: 1200×1200. Shield occupies ~80% → roughly 960×960 footprint.
+    Center X = 600. Top Y = 120. Bottom point Y = 1080.
+    Flat top: from (180, 120) to (1020, 120)
+    Upper-left angled shoulder: (180, 120) → (120, 300)
+    Left side: (120, 300) → (180, 780)
+    Lower-left taper: (180, 780) → (600, 1080)
+    Lower-right taper: (600, 1080) → (1020, 780)
+    Right side: (1020, 780) → (1080, 300)
+    Upper-right angled shoulder: (1080, 300) → (1020, 120)
+  -->
+  <path
+    d="M 200,120 L 1000,120 L 1080,300 L 1080,760 L 600,1080 L 120,760 L 120,300 Z"
+    fill="none"
+    stroke="#39FF14"
+    stroke-width="16"
+    stroke-linejoin="miter"
+    filter="url(#glow)"
+  />
+
+  <!-- Inner separator line — horizontal, dividing upper text from lower accent zone -->
+  <line
+    x1="200" y1="870"
+    x2="1000" y2="870"
+    stroke="#39FF14"
+    stroke-width="3"
+    opacity="0.6"
+    filter="url(#glow)"
+  />
+
+  <!--
+    "ZT" — very large, bold monospace, centered in upper shield area
+    Upper text zone: Y 120–870 → center Y ~495
+    Shift slightly left to leave room for "AI" superscript cluster
+    font-size ~280px, estimated width ~320px per char, total ~590px
+    Anchor center X ~560
+  -->
+  <text
+    x="540"
+    y="670"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="310"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-8"
+    filter="url(#glow)"
+  >ZT</text>
+
+  <!--
+    "AI" — ~115px, positioned upper-right relative to "ZT"
+    "ZT" anchor at x=540, "AI" offset to upper right
+    Estimated right edge of "ZT" at ~540+(310*1.15/2) ≈ 720
+    Place "AI" text-anchor start at x=720, y=390
+  -->
+  <text
+    x="725"
+    y="430"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="120"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="start"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >AI</text>
+
+  <!--
+    ℠ servicemark — ~38px, just after "AI"
+    "AI" at x=725, font-size=120 → estimated width ~145px → end at ~870
+    Place ℠ at x=875, y=395 (slightly raised / baseline adjusted)
+  -->
+  <text
+    x="875"
+    y="375"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="44"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.75"
+    text-anchor="start"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >℠</text>
+
+  <!--
+    Bottom accent zone (below separator line, inside shield)
+    Separator at Y=870, shield bottom point at Y=1080
+    Usable accent area: Y 885–1055, center X ~600
+    Blinking cursor rectangle: ~120×28px, centered
+  -->
+  <rect
+    class="cursor-blink"
+    x="540"
+    y="905"
+    width="120"
+    height="30"
+    fill="#39FF14"
+    filter="url(#glow)"
+  />
+
+</svg>

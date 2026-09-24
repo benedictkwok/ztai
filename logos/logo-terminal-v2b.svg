@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Black background -->
+  <rect width="1200" height="1200" fill="#0a0a0a"/>
+
+  <!-- ═══════════════════════════════════════════════
+       OUTER FRAME — 100px inset, rect 100,100 → 1100,1100
+       ═══════════════════════════════════════════════ -->
+  <rect
+    x="100" y="100"
+    width="1000" height="1000"
+    fill="none"
+    stroke="#39FF14"
+    stroke-width="2"
+    opacity="0.35"
+  />
+
+  <!-- Corner notch cutouts — 8×8 squares placed just inside each corner
+       of the frame stroke, filled with background color to "cut" the corner -->
+
+  <!-- Top-left inner corner -->
+  <rect x="100" y="100" width="8" height="8" fill="#0a0a0a"/>
+  <!-- Top-right inner corner -->
+  <rect x="1092" y="100" width="8" height="8" fill="#0a0a0a"/>
+  <!-- Bottom-left inner corner -->
+  <rect x="100" y="1092" width="8" height="8" fill="#0a0a0a"/>
+  <!-- Bottom-right inner corner -->
+  <rect x="1092" y="1092" width="8" height="8" fill="#0a0a0a"/>
+
+  <!-- ═══════════════════════════════════════════════
+       TOP LABEL — "ZERO TRUST AI" inside top of frame
+       ═══════════════════════════════════════════════ -->
+  <text
+    x="600" y="162"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="22"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.3"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="0.5em"
+  >ZERO TRUST AI</text>
+
+  <!-- ═══════════════════════════════════════════════
+       GEOMETRIC BRACKET — LEFT
+       Vertical center of lockup = 600px
+       Bracket height = 220px → spans y=490 to y=710
+       Left bracket left edge at x=185
+       Vertical bar: x=185, y=490, w=12, h=220
+       Top horizontal: x=185, y=490, w=60, h=12
+       Bottom horizontal: x=185, y=698, w=60, h=12
+       ═══════════════════════════════════════════════ -->
+
+  <!-- Left bracket vertical bar -->
+  <rect x="185" y="490" width="12" height="220" fill="#39FF14" filter="url(#glow)"/>
+  <!-- Left bracket top arm -->
+  <rect x="185" y="490" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+  <!-- Left bracket bottom arm -->
+  <rect x="185" y="698" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+
+  <!-- ═══════════════════════════════════════════════
+       "ZT" — centered at x=390, vertical center 600
+       font-size=220, approx cap height ~155px
+       baseline ≈ 600 + 77 = 677 → use y=682
+       ═══════════════════════════════════════════════ -->
+  <text
+    x="390" y="682"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="220"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="4px"
+    filter="url(#glow)"
+  >ZT</text>
+
+  <!-- ═══════════════════════════════════════════════
+       LIGHTNING BOLT SEPARATOR — cyan circuit trace
+       Spans roughly same vertical range as brackets (y=490–710)
+       Center x ≈ 600
+       Path: start top, jag right, cut left, end bottom
+       ═══════════════════════════════════════════════ -->
+  <path
+    d="M 596 490 L 610 572 L 590 572 L 604 710"
+    stroke="#00E5FF"
+    stroke-width="5"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glow-strong)"
+  />
+
+  <!-- ═══════════════════════════════════════════════
+       "AI" — centered at x=810, same baseline as ZT
+       ═══════════════════════════════════════════════ -->
+  <text
+    x="810" y="682"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="220"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >AI</text>
+
+  <!-- ═══════════════════════════════════════════════
+       GEOMETRIC BRACKET — RIGHT (mirror of left)
+       Right bracket right edge at x=1015
+       Vertical bar: x=1003, y=490, w=12, h=220
+       Top horizontal: x=943, y=490, w=60, h=12
+       Bottom horizontal: x=943, y=698, w=60, h=12
+       ═══════════════════════════════════════════════ -->
+
+  <!-- Right bracket vertical bar -->
+  <rect x="1003" y="490" width="12" height="220" fill="#39FF14" filter="url(#glow)"/>
+  <!-- Right bracket top arm -->
+  <rect x="943" y="490" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+  <!-- Right bracket bottom arm -->
+  <rect x="943" y="698" width="60" height="12" fill="#39FF14" filter="url(#glow)"/>
+
+  <!-- ═══════════════════════════════════════════════
+       ℠ SERVICEMARK — after right bracket, vertically
+       centered with brackets (y=600)
+       ═══════════════════════════════════════════════ -->
+  <text
+    x="1040" y="600"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="44"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.75"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >℠</text>
+
+  <!-- ═══════════════════════════════════════════════
+       "ZTAI.AI" WORDMARK — bottom inside frame
+       ═══════════════════════════════════════════════ -->
+  <text
+    x="600" y="1038"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="40"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.45"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="0.45em"
+  >ZTAI.AI</text>
+
+</svg>

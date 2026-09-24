@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="1200" fill="#0a0a0a"/>
+
+  <!-- Top border line — spans outer bracket edges x=150 to x=1050 -->
+  <line x1="150" y1="210" x2="1050" y2="210" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+
+  <!-- Bottom border line — spans outer bracket edges x=150 to x=1050 -->
+  <line x1="150" y1="990" x2="1050" y2="990" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+
+  <!--
+    LEFT BRACKET "["
+    Outer vertical bar: x=150, y=210 to y=990 (height=780)
+    Top horizontal bar: x=150 to x=230, y=210
+    Bottom horizontal bar: x=150 to x=230, y=990
+    All stroke-width=28, stroke=#39FF14, fill=none
+  -->
+  <path
+    d="M 230,210 L 150,210 L 150,990 L 230,990"
+    stroke="#39FF14"
+    stroke-width="28"
+    fill="none"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    filter="url(#glow)"
+  />
+
+  <!--
+    RIGHT BRACKET "]"
+    Outer vertical bar: x=1050, y=210 to y=990
+    Top horizontal bar: x=970 to x=1050, y=210
+    Bottom horizontal bar: x=970 to x=1050, y=990
+  -->
+  <path
+    d="M 970,210 L 1050,210 L 1050,990 L 970,990"
+    stroke="#39FF14"
+    stroke-width="28"
+    fill="none"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    filter="url(#glow)"
+  />
+
+  <!-- "ZT" text — centered at x=385, baseline y=730 -->
+  <text
+    x="385"
+    y="730"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="240"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >ZT</text>
+
+  <!-- Cyan separator bar — 8px wide, 300px tall, centered at x=600 y=600 -->
+  <rect
+    x="596"
+    y="450"
+    width="8"
+    height="300"
+    fill="#00E5FF"
+    filter="url(#glow-strong)"
+  />
+
+  <!-- "AI" text — centered at x=815, baseline y=730 -->
+  <text
+    x="815"
+    y="730"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="240"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >AI</text>
+
+  <!-- ℠ servicemark — immediately after ] bracket on same baseline as text, y=730 -->
+  <text
+    x="1065"
+    y="730"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="48"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.8"
+    text-anchor="start"
+    dominant-baseline="auto"
+  >℠</text>
+
+  <!-- Thin horizontal rule 60px below bottom border line (y=990+60=1050), spanning 900px centered -->
+  <line
+    x1="150"
+    y1="1050"
+    x2="1050"
+    y2="1050"
+    stroke="#39FF14"
+    stroke-width="1.5"
+    opacity="0.25"
+  />
+
+</svg>

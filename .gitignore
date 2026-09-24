@@ -23,3 +23,5 @@ public/css/output.css
 .windsurf/
 .codebuddy/
 .github/
+.DS_Store
+.wrangler/

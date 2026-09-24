@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Black background -->
+  <rect width="1200" height="1200" fill="#0a0a0a"/>
+
+  <!-- Top terminal border line -->
+  <line x1="250" y1="450" x2="950" y2="450" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+
+  <!-- Bottom terminal border line -->
+  <line x1="250" y1="760" x2="950" y2="760" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+
+  <!-- Main lockup group, centered vertically at y=605 (midpoint between 450 and 760) -->
+
+  <!-- "[" left bracket -->
+  <text
+    x="168"
+    y="720"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="320"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >[</text>
+
+  <!-- "ZT" text -->
+  <text
+    x="420"
+    y="710"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="230"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >ZT</text>
+
+  <!-- "|" separator — actual SVG rect, cyber blue, neon strong glow -->
+  <rect
+    x="597"
+    y="472"
+    width="6"
+    height="260"
+    fill="#00E5FF"
+    filter="url(#glow-strong)"
+  />
+
+  <!-- "AI" text -->
+  <text
+    x="780"
+    y="710"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="230"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >AI</text>
+
+  <!-- "]" right bracket -->
+  <text
+    x="1032"
+    y="720"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="320"
+    font-weight="700"
+    fill="#39FF14"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    filter="url(#glow)"
+  >]</text>
+
+  <!-- "ZTAI.AI" wordmark below lower line -->
+  <text
+    x="600"
+    y="828"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="52"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.6"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="0.3em"
+  >ZTAI.AI</text>
+
+  <!-- ℠ servicemark, bottom right corner -->
+  <text
+    x="1140"
+    y="1160"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="36"
+    font-weight="400"
+    fill="#39FF14"
+    opacity="0.6"
+    text-anchor="end"
+    dominant-baseline="auto"
+  >℠</text>
+
+</svg>
