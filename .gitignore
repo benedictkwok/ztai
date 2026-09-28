@@ -8,6 +8,7 @@ node_modules/
 public/css/output.css
 
 # AI assistant tool configs
+CLAUDE.md
 .agent/
 .claude/
 .codebuddy/
