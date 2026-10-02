@@ -17,6 +17,7 @@ const BLOG_SLUGS = {
   agentgateway_mcp_scope:      "article-wrap-agentgateway",
   prompt_injection_resistance: "article-wrap-injection",
   toxicity_judge_sensitivity:  "article-wrap-toxicity",
+  judge_calibration:           "article-wrap-judge-calibration",
 };
 
 let currentTab = "home";

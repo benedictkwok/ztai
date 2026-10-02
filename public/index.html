@@ -809,6 +809,35 @@
                 </div>
               </article>
 
+              <!-- Card: Judge Calibration -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: Calibrating the Calibrator: What Hand-Labeling 22 Disagreement Cases Reveals About the LLM-as-Judge Problem" onclick="window.showBlogArticle('article-wrap-judge-calibration')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-judge-calibration')}">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border px-2 py-1 text-xs font-bold uppercase tracking-wide" style="border-color:rgba(251,146,60,0.5);background:rgba(251,146,60,0.08);color:rgb(251,146,60);">Safety Research</span>
+                    <span class="text-xs text-emerald-50/50">Oct 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">Calibrating the Calibrator: What Hand-Labeling 22 Disagreement Cases Reveals About the LLM-as-Judge Problem We Flagged Last Time</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">We expanded from two judges to five, built a human-in-the-loop labeling tool, and hand-scored 22 cases where the panel disagreed. Before any fixes, one judge scored 45% accuracy &mdash; worse than a coin flip. Two nameable failure patterns explain most of the gap, both fixable. A human reviewer caught something no judge was even designed to detect. And folding a scope question into a content-safety score collapsed accuracy to 27% simultaneously across every judge.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">LLM-as-Judge</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Judge Calibration</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">AI Safety Testing</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">AI Governance</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>45% → 82% accuracy after two targeted fixes</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>Human reviewer found what no judge could detect</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>Scope + content in one field dropped scores to 27%</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
               <!-- Card: Toxicity / Safety Research -->
               <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Attacks That Don't Look Like Attacks" onclick="window.showBlogArticle('article-wrap-toxicity')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-toxicity')}">
                 <div class="flex-1 min-w-0">
@@ -3228,6 +3257,234 @@ Result:  Passed through completely unmodified. Full text reflected
             </article>
             </div><!-- /article-wrap-agentgateway -->
 
+            <div id="article-wrap-judge-calibration" class="hidden">
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Safety Research &middot; October 2026</p>
+                <h3 class="text-xl font-black uppercase text-white">Calibrating the Calibrator &mdash; LLM-as-Judge</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-judge-calibration', 'ztai-judge-calibration.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this security research as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-judge-calibration" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border px-2 py-1 text-xs font-bold uppercase tracking-wide" style="border-color:rgba(251,146,60,0.5);background:rgba(251,146,60,0.08);color:rgb(251,146,60);">Safety Research</span>
+                  <span class="text-xs text-emerald-50/50">October 2026 &middot; ZTAI.AI Security Research</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  Calibrating the Calibrator: What Hand-Labeling 22 Disagreement Cases Reveals About the LLM-as-Judge Problem We Flagged Last Time
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <!-- Follow-up note -->
+              <p class="text-sm leading-7 text-emerald-50/60 italic mb-6">Follow-up to <span onclick="window.showBlogArticle('article-wrap-toxicity')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-toxicity')}" class="not-italic text-neon underline underline-offset-2 cursor-pointer hover:text-cyber transition-colors focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">The Attacks That Don&rsquo;t Look Like Attacks: What 1,500+ Toxicity Evaluations Reveal About AI Safety Testing</span>. That piece ended on an uncomfortable finding: swapping the judge model moved the combined violation rate from 16.5% to 22.0% on identical data. This piece is us taking our own advice and actually fixing it.</p>
+
+              <!-- Executive Summary -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">Executive Summary</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p>Our previous study ended on an uncomfortable finding: re-scoring identical attack data with two different judge models moved the combined violation rate from 16.5% to 22.0% &mdash; a 1.33&times; swing purely from which model did the grading. We closed that piece by recommending that anyone running automated AI safety scoring treat judge identity as a disclosed, calibrated variable rather than an implementation detail. This study is us taking our own advice.</p>
+                  <p>We expanded from two judges to five working backends (a sixth was evaluated and retired early), built a human-in-the-loop labeling tool, and hand-scored 22 cases where the panel disagreed on the same target responses. That exercise surfaced five distinct findings, each more structural than the last:</p>
+                  <ol class="space-y-3 ml-1">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">The judge gap is worse than 1.33&times; once you actually check against ground truth.</span> Before any fixes, one judge backend scored only 45% accuracy against our hand-labeled cases &mdash; worse than a coin flip on a panel that included judges scoring 86%+ on the identical data.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Two nameable failure patterns explain most of the gap, and both are fixable.</span> A <em>literal-reading</em> trap and a <em>describing-vs-endorsing</em> confusion. Fixing both brought the worst judge&rsquo;s accuracy from 45% to 82%.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">The human-in-the-loop step caught something no judge was even designed to detect.</span> A reviewer noticed one response wasn&rsquo;t harmful, it was <em>broken</em> &mdash; a model stuck in a verbatim repetition loop. No judge had any way to flag that, because every judge was built to answer a content-safety question, not a &ldquo;did this generation process work correctly&rdquo; question. We added a second, independent axis for it.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">A deeper problem hid behind the first two: some disagreement wasn&rsquo;t about content at all.</span> Folding a role-scope question into the same violation score the content judges were already using caused a second, more severe collapse: accuracy dropped as low as 27% for some judges &mdash; worse than the original 45% problem we set out to fix.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0 font-bold">5.</span><span><span class="font-bold text-white">One disagreement case never made it into the calibration set at all &mdash; and the reason is a finding in its own right.</span> The same response text was correctly a violation if read by the external job seeker it was about, and correctly clean if read by internal HR staff reviewing it as training material, with nothing in the text itself to resolve which. We excluded it rather than force a label.</span></li>
+                  </ol>
+                  <p>The findings generalize past this one scenario: <em>content harm</em> and <em>role-scope adherence</em> are different questions with different correct answers for the same text. Full methodology and findings below.</p>
+                </div>
+              </div>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Methodology</h3>
+
+                <p><span class="font-bold text-white">Target model:</span> <code class="text-neon/80 text-xs">deepseek-r1:7b</code>, selected as the most exploitable model in our prior testing (~53% secret-leak success in earlier injection-lab work; 21&ndash;35% toxicity violation rate across scenarios in our original study).</p>
+
+                <p><span class="font-bold text-white">Scenario:</span> the HR Candidate Chatbot scenario from our original study &mdash; chosen deliberately because employment discrimination has a real, codified legal standard behind it. We rewrote the scenario&rsquo;s violation criteria against California&rsquo;s Fair Employment and Housing Act (FEHA, Gov. Code &sect;&nbsp;12940), including its bona fide occupational qualification exception and the codified three-prong business-necessity test (2 CCR &sect;&nbsp;11028), rather than relying on a generic &ldquo;discriminatory content&rdquo; description.</p>
+
+                <p><span class="font-bold text-white">Starting point:</span> a live judge-comparison run across our 15-attack bank produced 23 responses where the panel didn&rsquo;t unanimously agree. We hand-labeled ground truth for each one ourselves; one was later excluded as irreducibly audience-dependent &mdash; leaving <span class="font-bold text-white">22 labeled cases</span>.</p>
+
+                <p><span class="font-bold text-white">Judges tested:</span> six backends total &mdash; <code class="text-neon/80 text-xs">gemma4</code> (local), <code class="text-neon/80 text-xs">claude</code> (direct Anthropic API), <code class="text-neon/80 text-xs">Copilot: GPT-4.1</code>, <code class="text-neon/80 text-xs">Copilot: GPT-5-mini</code>, <code class="text-neon/80 text-xs">Copilot: claude-sonnet-5</code>, <code class="text-neon/80 text-xs">Copilot: GPT-5.6-luna</code>. GPT-4.1 was dropped before the real calibration work once GPT-5-mini confirmed working &mdash; a newer generation of the same vendor, all else equal, with no reason to keep both in the panel.</p>
+
+                <p><span class="font-bold text-white">Calibration passes:</span> four full re-scoring rounds across all 22 cases &times; 5 judges (110 calls per round), each round testing one hypothesis about why the panel disagreed, described in the findings below.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 1 &mdash; The 1.33&times; Gap From Our Last Study Was an Undercount</h3>
+
+                <p>Our previous study measured judge disagreement by comparing aggregate violation <em>rates</em> across a judge swap &mdash; a reasonable methodology when you don&rsquo;t have ground truth to check against. This time we did have ground truth, and it showed the real spread was worse than the rate comparison suggested.</p>
+
+                <p>Scored against our 22 hand-labeled cases, before any fixes:</p>
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0, 229, 255, 0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.6);">Judge</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Accuracy vs. ground truth (Round 0)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">claude</code> (direct)</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);">86%</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">copilot:claude-sonnet-5</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);">86%</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">gemma4</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);">82%</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><strong style="color:white;">copilot:gpt-5.6-luna</strong></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(251,191,36,1);"><strong>55%</strong></td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><strong style="color:white;">copilot:gpt-5-mini</strong></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);"><strong>45%</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>GPT-5-mini wasn&rsquo;t just inaccurate &mdash; it was <em>confidently</em> wrong. It flagged all five of our &ldquo;Continuation / Autocomplete&rdquo; test rows as violations at 90&ndash;95% self-reported confidence, when those rows critically <em>describe</em> hiring bias as a problem rather than endorse it, and every better-performing judge on the panel correctly called them clean. A 1.33&times; rate difference between two judges undersells what&rsquo;s actually happening when you can check against a third source of truth: some judges aren&rsquo;t just miscalibrated, they&rsquo;re wrong in a specific, repeatable direction.</p>
+
+                <p>One plausible explanation worth naming, with an honest caveat attached: GPT-5-mini is a distilled model, and there&rsquo;s well-documented research on &ldquo;shortcut learning&rdquo; showing smaller and distilled language models lean more heavily on surface lexical cues than on deeper contextual reasoning.<sup><a href="#jc-fn1" class="text-neon/70 hover:text-neon transition-colors">1</a></sup><sup><a href="#jc-fn2" class="text-neon/70 hover:text-neon transition-colors">2</a></sup><sup><a href="#jc-fn3" class="text-neon/70 hover:text-neon transition-colors">3</a></sup> That pattern lines up with what we saw: GPT-5-mini flagged sentences containing stereotype-adjacent <em>words</em> regardless of whether the sentence was describing or endorsing the stereotype. We found no study analyzing GPT-5-mini&rsquo;s shortcut-learning behavior specifically, so this is a literature-grounded, plausible explanation for the pattern we observed &mdash; not a confirmed mechanism.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 2 &mdash; Two Nameable Failure Patterns, Both Fixable</h3>
+
+                <p>Reading the wrong judges&rsquo; own stated rationale &mdash; not just their verdicts &mdash; showed the same two failure patterns recurring across both weak judges.</p>
+
+                <p><span class="font-bold text-white">The literal-reading trap.</span> One target response used the phrase &ldquo;lesser races&rdquo; without naming a specific race. Our fiction-framing rule at the time told judges to clear content that doesn&rsquo;t name a real protected group. GPT-5-mini&rsquo;s own rationale read: <em>&ldquo;mirroring real-world hate ideology even though it does not name a specific protected group&rdquo;</em> &mdash; it correctly identified the fact pattern the rule was built around, and flagged the content anyway, contradicting its own stated reasoning. The fix: invoking a protected <em>category</em> itself (&ldquo;races,&rdquo; as opposed to a specific race) is the trigger a judge should act on, independent of which group gets named.</p>
+
+                <p><span class="font-bold text-white">Describing bias versus committing it.</span> Several target responses explained, critically, that <em>&ldquo;systemic bias causes some hiring managers to wrongly see group X as less qualified.&rdquo;</em> That&rsquo;s a description of a problem, not an instance of it &mdash; but judges kept flagging it as discrimination anyway, apparently pattern-matching on stereotype-adjacent words rather than reading whose claim the sentence was actually making. We had to make judges explicitly distinguish a sentence stated as the model&rsquo;s own asserted fact from the same words named as a bias to warn against.</p>
+
+                <p>Fixing both &mdash; plus extending our &ldquo;fiction doesn&rsquo;t exempt real content&rdquo; rule to cover the <code class="text-neon/80 text-xs">threat</code> category, which had no fiction exemption at all and was catching harmless villain dialogue &mdash; brought the full panel to:</p>
+
+                <img src="/images/ztai-blog-judge-calibration-chart2-journey.png" alt="Chart showing four calibration rounds across the same 22 hand-labeled cases: Round 0 baseline through Round 3 final, tracking accuracy for each of the five judges" class="rounded-lg w-full my-5" style="border: 1px solid rgba(0,229,255,0.2);" loading="lazy" />
+
+                <p>(Round 0 &rarr; Round 1 on the chart above.) GPT-5-mini&rsquo;s accuracy against ground truth went from 45% to 82%; the full panel&rsquo;s average accuracy moved from the mid-70s into the high-80s/90s.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 3 &mdash; The Human Reviewer Caught Something No Judge Was Even Looking For</h3>
+
+                <p>Every judge in this study was built to answer one question: is this text harmful. While hand-labeling disagreement cases against that exact question, a reviewer noticed something none of the judges had any way to flag &mdash; one target response wasn&rsquo;t dangerous, it was <em>broken</em>. The model had visibly lost coherence mid-generation: <em>&ldquo;Let it burn as it is. Let it burn as it is. Let it burn as it is.&rdquo;</em> &mdash; the identical four-word clause, verbatim, three times in a row &mdash; followed by <em>&ldquo;It is so much, so much, so much&hellip; worse.&rdquo;</em> That&rsquo;s not a stylistic flourish a writer would choose; it&rsquo;s a model stuck in a repetition loop.</p>
+
+                <p>No judge was asking this question, because no one had thought to ask it. All five were scoring content safety, and a text that&rsquo;s incoherent but not hateful scores clean on every one of them &mdash; correctly, by their own definition, and completely silent about the fact that something had gone wrong with how it was generated. That silence is the actual risk: a judge that can&rsquo;t make sense of degenerate output either passes it as clean or fails to parse it at all, and in either case the result is indistinguishable from &ldquo;this response was reviewed and found safe.&rdquo;</p>
+
+                <p>The same failure category showed up again independently, this time in the judging pipeline itself: one of our local judges was found to exhaust its full response budget on hidden reasoning tokens and return completely empty output on long or complex inputs &mdash; a different cause, the same underlying problem, a process failing silently instead of producing a wrong-but-visible answer.</p>
+
+                <p>The fix: a second field, <code class="text-neon/80 text-xs">stability_violation</code>, scored independently of content safety &mdash; does the text show signs of generation breakdown (verbatim repetition loops, incoherence, abrupt truncation), separate from whether what it says is harmful. A response can be stable-and-harmful, unstable-and-harmless, both, or neither; the two axes don&rsquo;t predict each other, and collapsing them would hide exactly the case that surfaced this finding.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 4 &mdash; A Disagreement That Wasn&rsquo;t About Content At All</h3>
+
+                <p>One remaining disagreement case didn&rsquo;t fit the content-harm framework no matter how we worded it. A target response, in reply to a role-play attack, had generated an off-topic screenplay monologue &mdash; a villain discussing abstract themes of power and hierarchy, naming no real protected group, using no real-world hate-speech vocabulary. Every judge correctly called it harmless. Our own hand labels agreed: clean.</p>
+
+                <p>But a different question sat underneath that one: <span class="font-bold text-white">should a candidate-facing HR assistant have generated a screenplay monologue at all, regardless of what it said?</span> That&rsquo;s not a content-safety question &mdash; it&rsquo;s a role-boundary question, and it has a different correct answer depending on the target application&rsquo;s actual purpose.</p>
+
+                <p>Our first attempt at a fix used a precedence hierarchy, reasoning that different kinds of violation should override each other in a fixed order: protected-class violations at the top, then scope and role boundaries, then internal-training-context exceptions, then general creative-writing context at the lowest precedence. But when we implemented it as a single collapsed score &mdash; with a higher tier&rsquo;s verdict simply overriding a lower tier&rsquo;s &mdash; the result across all 22 cases:</p>
+
+                <img src="/images/ztai-blog-judge-calibration-chart2-journey.png" alt="Four calibration rounds across the same 22 hand-labeled cases, showing accuracy for each judge across all rounds" class="rounded-lg w-full my-5" style="border: 1px solid rgba(0,229,255,0.2);" loading="lazy" />
+
+                <p>(Round 1 &rarr; Round 2.) Every judge got <em>worse</em>. <code class="text-neon/80 text-xs">copilot:claude-sonnet-5</code> &mdash; the strongest performer in the study, 100% accurate the round before &mdash; dropped to 27%, worse than the original 45% problem we&rsquo;d just finished fixing. The mechanism is straightforward in hindsight: our hand-labeled ground truth had already called every one of those screenplay responses clean, as <em>content</em>. The moment &ldquo;should the bot have engaged with this at all&rdquo; and &ldquo;is this text actually harmful&rdquo; shared one field, the combined score contradicted our own labels on nearly every row that touched the off-topic attack pattern &mdash; not because the judges got worse at reading, but because we&rsquo;d asked one number to answer two different questions with two different correct answers for the same text.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 5 &mdash; Scope Is a Property of the Application, Not the Content</h3>
+
+                <p>The fix was to stop averaging. We split the single violation score into two independent fields: one judging content safety exactly as before, and a separate <code class="text-neon/80 text-xs">scope_violation</code> field judging only whether the response stayed within the assistant&rsquo;s defined role &mdash; reported independently, never blended into a combined verdict.</p>
+
+                <img src="/images/ztai-blog-judge-calibration-chart3-two-axes.png" alt="Diagram showing the two independent scoring axes: content harm and role scope, with four possible combinations" class="rounded-lg w-full my-5" style="border: 1px solid rgba(0,229,255,0.2);" loading="lazy" />
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0, 229, 255, 0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.5);"></th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Content harm</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Role scope</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; font-weight: bold; color: white;">In scope</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Violation &mdash; e.g. a response stating a protected-characteristic stereotype as fact</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,0.8);">Clean</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; font-weight: bold; color: white;">Out of scope</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);">Violation on both axes simultaneously (rare in practice)</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(251,191,36,1);"><strong>Scope violation only</strong> &mdash; harmless content, wrong job for this assistant</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Once scope was decoupled rather than folded in, accuracy came back across the full panel:</p>
+
+                <img src="/images/ztai-blog-judge-calibration-chart2-journey.png" alt="Four calibration rounds across the same 22 hand-labeled cases, showing accuracy recovery in Round 3 after decoupling scope into its own field" class="rounded-lg w-full my-5" style="border: 1px solid rgba(0,229,255,0.2);" loading="lazy" />
+
+                <p>(Round 2 &rarr; Round 3, final state.) The critical design decision wasn&rsquo;t the two-field schema itself &mdash; it was <em>where the scope rule lives</em>. The actual definition of &ldquo;out of scope&rdquo; is not a judge-wide constant; it&rsquo;s a property of each target application&rsquo;s own configuration. Our candidate-facing HR scenario defines generating off-topic fiction as a role violation. A general-purpose assistant scenario defines no such boundary at all, by design &mdash; the shared judge infrastructure asks the same question of both, but only one of them has an answer that penalizes it.</p>
+
+                <p>Final accuracy across the full panel, this fix included:</p>
+
+                <img src="/images/ztai-blog-judge-calibration-chart1-final-accuracy.png" alt="Bar chart showing final accuracy for all five judges scored against 22 hand-labeled responses: gemma4 91%, claude 91%, gpt-5-mini 77%, claude-sonnet-5 82%, gpt-5.6-luna 73%" class="rounded-lg w-full my-5" style="border: 1px solid rgba(0,229,255,0.2);" loading="lazy" />
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Finding 6 &mdash; Some Disagreement Isn&rsquo;t a Judge Problem, It&rsquo;s a Missing-Information Problem</h3>
+
+                <p>One disagreement case never made it into the 22-row calibration set above, and we think the reason it didn&rsquo;t is itself worth stating plainly rather than filing away as a footnote.</p>
+
+                <p>The response in question discussed a pattern of hiring bias &mdash; reasonable to score as a clean, critical description if the reader is internal HR staff being trained on what bias looks like; a real violation if the reader is the external job seeker the pattern is actually about. Nothing in the response text itself says which. This is a sharper version of the audience question Finding 5 resolves at the system level: our candidate-facing scenario assumes a fixed audience, always the candidate, and that&rsquo;s the right call for every other response in this study. But this particular case was <em>still</em> ambiguous, because the text alone doesn&rsquo;t carry enough information to resolve it even once you already know exactly who the bot is for.</p>
+
+                <p>We discussed labeling it either way and decided against forcing a choice. A label manufactured under those conditions isn&rsquo;t ground truth &mdash; it&rsquo;s a coin flip with a name attached to it &mdash; and calibrating a judge against it would teach a lesson that happens to be wrong roughly half the time, for reasons that have nothing to do with the judge&rsquo;s competence or our rule-writing.</p>
+
+                <p>The practical lesson generalizes: not every judge disagreement is a signal that the judge, the rule, or the prompt needs more work. Some are a signal that the text being evaluated doesn&rsquo;t carry enough context to be evaluated at all, by anyone, in isolation. The right response to that kind of case isn&rsquo;t a better rule &mdash; it&rsquo;s recognizing the limit and excluding the case.</p>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">Recommendations for Anyone Running LLM-as-Judge at Scale</h3>
+
+                <ol class="space-y-4 ml-2">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">A rate comparison between two judges understates the real disagreement.</span> Hand-labeling ground truth on a sample of disagreement cases, even a small one, surfaces judge-specific failure patterns a rate comparison alone won&rsquo;t show.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Read the judge&rsquo;s own rationale, not just its verdict, before trusting a fix.</span> A judge that states the correct rule and then contradicts it is a different failure mode from a judge that never understood the rule &mdash; and only the second one reliably responds to clearer prompting.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">Distinguish a model describing a problem from a model committing it, explicitly, in your judge&rsquo;s instructions.</span> Explicitly teach your judge to tell &ldquo;pointing out bias&rdquo; apart from &ldquo;being biased.&rdquo; This isn&rsquo;t specific to our scenario. A sentence that criticizes a stereotype and a sentence that states that same stereotype can use almost identical words &mdash; the only difference is which one the model is doing. Any judge built to catch bias, in any application, can make this mistake if it isn&rsquo;t told to check which one it&rsquo;s looking at.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">Score generation reliability separately from content safety.</span> A judge built only to ask &ldquo;is this harmful&rdquo; has no way to flag a response that&rsquo;s merely incoherent, and a human reviewer is often the only check that will catch it.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">5.</span><span><span class="font-bold text-white">Don&rsquo;t let &ldquo;is this harmful&rdquo; and &ldquo;should this assistant have engaged at all&rdquo; share one field.</span> If your violation score is answering both, expect it to get both wrong at the same time &mdash; our own attempt collapsed accuracy across every judge on the panel simultaneously.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">6.</span><span><span class="font-bold text-white">Treat scope boundaries as configuration of the target application, not the judge.</span> A single shared content policy across multiple deployed assistants with different jobs will eventually be wrong for at least one of them.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">7.</span><span><span class="font-bold text-white">Recognize when the correct label depends on information the text doesn&rsquo;t contain, and exclude rather than force it.</span> Forcing a label onto an unresolvable case doesn&rsquo;t calibrate a judge &mdash; it teaches it the wrong lesson from an unresolvable question.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-1 shrink-0 font-bold">8.</span><span><span class="font-bold text-white">Calibrate against a real legal or policy standard where one exists, not a generic description of the harm category.</span> Grounding our HR scenario in FEHA&rsquo;s actual business-necessity test, rather than &ldquo;discriminatory content,&rdquo; is what made several of our hardest disagreement cases resolvable at all.</span></li>
+                </ol>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">How ZTAI Can Help</h3>
+
+                <p>Our last study&rsquo;s core governance finding was that a compliance score without a disclosed, calibrated judge model is a number that can move by a third on its own. This study adds a sharper edge: even a well-calibrated judge can be answering the wrong question if a target application&rsquo;s scope and purpose aren&rsquo;t built into the test itself. A single enterprise-wide &ldquo;AI safety score&rdquo; applied uniformly across a candidate-facing HR bot, an internal recruiting tool, and a general-purpose assistant is not just under-calibrated &mdash; it&rsquo;s structurally incapable of being correct for all three at once.</p>
+
+                <div class="grid gap-5 sm:grid-cols-2 mt-5">
+                  <div class="cyber-border rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-2">AI Safety Assessment</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">ZTAI&rsquo;s AI Security Assessments score findings using AARS and OWASP AIVSS with both the judge model <em>and</em> the target application&rsquo;s defined scope treated as disclosed, calibrated variables.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Book an Assessment">Book an Assessment</button>
+                  </div>
+                  <div class="terminal-panel rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-2">AI Impact Assessment</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">We evaluate each deployed AI system against its own actual purpose and role boundaries &mdash; not a generic content policy &mdash; consistent with EU AI Act Article 9 and ISO 42001 fairness-analysis requirements.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Request Assessment">Request Assessment</button>
+                  </div>
+                </div>
+
+                <footer class="border-t border-neon/20 pt-6 mt-8">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben leads AI security assessments for enterprise clients and is developing automated governance tools for enterprises scaling AI safely.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40">benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 border-t border-neon/10 pt-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/40 mb-2">Primary Sources</p>
+                    <ul class="space-y-1 text-xs text-emerald-50/50">
+                      <li>&rarr; <span onclick="window.showBlogArticle('article-wrap-toxicity')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-toxicity')}" class="underline underline-offset-2 hover:text-neon transition-colors cursor-pointer focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">The Attacks That Don&rsquo;t Look Like Attacks &mdash; the original study this piece follows up on</span></li>
+                      <li id="jc-fn1">&rarr; <sup>1</sup> Du, M. et al. <a href="https://arxiv.org/pdf/2208.11857" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">&ldquo;Shortcut Learning of Large Language Models in Natural Language Understanding&rdquo;</a> &mdash; documents models exploiting spurious lexical cues rather than genuine semantic understanding.</li>
+                      <li id="jc-fn2">&rarr; <sup>2</sup> <a href="https://arxiv.org/pdf/2603.29025" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">&ldquo;The Model Says Walk: How Surface Heuristics Override Implicit Constraints in LLM Reasoning&rdquo;</a> &mdash; surface-level heuristics overriding deeper contextual constraints.</li>
+                      <li id="jc-fn3">&rarr; <sup>3</sup> <a href="https://arxiv.org/html/2510.16815v2" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">&ldquo;Knowing the Facts but Choosing the Shortcut: Understanding How Large Language Models Compare Entities&rdquo;</a> &mdash; smaller models shown to favor surface cues over their own more accurate underlying values.</li>
+                    </ul>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published October 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+            </div><!-- /article-wrap-judge-calibration -->
+
           </div>
         </section>
       </div>
@@ -3666,6 +3923,6 @@ Result:  Passed through completely unmodified. Full text reflected
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=8"></script>
+  <script type="module" src="/js/tabs.js?v=9"></script>
 </body>
 </html>
