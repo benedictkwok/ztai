@@ -3,6 +3,7 @@ import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@12/+esm";
 const panels = {
   home: document.getElementById("panel-home"),
   blog: document.getElementById("panel-blog"),
+  disclosures: document.getElementById("panel-disclosures"),
   contact: document.getElementById("panel-contact"),
   founder: document.getElementById("panel-founder"),
 };
@@ -62,6 +63,18 @@ function switchTab(newTab) {
           cards,
           { opacity: [0, 1], y: [28, 0] },
           { delay: stagger(0.1), duration: 0.4, ease: "easeOut" }
+        );
+      }
+    }
+
+    // Stagger-animate disclosure sections on disclosures tab entry
+    if (newTab === "disclosures") {
+      const sections = inEl.querySelectorAll(".disclosure-section");
+      if (sections.length) {
+        animate(
+          sections,
+          { opacity: [0, 1], y: [20, 0] },
+          { delay: stagger(0.07), duration: 0.35, ease: "easeOut" }
         );
       }
     }
@@ -313,9 +326,12 @@ window.submitUnlockCode = function () {
 _restoreSession();
 
 // Deep-link: ?blogname=shadow_ai opens the blog tab and reveals the article
+// ?blogname=disclosures is a special alias that opens the Disclosures tab
 (function handleDeepLink() {
   const slug = new URLSearchParams(window.location.search).get("blogname");
-  if (!slug || !BLOG_SLUGS[slug]) return;
+  if (!slug) return;
+  if (slug === "disclosures") { switchTab("disclosures"); return; }
+  if (!BLOG_SLUGS[slug]) return;
   switchTab("blog");
   setTimeout(() => window.showBlogArticle(BLOG_SLUGS[slug]), 450);
 })();

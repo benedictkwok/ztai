@@ -31,6 +31,7 @@
             <button class="tab-btn" data-scroll="#platform" role="button">Platform</button>
             <button class="tab-btn" data-scroll="#services" role="button">Consulting</button>
             <button class="tab-btn" data-tab="blog" role="tab" aria-selected="false" aria-controls="panel-blog">Blog</button>
+            <button class="tab-btn" data-tab="disclosures" role="tab" aria-selected="false" aria-controls="panel-disclosures">Disclosures</button>
             <button class="tab-btn" data-tab="contact" role="tab" aria-selected="false" aria-controls="panel-contact">Contact Us</button>
             <button class="tab-btn" data-tab="founder" role="tab" aria-selected="false" aria-controls="panel-founder">About the Founder</button>
           </div>
@@ -3491,6 +3492,224 @@ Result:  Passed through completely unmodified. Full text reflected
       <!-- /panel-blog -->
 
       <!-- ═══════════════════════════════════════════════════════════════════
+           DISCLOSURES PANEL
+           ═══════════════════════════════════════════════════════════════════ -->
+      <div id="panel-disclosures" class="hidden" role="tabpanel" aria-labelledby="tab-disclosures">
+        <section class="px-5 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-5xl">
+
+            <!-- Header -->
+            <div class="disclosure-section mb-10">
+              <p class="mb-2 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Responsible Disclosure</p>
+              <h2 class="glow-text text-3xl font-black uppercase text-white sm:text-4xl mb-5">Research &amp; Disclosures</h2>
+              <div class="terminal-panel rounded-lg p-6 sm:p-8">
+                <p class="text-sm leading-7 text-emerald-50/80 mb-4">ZTAI reports security issues it finds in AI tooling directly to the maintainers, with a reproduction and a suggested fix. Where we can, we write the fix ourselves and submit it upstream.</p>
+                <p class="text-sm leading-7 text-emerald-50/80 mb-4"><span class="font-bold text-white">Disclosure policy.</span> We report privately or through the project&rsquo;s public issue tracker, per the project&rsquo;s own security policy. We publish technical write-ups only after a fix ships or 90 days after the report, whichever comes first. Nothing on this page comes from client engagements.</p>
+                <p class="text-xs text-emerald-50/40 mt-2">Last verified against GitHub: 2026-10-01</p>
+              </div>
+            </div>
+
+            <!-- At a glance -->
+            <div class="disclosure-section mb-10">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">At a Glance</p>
+              <div class="overflow-x-auto rounded-lg" style="border: 1px solid rgba(0,229,255,0.25);">
+                <table style="width:100%;border-collapse:collapse;font-size:0.72rem;line-height:1.5rem;font-family:inherit;">
+                  <thead>
+                    <tr style="background:rgba(0,0,0,0.6);">
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 14px;text-align:left;text-transform:uppercase;letter-spacing:0.12em;color:rgba(240,253,245,0.6);">Vendor / Project</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 14px;text-align:center;text-transform:uppercase;letter-spacing:0.12em;color:rgba(0,229,255,1);">Issues Reported</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 14px;text-align:center;text-transform:uppercase;letter-spacing:0.12em;color:rgba(0,229,255,1);">Fix PRs by ZTAI</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 14px;text-align:left;text-transform:uppercase;letter-spacing:0.12em;color:rgba(0,229,255,1);">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(240,253,245,0.85);font-weight:600;">NVIDIA / SkillSpector</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">4</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">2</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(110,231,183,1);">All 4 resolved &mdash; 3 fixes merged (2 by ZTAI, 1 community)</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(240,253,245,0.85);font-weight:600;">IBM / ContextForge MCP Gateway</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">4</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">4</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(251,191,36,1);">All open, under review</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(240,253,245,0.85);font-weight:600;">Anthropic / Agent Skills</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">5</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:rgba(240,253,245,0.7);">&mdash;</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:rgba(251,191,36,1);">4 open; 1 closed</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.3);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;color:white;font-weight:700;">Total</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:white;font-weight:700;">13</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;text-align:center;color:white;font-weight:700;">6</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 14px;"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- NVIDIA SkillSpector -->
+            <div class="disclosure-section mb-10">
+              <div class="flex items-center gap-3 mb-4">
+                <p class="text-base font-black uppercase text-neon">NVIDIA &mdash; SkillSpector</p>
+                <span class="inline-flex rounded border border-neon/40 bg-neon/8 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-neon/80">Agent-skill security scanner</span>
+              </div>
+              <div class="overflow-x-auto rounded-lg mb-4" style="border: 1px solid rgba(0,229,255,0.25);">
+                <table style="width:100%;border-collapse:collapse;font-size:0.72rem;line-height:1.6rem;font-family:inherit;">
+                  <thead>
+                    <tr style="background:rgba(0,0,0,0.6);">
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(240,253,245,0.6);">Report</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Finding</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Fix</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/issues/405" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#405</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);">EA1 wildcard-tool-access rule matched across blank lines and markdown (false positives)</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/pull/417" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #417</a> <span style="color:rgba(240,253,245,0.45);">(ZTAI)</span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(110,231,183,1);white-space:nowrap;">
+                        <svg class="inline-block mr-1" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Merged 2026-08-24
+                      </td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/issues/406" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#406</a>, <a href="https://github.com/NVIDIA/SkillSpector/issues/407" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#407</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);">PE3 credential rule: OAuth-doc exemption missed singular <code class="text-neon/70 text-xs">reference/</code> dir; <code class="text-neon/70 text-xs">.env</code> pattern matched Python attribute access</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/pull/415" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #415</a> <span style="color:rgba(240,253,245,0.45);">(ZTAI)</span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(110,231,183,1);white-space:nowrap;">
+                        <svg class="inline-block mr-1" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Merged 2026-08-24
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/issues/419" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#419</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);">TP4 description-vs-behavior check never analyzed code embedded in markdown reference docs (missed detections)</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/NVIDIA/SkillSpector/pull/421" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #421</a> <span style="color:rgba(240,253,245,0.45);">(community)</span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(110,231,183,1);white-space:nowrap;">
+                        <svg class="inline-block mr-1" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Merged 2026-09-18
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- IBM ContextForge -->
+            <div class="disclosure-section mb-10">
+              <div class="flex items-center gap-3 mb-4">
+                <p class="text-base font-black uppercase text-neon">IBM &mdash; ContextForge MCP Gateway</p>
+                <span class="inline-flex rounded border border-cyber/40 bg-cyber/8 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-cyber/80">MCP Gateway</span>
+              </div>
+              <div class="overflow-x-auto rounded-lg mb-3" style="border: 1px solid rgba(0,229,255,0.25);">
+                <table style="width:100%;border-collapse:collapse;font-size:0.72rem;line-height:1.6rem;font-family:inherit;">
+                  <thead>
+                    <tr style="background:rgba(0,0,0,0.6);">
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(240,253,245,0.6);">Report</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Finding</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Fix</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/issues/6823" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#6823</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">CodeSafetyLinterPlugin</code> never scanned real MCP tool output (dead code: wrong result shape)</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/pull/6824" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #6824</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open, under review</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/issues/6825" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#6825</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);">No detection for tool shadowing (near-miss tool names impersonating legitimate tools)</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/pull/6826" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #6826</a> <span style="color:rgba(240,253,245,0.45);">new <code class="text-neon/70 text-xs">ToolShadowDetectorPlugin</code></span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open, under review</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/issues/6827" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#6827</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">SecretsDetection</code> <code class="text-neon/70 text-xs">hex_secret_32</code> pattern false-positives on legitimate hex tokens</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/pull/6828" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #6828</a> <span style="color:rgba(240,253,245,0.45);">(docs)</span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open, under review</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/issues/6829" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#6829</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">UnifiedPDPPlugin</code> default rules deny callers without a role claim entirely</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/IBM/mcp-context-forge/pull/6830" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">PR #6830</a> <span style="color:rgba(240,253,245,0.45);">(docs)</span></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open, under review</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-xs text-emerald-50/45 mt-2">Background: <span onclick="window.showBlogArticle('article-wrap-mcp-gateway')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-mcp-gateway')}" class="text-neon/70 underline underline-offset-2 cursor-pointer hover:text-neon transition-colors focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">Blocked &ne; Protected &mdash; testing ContextForge against all 10 DVMCP challenges</span></p>
+            </div>
+
+            <!-- Anthropic Skills -->
+            <div class="disclosure-section mb-10">
+              <div class="flex items-center gap-3 mb-4">
+                <p class="text-base font-black uppercase text-neon">Anthropic &mdash; Agent Skills</p>
+                <span class="inline-flex rounded border px-2 py-0.5 text-xs font-bold uppercase tracking-wide" style="border-color:rgba(251,146,60,0.4);background:rgba(251,146,60,0.08);color:rgba(251,146,60,0.8);">anthropics/skills</span>
+              </div>
+              <div class="overflow-x-auto rounded-lg mb-3" style="border: 1px solid rgba(0,229,255,0.25);">
+                <table style="width:100%;border-collapse:collapse;font-size:0.72rem;line-height:1.6rem;font-family:inherit;">
+                  <thead>
+                    <tr style="background:rgba(0,0,0,0.6);">
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(240,253,245,0.6);">Report</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Skill / File</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Class</th>
+                      <th style="border:1px solid rgba(0,229,255,0.2);padding:8px 12px;text-align:left;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,229,255,1);">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/anthropics/skills/issues/1617" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#1617</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">pdf</code> &mdash; <code class="text-neon/70 text-xs">fill_fillable_fields.py</code> silently overwrites existing files</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;color:rgba(240,253,245,0.55);">CWE-73</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/anthropics/skills/issues/1618" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#1618</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">mcp-builder</code> &mdash; path traversal in resource-handler example</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;color:rgba(240,253,245,0.55);">CWE-22</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/anthropics/skills/issues/1619" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#1619</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">mcp-builder</code> &mdash; <code class="text-neon/70 text-xs">MCPConnectionStdio</code> passes unvalidated command/args</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;color:rgba(240,253,245,0.55);">CWE-78</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open</td>
+                    </tr>
+                    <tr style="background:rgba(0,0,0,0.2);">
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/anthropics/skills/issues/1621" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#1621</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">mcp-builder</code> &mdash; <code class="text-neon/70 text-xs">MCPConnectionSSE</code>/<code class="text-neon/70 text-xs">HTTP</code> accept arbitrary URLs and forward headers</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;color:rgba(240,253,245,0.55);">CWE-918</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(251,191,36,1);white-space:nowrap;">Open</td>
+                    </tr>
+                    <tr>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;"><a href="https://github.com/anthropics/skills/issues/1620" target="_blank" rel="noopener noreferrer" class="text-neon/70 underline underline-offset-2 hover:text-neon transition-colors">#1620</a></td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(240,253,245,0.75);"><code class="text-neon/70 text-xs">webapp-testing</code> &mdash; shell injection via <code class="text-neon/70 text-xs">--server</code> (<code class="text-neon/70 text-xs">shell=True</code>)</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;white-space:nowrap;color:rgba(240,253,245,0.55);">CWE-78</td>
+                      <td style="border:1px solid rgba(0,229,255,0.15);padding:8px 12px;color:rgba(110,231,183,0.8);white-space:nowrap;">Closed &mdash; resolved (see <a href="https://github.com/anthropics/skills/issues/1021" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">#1021</a>)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-xs text-emerald-50/45 mt-2">Found during an independent evaluation of agent-skill supply-chain risk using NVIDIA SkillSpector. Background: <span onclick="window.showBlogArticle('article-wrap-skills')" tabindex="0" role="link" onkeydown="if(event.key==='Enter'){window.showBlogArticle('article-wrap-skills')}" class="text-neon/70 underline underline-offset-2 cursor-pointer hover:text-neon transition-colors focus:outline-none focus:ring-1 focus:ring-neon/50 rounded">AI skills supply-chain research</span></p>
+            </div>
+
+            <!-- Footer -->
+            <div class="disclosure-section cyber-border rounded-lg p-5 sm:p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-3">Found Something in ZTAI&rsquo;s Own Site or Tools?</p>
+              <p class="text-sm leading-7 text-emerald-50/70">See our <a href="/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">security.txt</a> or email <a href="mailto:benedictkwok@ztai.ai" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">benedictkwok@ztai.ai</a>.</p>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <!-- /panel-disclosures -->
+
+      <!-- ═══════════════════════════════════════════════════════════════════
            CONTACT PANEL
            ═══════════════════════════════════════════════════════════════════ -->
       <div id="panel-contact" class="hidden" role="tabpanel" aria-labelledby="tab-contact">
@@ -3923,6 +4142,6 @@ Result:  Passed through completely unmodified. Full text reflected
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=9"></script>
+  <script type="module" src="/js/tabs.js?v=10"></script>
 </body>
 </html>

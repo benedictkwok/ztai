@@ -1,0 +1,5 @@
+Contact: mailto:benedictkwok@ztai.ai
+Expires: 2027-09-28T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://ztai.ai/.well-known/security.txt
+Policy: https://ztai.ai/?blogname=disclosures
