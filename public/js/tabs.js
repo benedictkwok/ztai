@@ -19,6 +19,7 @@ const BLOG_SLUGS = {
   prompt_injection_resistance: "article-wrap-injection",
   toxicity_judge_sensitivity:  "article-wrap-toxicity",
   judge_calibration:           "article-wrap-judge-calibration",
+  llm_influence_attack_poisoned_context: "article-wrap-influence",
 };
 
 let currentTab = "home";
