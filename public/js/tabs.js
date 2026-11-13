@@ -326,13 +326,17 @@ window.submitUnlockCode = function () {
 // Restore session on module init
 _restoreSession();
 
-// Deep-link: ?blogname=shadow_ai opens the blog tab and reveals the article
-// ?blogname=disclosures is a special alias that opens the Disclosures tab
+// Deep-link: ?tab=contact opens the Contact tab; ?tab=disclosures opens Disclosures
+// ?blogname=<slug> opens the blog tab and reveals a specific article
 (function handleDeepLink() {
-  const slug = new URLSearchParams(window.location.search).get("blogname");
+  const params = new URLSearchParams(window.location.search);
+
+  const tab = params.get("tab");
+  if (tab && panels[tab]) { switchTab(tab); return; }
+
+  const slug = params.get("blogname");
   if (!slug) return;
   if (slug === "disclosures") { switchTab("disclosures"); return; }
-  if (slug === "contact") { switchTab("contact"); return; }
   if (!BLOG_SLUGS[slug]) return;
   switchTab("blog");
   setTimeout(() => window.showBlogArticle(BLOG_SLUGS[slug]), 450);
