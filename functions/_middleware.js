@@ -24,6 +24,11 @@ const ARTICLES = {
     description:
       "Every classic jailbreak scored zero violations. 'Rank these candidates' hit 100% on two models. Switching judge models moved the combined violation rate from 16.5% to 22.0% on identical data.",
   },
+  llm_influence_attack_poisoned_context: {
+    title: "Your Chatbot Doesn't Need to Be Hacked to Lie: Measuring Influence Attacks on LLMs | ZTAI.AI",
+    description:
+      "7,920 trials across 6 local models. Neutral poisoned documents alone drove Gemma 4 to 30/30 false answers. A hidden instruction beat a reasoning model that resisted passive misinformation. Delimiter-immune ≠ document-immune.",
+  },
 };
 
 export async function onRequest(context) {
@@ -44,13 +49,15 @@ export async function onRequest(context) {
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${article.title}</title>`);
 
   // Replace content attributes in-place for each existing OG/twitter tag
-  html = html
-    .replace(/(<meta property="og:title"\s+content=")[^"]*(")/,       `$1${article.title}$2`)
-    .replace(/(<meta property="og:description"\s+content=")[^"]*(")/,  `$1${article.description}$2`)
-    .replace(/(<meta property="og:url"\s+content=")[^"]*(")/,          `$1${url.href}$2`)
-    .replace(/(<meta property="og:type"\s+content=")[^"]*(")/,         `$1article$2`)
-    .replace(/(<meta name="twitter:title"\s+content=")[^"]*(")/,       `$1${article.title}$2`)
-    .replace(/(<meta name="twitter:description"\s+content=")[^"]*(")/,  `$1${article.description}$2`);
+  const safeReplace = (str, re, prefix, value, suffix) =>
+    str.replace(re, () => prefix + value + suffix);
+
+  html = safeReplace(html, /(<meta property="og:title"\s+content=")[^"]*(")/,       '$1', article.title,       '$2');
+  html = safeReplace(html, /(<meta property="og:description"\s+content=")[^"]*(")/,  '$1', article.description,  '$2');
+  html = safeReplace(html, /(<meta property="og:url"\s+content=")[^"]*(")/,          '$1', url.href,              '$2');
+  html = safeReplace(html, /(<meta property="og:type"\s+content=")[^"]*(")/,         '$1', 'article',             '$2');
+  html = safeReplace(html, /(<meta name="twitter:title"\s+content=")[^"]*(")/,       '$1', article.title,         '$2');
+  html = safeReplace(html, /(<meta name="twitter:description"\s+content=")[^"]*(")/,  '$1', article.description,  '$2');
 
   return new Response(html, {
     status: response.status,

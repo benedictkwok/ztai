@@ -455,10 +455,11 @@ if (contactForm) {
     if (submitBtn) submitBtn.disabled = true;
 
     try {
+      const turnstileToken = document.querySelector("#cf-turnstile-widget input[name='cf-turnstile-response']")?.value || "";
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, company, email, website, message }),
+        body: JSON.stringify({ name, company, email, website, message, turnstileToken }),
       });
 
       if (res.ok) {
@@ -466,6 +467,7 @@ if (contactForm) {
         contactSuccess.classList.remove("hidden");
         animate(contactSuccess, { opacity: [0, 1], y: [-8, 0] }, { duration: 0.3 });
         contactForm.reset();
+        if (typeof turnstile !== "undefined") turnstile.reset();
         setTimeout(() => {
           contactStatus.textContent = "standby";
           contactSuccess.classList.add("hidden");

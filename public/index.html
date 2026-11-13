@@ -17,6 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/output.css" />
+  <!-- Cloudflare Turnstile — replace data-sitekey with your production key from
+       dash.cloudflare.com > Turnstile. Test key (always-passes) used by default.
+       Set TURNSTILE_SECRET_KEY env var in CF Pages to enable server-side verification. -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="font-mono antialiased">
   <div class="page-shell min-h-screen">
@@ -552,6 +556,7 @@
                 <p class="text-xs leading-5 text-emerald-50/60">As part of our own compliance and security practice, we screen prospective engagements against U.S. sanctions and denied-party lists before beginning technical work. Please don&rsquo;t include sensitive system details in this form &mdash; we&rsquo;ll establish a secure channel after initial contact.</p>
               </div>
 
+              <div id="ia-turnstile" class="cf-turnstile mb-4" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
               <button class="volatile-button w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]" type="submit" data-text="Initiate Assessment">Initiate Assessment</button>
               <p class="mt-3 text-xs leading-5 text-emerald-50/40 text-center">Submitted information is used solely for assessment intake and follow-up. See our <a href="/privacy.html" class="underline underline-offset-2 hover:text-neon transition-colors">Privacy Policy</a> for your CCPA rights.</p>
             </form>
@@ -4047,8 +4052,9 @@ Result:  Passed through completely unmodified. Full text reflected
                   <p class="text-xs leading-5 text-emerald-50/60">As part of our own compliance and security practice, we screen prospective engagements against U.S. sanctions and denied-party lists before beginning technical work. Please don&rsquo;t include sensitive system details in this form &mdash; we&rsquo;ll establish a secure channel after initial contact.</p>
                 </div>
 
-                <!-- Submit -->
+                <!-- Turnstile + Submit -->
                 <div class="form-group">
+                  <div id="cf-turnstile-widget" class="cf-turnstile mb-4" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
                   <button
                     type="submit"
                     class="volatile-button w-full rounded-md px-6 py-4 text-sm font-black uppercase tracking-[0.22em]"
@@ -4325,10 +4331,11 @@ Result:  Passed through completely unmodified. Full text reflected
       if (submitBtn) submitBtn.disabled = true;
 
       try {
+        const turnstileToken = document.querySelector("#ia-turnstile input[name='cf-turnstile-response']")?.value || "";
         const res = await fetch("/api/intake", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, company, email, website, architecture }),
+          body: JSON.stringify({ name, company, email, website, architecture, turnstileToken }),
         });
         if (res.ok) {
           formStatus.textContent = "transmitted";
@@ -4337,6 +4344,7 @@ Result:  Passed through completely unmodified. Full text reflected
             formStatus.textContent = "standby";
             assessmentForm.classList.remove("shadow-neon");
             assessmentForm.reset();
+            if (typeof turnstile !== "undefined") turnstile.reset();
           }, 1800);
         } else {
           formStatus.textContent = "error";
@@ -4350,6 +4358,6 @@ Result:  Passed through completely unmodified. Full text reflected
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=11"></script>
+  <script type="module" src="/js/tabs.js?v=12"></script>
 </body>
 </html>

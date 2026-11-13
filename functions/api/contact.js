@@ -7,10 +7,13 @@ const PERSONAL_EMAIL_DOMAINS = new Set([
 
 export async function onRequestPost({ request, env }) {
   try {
-    const { name, company, email, website, message } = await request.json();
+    const { name, company, email, website, message, turnstileToken } = await request.json();
 
     if (!name || !company || !email || !website || !message)
       return Response.json({ error: "Missing required fields" }, { status: 400 });
+
+    if (name.length > 200 || company.length > 200 || website.length > 500 || message.length > 10000)
+      return Response.json({ error: "Input exceeds maximum length" }, { status: 400 });
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return Response.json({ error: "Invalid email address" }, { status: 400 });
@@ -18,6 +21,15 @@ export async function onRequestPost({ request, env }) {
     const domain = email.split("@")[1]?.toLowerCase();
     if (domain && PERSONAL_EMAIL_DOMAINS.has(domain))
       return Response.json({ error: "Company email required" }, { status: 400 });
+
+    if (env.TURNSTILE_SECRET_KEY) {
+      const fd = new FormData();
+      fd.append("secret", env.TURNSTILE_SECRET_KEY);
+      fd.append("response", turnstileToken || "");
+      fd.append("remoteip", request.headers.get("CF-Connecting-IP") || "");
+      const tv = await (await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: fd })).json();
+      if (!tv.success) return Response.json({ error: "Bot verification failed" }, { status: 403 });
+    }
 
     if (env.RESEND_API_KEY) {
       const res = await fetch("https://api.resend.com/emails", {
