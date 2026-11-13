@@ -332,6 +332,7 @@ _restoreSession();
   const slug = new URLSearchParams(window.location.search).get("blogname");
   if (!slug) return;
   if (slug === "disclosures") { switchTab("disclosures"); return; }
+  if (slug === "contact") { switchTab("contact"); return; }
   if (!BLOG_SLUGS[slug]) return;
   switchTab("blog");
   setTimeout(() => window.showBlogArticle(BLOG_SLUGS[slug]), 450);
