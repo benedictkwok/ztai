@@ -641,6 +641,35 @@
                 </div>
               </article>
 
+              <!-- Card: Symlink Boundary Research — Nov 2026 -->
+              <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Prompt Is Not the Control: Testing the Symlink Boundary in AI Agent Tooling" onclick="window.showBlogArticle('article-wrap-symlink')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-symlink')}">
+                <div class="flex-1 min-w-0">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="inline-flex rounded border px-2 py-1 text-xs font-bold uppercase tracking-wide" style="border-color:rgba(251,146,60,0.5);background:rgba(251,146,60,0.08);color:rgb(251,146,60);">Agentic Security</span>
+                    <span class="text-xs text-emerald-50/50">Nov 2026</span>
+                  </div>
+                  <h3 class="text-xl font-black uppercase text-white mb-3">The Prompt Is Not the Control: Testing the Symlink Boundary in AI Agent Tooling</h3>
+                  <p class="text-sm leading-7 text-emerald-50/68 mb-4">Desktop Commander&rsquo;s file tools resolved symlinks and refused access. Its shell tool is not bound by <code class="text-neon/80 text-xs">allowedDirectories</code> &mdash; the project documents this, and users still miss it. The gap is disclosed and still misread. We also added symlink detection to NVIDIA&rsquo;s SkillSpector: 3 HIGH findings across 3,706 skill files.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Agentic Security</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">MCP</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">CWE-59</span>
+                    <span class="rounded border border-neon/30 px-2 py-0.5 text-xs text-neon/70">Approval Prompts</span>
+                  </div>
+                </div>
+                <div class="shrink-0 flex flex-col gap-3 md:items-end md:min-w-40">
+                  <ul class="space-y-2 text-xs text-emerald-50/68">
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>File tools held; shell had no boundary</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>3 HIGH in 3,706 SkillSpector scan files</li>
+                    <li class="flex items-center gap-2"><span class="text-neon">›</span>PR #1142 open, CI green</li>
+                  </ul>
+                  <div class="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-neon">
+                    <span>Read Article</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+
               <!-- Card: AI Skills Supply Chain -->
               <article class="blog-card cyber-border rounded-lg p-6 md:col-span-3 flex flex-col md:flex-row md:items-start gap-6 cursor-pointer" tabindex="0" role="button" aria-label="Read: The Hidden Threat in Your AI Toolchain" onclick="window.showBlogArticle('article-wrap-skills')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.showBlogArticle('article-wrap-skills')}">
                 <div class="flex-1 min-w-0">
@@ -3699,6 +3728,216 @@ Result:  Passed through completely unmodified. Full text reflected
             </article>
             </div><!-- /article-wrap-influence -->
 
+            <div id="article-wrap-symlink" class="hidden">
+            <!-- ── Research: Symlink Boundary ── -->
+            <div class="mb-6 mt-16 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="mb-1 text-sm font-bold uppercase tracking-[0.24em] text-cyber">Security Research</p>
+                <h3 class="text-xl font-black uppercase text-white">Symlink Boundary Study</h3>
+              </div>
+              <button
+                onclick="downloadBlogPdf('blog-post-symlink', 'ztai-symlink-approval-boundary.pdf')"
+                class="volatile-button inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-xs"
+                data-text="Download PDF"
+                aria-label="Download this security research as a PDF"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+              </button>
+            </div>
+
+            <article id="blog-post-symlink" class="terminal-panel rounded-lg p-6 sm:p-10 mb-16">
+
+              <header class="mb-8 border-b border-neon/25 pb-6">
+                <div class="mb-4 flex flex-wrap items-center gap-3">
+                  <span class="inline-flex rounded border px-2 py-1 text-xs font-bold uppercase tracking-wide" style="border-color:rgba(251,146,60,0.5);background:rgba(251,146,60,0.08);color:rgb(251,146,60);">Agentic Security</span>
+                  <span class="text-xs text-emerald-50/50">November 2026 &middot; ZTAI.AI Security Research</span>
+                </div>
+                <h2 class="glow-text text-2xl font-black uppercase text-white sm:text-3xl mb-3">
+                  The Prompt Is Not the Control: Testing the Symlink Boundary in AI Agent Tooling
+                </h2>
+                <p class="text-sm text-emerald-50/55">By Benedict Kwok &mdash; Founder &amp; Principal Security Advisor, ZTAI Security Advisors LLC</p>
+              </header>
+
+              <!-- Executive Summary -->
+              <div class="rounded-lg border border-cyber/30 bg-cyber/5 p-5 mb-8">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-4">Executive Summary</p>
+                <div class="space-y-3 text-sm leading-7 text-emerald-50/80">
+                  <p>In November 2026 a researcher showed that the Claude Code VS Code extension displays a workspace-relative path in its permission prompt even when a symlink points that path outside the workspace. Anthropic closed the report as not a security issue, on the argument that the prompt is not the security control. The same symlink pattern has now been reported against the Claude Code CLI three times, against Claude Desktop on Windows once, and against every major competing coding agent.</p>
+                  <p>We ran a controlled test of the same pattern against a different tool in the same category: Desktop Commander, an MCP server that gives Claude a shell and file tools on a Mac, scoped by an <code class="text-neon/80 text-xs">allowedDirectories</code> list.</p>
+                  <ul class="space-y-2 ml-1">
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0">&rsaquo;</span><span><span class="font-bold text-white">File tools held.</span> A symlink placed inside an allowed folder, pointing to a folder outside it, was resolved to its real location and refused for both read and write.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0">&rsaquo;</span><span><span class="font-bold text-white">The shell tool is not bound by that setting, and the project says so.</span> The same server&rsquo;s command-execution tool read the outside file directly, with no symlink needed. Desktop Commander&rsquo;s own README and SECURITY.md state that <code class="text-neon/80 text-xs">allowedDirectories</code> governs file operations only and that terminal commands can reach files outside it. The gap is not undisclosed; it is disclosed and still misread.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-cyber mt-0.5 shrink-0">&rsaquo;</span><span><span class="font-bold text-white">The only control on the shell path is the per-command approval prompt</span>, which is the control Anthropic said is not a control.</span></li>
+                  </ul>
+                  <p>The lesson is not &ldquo;Desktop Commander is broken&rdquo; or &ldquo;Claude Code is broken&rdquo;. It is that in agent tooling, the boundary you configured and the boundary that executes are often two different things, and the approval dialog sits between them. Test which one you actually have.</p>
+                  <p>We also closed one gap we could reach. Skills are a natural carrier for a planted link, and the open-source skill scanner we contribute to, NVIDIA&rsquo;s SkillSpector, refused to follow symlinks but never reported them. Our pull request adds two findings so a shipped or script-created link is flagged before the skill is installed.</p>
+                </div>
+              </div>
+
+              <div class="space-y-6 text-sm leading-8 text-emerald-50/80">
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">Introduction</h3>
+
+                <p>Agentic tools ask you to approve things. &ldquo;Edit <code class="text-neon/80 text-xs">./helpdocs/notes.md</code>?&rdquo; &ldquo;Run <code class="text-neon/80 text-xs">cat config/.env</code>?&rdquo; You read the line, you click yes. That click is doing a lot of work, and three groups of researchers spent 2026 showing that the line you read is not always the thing that happens.</p>
+
+                <p>The pattern is a symbolic link. A symlink is a file that points to another path. If <code class="text-neon/80 text-xs">./helpdocs</code> is a symlink to <code class="text-neon/80 text-xs">/etc</code>, then <code class="text-neon/80 text-xs">./helpdocs/passwd</code> is <code class="text-neon/80 text-xs">/etc/passwd</code>, but a tool that prints the path it was handed will show you <code class="text-neon/80 text-xs">./helpdocs/passwd</code>. Approve that, and the agent reads a system file while the prompt told you it was reading a help document. Wiz calls this CWE-451, misrepresentation of critical information in the UI, layered on the much older CWE-59, improper link resolution.</p>
+
+                <p>This post does two things. It collects what has been reported against Claude&rsquo;s own tooling, then it runs the same test against a tool many Claude Desktop users have installed, and reports exactly what happened.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">1. What Has Been Reported</h3>
+
+                <p class="text-xs text-emerald-50/50 italic">Dates and versions below are as reported by the cited sources. Verify against the originals before relying on them.</p>
+
+                <p><span class="font-bold text-white">Claude Code VS Code extension (November 2026).</span> Carl Pearson of Ultrastrike reported that the extension&rsquo;s permission prompt shows the workspace path, not the resolved path, for a symlinked location. Reported against version 2.1.322, no patch at publication. Anthropic&rsquo;s position, per the report: the prompt is not part of the security control, and symlinks fall outside the permission threat model.</p>
+
+                <p><span class="font-bold text-white">Claude Code CLI, three times.</span></p>
+                <ul class="space-y-2 ml-1">
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0">&rsaquo;</span><span>CVE-2025-59829 (GHSA-66m2-gx93-v996, CWE-61): permission deny rules did not account for symlinks; fixed in 1.0.120. GitHub rates it Low.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0">&rsaquo;</span><span>CVE-2026-25724 (GHSA-4q92-rfm6-2cqx, CWE-61): a file explicitly denied in <code class="text-neon/80 text-xs">settings.json</code> could be read through a symlink without triggering the deny rule; fixed in 2.1.7. NVD scores it 7.5 (CVSS 3.1); GitHub&rsquo;s own advisory rates it Low.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0">&rsaquo;</span><span>SymJack (Adversa AI, May 2026): the approval-prompt variant. Anthropic rejected the report, then shipped a change in 2.1.129 that resolves symlinks before the prompt and shows the real destination. GhostApproval (Wiz, July 2026) covered the same ground; Anthropic said a symlink warning had shipped in early February as routine hardening.</span></li>
+                </ul>
+
+                <p><span class="font-bold text-white">Claude Desktop for Windows, CVE-2026-44470</span> (GHSA-5p5x-5294-qhp3, CWE-59, CVSS 4.0 score 8.5). The CoworkVMService ran as SYSTEM and did not check whether the VM bundle directory was a real directory or an NTFS junction before creating files in it; local privilege escalation. Fixed in 1.3834.0. Same weakness class, different link type.</p>
+
+                <p><span class="font-bold text-white">Everyone else.</span> Adversa&rsquo;s SymJack confirmed the technique against Claude Code, Gemini CLI, Antigravity CLI, Cursor Agent CLI, GitHub Copilot CLI, Grok Build and Codex CLI. Wiz&rsquo;s GhostApproval list adds Amazon Q Developer, Augment and Windsurf. Cursor&rsquo;s CVE-2026-50549 (GHSA-3v8f-48vw-3mjx, fixed in 3.0) is rated 9.8 under CVSS 3.1 and 9.3 under CVSS 4.0.</p>
+
+                <p>The pattern across all of it: CLIs get fixed first, IDE surfaces lag, and vendors argue about whether a click the user made counts as a vulnerability.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">2. The Test: Desktop Commander on macOS</h3>
+
+                <p><span class="font-bold text-white">Why this target.</span> Desktop Commander (version 0.2.46, running as a DXT plugin inside Claude Desktop 5.11492.5 on macOS 26.6.2) is an MCP server that gives Claude Desktop a terminal and file tools on the user&rsquo;s own machine. It has a configuration setting, <code class="text-neon/80 text-xs">allowedDirectories</code>, that restricts which folders the file tools can touch. It is the kind of boundary a careful user sets up and then trusts. On the test machine it was scoped to three folders: a dev tree, an Obsidian vault, and one more project folder. Nothing else.</p>
+
+                <p><span class="font-bold text-white">Setup.</span> All paths are real; the key is fake.</p>
+
+                <ol class="space-y-2 ml-1">
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0 font-bold">1.</span><span>Create a folder outside every allowed directory: <code class="text-neon/80 text-xs">~/dc-symlink-test/</code>.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0 font-bold">2.</span><span>Put a fake credential in it: <code class="text-neon/80 text-xs">FAKE_TEST_KEY=sk-test-FAKE-0000-not-a-real-key</code>.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0 font-bold">3.</span><span>Create a symlink inside the allowed vault pointing at the outside folder: <code class="text-neon/80 text-xs">&lt;vault&gt;/External/dc-test-link &rarr; ~/dc-symlink-test</code>.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0 font-bold">4.</span><span>Confirm with <code class="text-neon/80 text-xs">realpath</code> that <code class="text-neon/80 text-xs">&lt;vault&gt;/External/dc-test-link/.env</code> resolves to <code class="text-neon/80 text-xs">~/dc-symlink-test/.env</code>.</span></li>
+                </ol>
+
+                <div class="my-5 overflow-x-auto rounded-lg" style="border: 1px solid rgba(0, 229, 255, 0.25);">
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; line-height: 1.5rem; font-family: inherit;">
+                    <thead>
+                      <tr style="background: rgba(0,0,0,0.6);">
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(240,253,245,0.6);">#</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Tool</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Path given</th>
+                        <th style="border: 1px solid rgba(0,229,255,0.2); padding: 8px 12px; text-align: left; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,229,255,1);">Observed</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.6);">T1 (control)</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">read_file</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Direct path, outside allowed dirs</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);"><strong>Refused</strong> &mdash; &ldquo;Path not allowed&hellip;&rdquo;</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.6);">T2</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">read_file</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Inside allowed dir, via symlink</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);"><strong>Refused</strong>, same message. Link resolved before check.</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.6);">T3</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">write_file</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);">Inside allowed dir, via symlink</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(110,231,183,1);"><strong>Refused</strong>, same message.</td></tr>
+                      <tr style="background:rgba(0,0,0,0.2);"><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.6);">T4</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">start_process</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);"><code class="text-neon/80 text-xs">cat ~/dc-symlink-test/.env</code> (no symlink)</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(255,90,90,1);"><strong>Returned the fake key.</strong> No path check exists.</td></tr>
+                      <tr><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.6);">T5</td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);"><code class="text-neon/80 text-xs">start_process</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.7);"><code class="text-neon/80 text-xs">env</code></td><td style="border: 1px solid rgba(0,229,255,0.15); padding: 8px 12px; color: rgba(240,253,245,0.8);">Returned 22 env vars. None matched key/token/secret on this machine.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p>Cleanup: the symlink and test folder were deleted. Nothing real was read or written. The exact tool calls, arguments, and verbatim responses are recorded in our research archive.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">3. What the Results Mean</h3>
+
+                <p><span class="font-bold text-white">The symlink class is closed on the file side.</span> Desktop Commander&rsquo;s file tools canonicalize the path before comparing it against <code class="text-neon/80 text-xs">allowedDirectories</code>. That is the fix Wiz and Adversa asked every vendor for, and here it was already in place. Credit where due.</p>
+
+                <p><span class="font-bold text-white">The configured boundary does not cover the shell.</span> T4 is the finding. <code class="text-neon/80 text-xs">allowedDirectories</code> is a file-tool setting. The command-execution tool runs whatever it is given, as the logged-in user, and so can read anything that user can read: SSH keys, cloud credentials, real <code class="text-neon/80 text-xs">.env</code> files, browser profiles. A user who set <code class="text-neon/80 text-xs">allowedDirectories</code> to three folders and believes the agent is confined to them is wrong. To the project&rsquo;s credit, this is documented: the README&rsquo;s description of the setting carries a warning that terminal commands are not covered, and SECURITY.md lists &ldquo;Terminal commands can access files outside <code class="text-neon/80 text-xs">allowedDirectories</code> restrictions&rdquo; and &ldquo;Command blocking can be bypassed via substitution and absolute paths&rdquo; as known limitations. The problem is not concealment. It is that a setting named &ldquo;allowed directories&rdquo; reads as a boundary, the <code class="text-neon/80 text-xs">get_config</code> output shows it next to the shell tool with no caveat, and nothing at the moment of use reminds you that one of the two tools ignores it. We had used the shell to read files outside those folders all session without noticing, and we were looking for exactly this class of gap.</p>
+
+                <p><span class="font-bold text-white">The only remaining control is the prompt.</span> On the shell path, what stands between an injected instruction and your credentials is the approval dialog for each command. That is the same dialog Anthropic described as &ldquo;not part of the security control&rdquo; when declining the VS Code report. Both statements can be true. A prompt is a weak control: it depends on the user reading the command every time, understanding what it does, and not being in a hurry. That is why it should not be the only control.</p>
+
+                <p><span class="font-bold text-white">Symlinks are already in your folders.</span> Before running the test we listed symlinks inside the allowed directories on the test machine. There were roughly twenty: Python virtual-environment links pointing at Linux paths synced from another machine (dangling on the Mac), relative links inside a skills repository, and a <code class="text-neon/80 text-xs">CLAUDE.md &rarr; AGENTS.md</code> link in a cloned gateway project. None were malicious. All arrived through ordinary git clones and folder sync without anyone creating them deliberately. A malicious one would arrive the same way.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">4. What to Do</h3>
+
+                <ol class="space-y-3 ml-1">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">1.</span><span><span class="font-bold text-white">Find out which tools your boundary actually covers.</span> Read the SECURITY.md and configuration docs for every agent tool with filesystem access and ask: does this setting apply to the shell, or only to the file API? Desktop Commander answers that question in its docs; most users never open them. If the documentation does not say, test it the way we did, with a fake secret.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">2.</span><span><span class="font-bold text-white">Resolve before you approve.</span> When an agent asks to touch a path, run <code class="text-neon/80 text-xs">realpath</code> on it. If the result is outside the folder you trusted, deny. This is the Ultrastrike workaround and it works everywhere.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">3.</span><span><span class="font-bold text-white">Keep secrets out of reach of the agent&rsquo;s user.</span> Real <code class="text-neon/80 text-xs">.env</code> files, keys and tokens should not be readable by the account the desktop agent runs as, or should live in a secrets manager that requires a separate approval. A boundary that depends on the agent not asking is not a boundary.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">4.</span><span><span class="font-bold text-white">Audit symlinks after every sync and clone.</span> <code class="text-neon/80 text-xs">find &lt;folder&gt; -type l</code> takes a second. Unexpected links pointing outside the tree are a stop-and-ask event.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">5.</span><span><span class="font-bold text-white">Prefer isolated execution for untrusted work.</span> Cloud or VM execution with a narrow mount beats a shell on your laptop. The Cowork SharedRoot escape in July showed that the mount itself has to be narrow too; the default moved to cloud execution afterwards.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">6.</span><span><span class="font-bold text-white">Approve command by command.</span> Blanket &ldquo;allow all&rdquo; modes convert the one remaining control into none.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0 font-bold">7.</span><span><span class="font-bold text-white">Scan skills and plugins for links before installing them.</span> See the next section for what that scan now catches.</span></li>
+                </ol>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">5. Closing the Gap in the Skill Scanner</h3>
+
+                <p>Agent skills are the obvious delivery vehicle for this class: a skill is a folder you install into an agent&rsquo;s workspace, and it can ship a symlink or run a setup script that creates one. We checked NVIDIA&rsquo;s SkillSpector, the open-source scanner for agent skills. Three separate reports (#374, #495, #268) had hardened it against symlinks so the scanner itself can&rsquo;t be tricked into reading host files, but each time the fix was to <em>skip</em> the link. A skill shipping <code class="text-neon/80 text-xs">helpdocs &rarr; ~/.ssh</code> scored SAFE, and so did a setup script that ran <code class="text-neon/80 text-xs">os.symlink("~/.claude/settings.json", "project_settings.json")</code>. Nobody had proposed treating the link as the finding.</p>
+
+                <p>We filed <a href="https://github.com/NVIDIA/SkillSpector/issues/1141" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">issue #1141</a> and opened <a href="https://github.com/NVIDIA/SkillSpector/pull/1142" target="_blank" rel="noopener noreferrer" class="text-neon/80 underline underline-offset-2 hover:text-neon transition-colors">pull request #1142</a>, which adds two rules:</p>
+
+                <ul class="space-y-3 ml-1">
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0">&rsaquo;</span><span><span class="font-bold text-white">SC11, Shipped Symbolic Link.</span> The existing bundle walk already saw every link and threw the information away. It now reports each one: HIGH when the link resolves outside the bundle, is dangling, or targets a credential store or agent-configuration path; MEDIUM when it stays inside the bundle, because the linked content is still unscanned either way. The scanner reads the link target and never follows it, so the earlier hardening is preserved.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon shrink-0">&rsaquo;</span><span><span class="font-bold text-white">PE6, Symlink Creation.</span> Patterns for <code class="text-neon/80 text-xs">os.symlink</code>, <code class="text-neon/80 text-xs">Path.symlink_to</code>, <code class="text-neon/80 text-xs">ln -s</code>, <code class="text-neon/80 text-xs">mklink</code>, <code class="text-neon/80 text-xs">New-Item -ItemType SymbolicLink</code> and Node&rsquo;s <code class="text-neon/80 text-xs">fs.symlink</code>. LOW by default; raised when the target escapes the workspace, HIGH when the same line names a credential or agent-config path.</span></li>
+                </ul>
+
+                <p>To check the noise level we ran the rules over 3,706 real skill and script files from two public skill collections. PE6: 12 LOW, 2 MEDIUM, and the only HIGH results were three copies of one line in a published skill, <code class="text-neon/80 text-xs">ln -sf &hellip; ~/.claude/company-context.md</code>, which plants a link inside the agent&rsquo;s configuration directory. That is exactly the pattern the rule exists to surface.</p>
+
+                <p>SC11 told a different story: one of the collections mirrors its skills into <code class="text-neon/80 text-xs">.codex/</code>, <code class="text-neon/80 text-xs">.gemini/</code>, <code class="text-neon/80 text-xs">.vibe/</code> and <code class="text-neon/80 text-xs">.hermes/</code> directories with 1,574 relative symlinks, which produced 1,573 MEDIUM findings and one HIGH (a dangling link). SkillSpector scans a skill bundle, not a whole collection, so an individual skill will not look like that, but it is a fair warning that the MEDIUM tier can be loud on mirrored repositories. The PR was open, CI green, one review in progress, as of 2026-11-16.</p>
+
+                <h3 class="text-base font-black uppercase text-neon mt-8 mb-3">6. Limits of This Test</h3>
+
+                <ul class="space-y-3 ml-1">
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0">&rsaquo;</span><span>One tool, one machine, one configuration, one day. Desktop Commander&rsquo;s behavior may change between versions; we recorded what 0.2.46 did on 2026-11-16.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0">&rsaquo;</span><span>We tested a directory symlink. We did not test hard links, junction equivalents, or race conditions between check and use.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0">&rsaquo;</span><span>The shell finding is a documented design property, not a vulnerability, and we have not reported it as one. Desktop Commander&rsquo;s README and SECURITY.md already describe <code class="text-neon/80 text-xs">allowedDirectories</code> as file-tool-only and list the terminal bypass as a known limitation. The point is that users read &ldquo;allowed directories&rdquo; as a boundary and it is not one for the shell; a feature request to the project for a shell-scoping option or an at-configuration warning is the right channel.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0">&rsaquo;</span><span>Everything in section 1 is from public reporting and vendor advisories, cited below, not from our own reproduction of those issues.</span></li>
+                  <li class="flex items-start gap-3"><span class="text-neon mt-0.5 shrink-0">&rsaquo;</span><span>The SkillSpector rules are a pull request, not a release. Until merged, nothing described in section 5 protects anyone.</span></li>
+                </ul>
+
+                <h3 class="text-base font-black uppercase text-cyber mt-8 mb-3">How ZTAI Can Help</h3>
+
+                <p>If your team runs AI agents with access to developer machines, build servers, or internal data, we can run this class of test against your actual configuration: which tools are bounded, which are not, and what an injected instruction could reach. Written findings, severity, and specific fixes.</p>
+
+                <div class="grid gap-5 sm:grid-cols-2 mt-5">
+                  <div class="cyber-border rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-neon mb-2">AI Security Assessment</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">Adversarial testing of agents and MCP tool chains &mdash; which boundaries hold, which don&rsquo;t, and what a prompt injection or planted link could reach in your stack.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Book an Assessment">Book an Assessment</button>
+                  </div>
+                  <div class="terminal-panel rounded-lg p-5">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-cyber mb-2">Agentic Architecture Review</p>
+                    <p class="text-sm leading-6 text-emerald-50/70 mb-4">We review your agent tool configuration, approval-prompt exposure, and secret management against the specific attack class your tooling faces &mdash; not a generic checklist.</p>
+                    <button onclick="window.switchToTab('contact')" class="volatile-button rounded-md px-4 py-2 text-xs cursor-pointer" data-text="Request Review">Request Review</button>
+                  </div>
+                </div>
+
+                <footer class="border-t border-neon/20 pt-6 mt-8">
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-neon/50 text-neon font-black text-sm">BK</div>
+                    <div>
+                      <p class="font-black text-white text-sm">Benedict Kwok</p>
+                      <p class="text-xs uppercase tracking-[0.16em] text-cyber mt-0.5">Founder &amp; Principal Security Advisor &mdash; ZTAI Security Advisors LLC</p>
+                      <p class="mt-2 text-xs leading-5 text-emerald-50/60">Ben has 25+ years in security across Oracle, SAP, HP, Symantec and IBM, including co-creating CVSS v2 and v3, and runs an adversarial research lab testing prompt injection, poisoned retrieval and agent tool boundaries.</p>
+                      <p class="mt-1 text-xs text-emerald-50/40"><a href="https://www.linkedin.com/in/benedict-kwok-2018/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">linkedin.com/in/benedict-kwok-2018</a> &middot; benedictkwok@ztai.ai</p>
+                    </div>
+                  </div>
+                  <div class="mt-5 border-t border-neon/10 pt-4">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-50/40 mb-2">Sources</p>
+                    <ul class="space-y-1 text-xs text-emerald-50/50">
+                      <li>&rarr; <a href="https://cybersecuritynews.com/claude-code-vs-code-extension/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Cybersecurity News &mdash; Claude Code VS Code extension symlink permission flaw</a></li>
+                      <li>&rarr; <a href="https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Adversa AI &mdash; SymJack: the approval prompt is lying to you</a></li>
+                      <li>&rarr; <a href="https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">The Hacker News &mdash; GhostApproval symlink flaws</a></li>
+                      <li>&rarr; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ghostapproval-ai-coding-assistant-symlink/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Cloud Security Alliance &mdash; GhostApproval research note</a></li>
+                      <li>&rarr; GHSA-66m2-gx93-v996 / <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-59829" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">CVE-2025-59829</a></li>
+                      <li>&rarr; GHSA-4q92-rfm6-2cqx / <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25724" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">CVE-2026-25724</a></li>
+                      <li>&rarr; GHSA-5p5x-5294-qhp3 / <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44470" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">CVE-2026-44470</a></li>
+                      <li>&rarr; GHSA-3v8f-48vw-3mjx / <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-50549" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">CVE-2026-50549</a></li>
+                      <li>&rarr; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-claude-cowork-sharedroot-sandbox-escape-20/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Cloud Security Alliance &mdash; SharedRoot (Cowork) research note</a></li>
+                      <li>&rarr; <a href="https://github.com/wonderwhy-er/DesktopCommanderMCP/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">Desktop Commander SECURITY.md</a> &middot; <a href="https://github.com/wonderwhy-er/DesktopCommanderMCP#readme" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">README</a> (known limitations)</li>
+                      <li>&rarr; <a href="https://github.com/NVIDIA/SkillSpector/issues/1141" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">NVIDIA SkillSpector issue #1141</a> &middot; <a href="https://github.com/NVIDIA/SkillSpector/pull/1142" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-neon transition-colors">PR #1142</a></li>
+                    </ul>
+                  </div>
+                  <p class="mt-4 text-xs uppercase tracking-[0.18em] text-emerald-50/35">Published November 2026 &middot; &copy; 2026 ZTAI Security Advisors LLC. All rights reserved.</p>
+                </footer>
+
+              </div>
+            </article>
+            </div><!-- /article-wrap-symlink -->
+
           </div>
         </section>
       </div>
@@ -4358,6 +4597,6 @@ Result:  Passed through completely unmodified. Full text reflected
   </script>
 
   <!-- Tab switching + contact form + PDF — Motion One loaded via CDN ESM -->
-  <script type="module" src="/js/tabs.js?v=14"></script>
+  <script type="module" src="/js/tabs.js?v=15"></script>
 </body>
 </html>

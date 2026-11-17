@@ -29,6 +29,11 @@ const ARTICLES = {
     description:
       "7,920 trials across 6 local models. Neutral poisoned documents alone drove Gemma 4 to 30/30 false answers. A hidden instruction beat a reasoning model that resisted passive misinformation. Delimiter-immune ≠ document-immune.",
   },
+  symlink_approval_boundary_desktop_commander: {
+    title: "The Prompt Is Not the Control: Testing the Symlink Boundary in AI Agent Tooling | ZTAI.AI",
+    description:
+      "Desktop Commander's file tools resolved symlinks and held. Its shell tool had no boundary at all — allowedDirectories only governs the file API. We also added symlink detection to NVIDIA's SkillSpector: 3 HIGH findings across 3,706 files.",
+  },
 };
 
 export async function onRequest(context) {
